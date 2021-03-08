@@ -18,6 +18,7 @@ body {
 .app-name-header {
   color: hsl(0, 0%, 91%);
   font-size: 3rem;
+  padding-left: 2rem;
 }
 
 .nav {
@@ -42,6 +43,28 @@ body {
 .logo {
   width: 2.7rem;
   padding-right: 0.5rem;
+}
+
+/* Style the tab buttons */
+.nav-tabs {
+  background-color: rgb(63, 63, 63);
+  color: rgb(240, 240, 240);
+  cursor: pointer;
+  border-radius: 1rem;
+  
+  border: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 0.7rem;
+  padding-top: 0.7rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Change background color of buttons on hover */
+.nav-tabs:hover {
+  color: hsl(29, 97%, 45%);
+  /* background-color: #777; */
 }
 
 .nav-list {
@@ -141,4 +164,11 @@ body {
   .full-screen-header {
     background-position-x: 65%;
   }
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
 }
