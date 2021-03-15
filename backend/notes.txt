@@ -1,0 +1,18 @@
+BandWagon Option 1 Option 2 .....  ProfilePic AccountName BadgeDisplayed TotalPointsBalance
+
+
+VoteId1	SchedId1 WinningTeamId9 PointsAwarded: 0
+
+
+
+GameId1 SchedId1 TeamId9 90 TeamId3 80 TeamId9
+GameId2
+GameId3 
+
+BadgesEarnedId AccountID BadgeID
+
+Id1	AccountID1 	BadgeID7
+Id2	AccountID1 	BadgeID8
+Id3	AccountID1 	BadgeID8
+Id4	AccountID2 	BadgeID1
+Id5	AccountID2 	BadgeID6
