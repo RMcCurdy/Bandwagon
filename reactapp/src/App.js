@@ -4,13 +4,17 @@ import {Route, BrowserRouter as Router, Link, Switch} from "react-router-dom";
 import Nav from './components/Nav';
 import Homebase from './components/Homebase';
 
+import AppState from './context/AppState';
+
 function App() {
   return (
       <div className="App">
-      <Router>
-        <Nav />
-        <Homebase />
-      </Router>
+      <AppState>
+        <Router>
+          <Nav />
+          <Homebase />
+        </Router>
+      </AppState>
       </div>
   );
 }

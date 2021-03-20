@@ -1,29 +1,48 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Route, BrowserRouter as Router, Link, Switch} from "react-router-dom";
 
+import AppContext from '../context/AppContext';
 
 function Nav() {
+  const {isLoggedIn} = useContext(AppContext);
+
+  const logoAndWebName = <span className="app-name-header header-title">
+  <img className="logo" src="../img/orange.png" alt="Product Logo" />Bandwagon
+  </span>
+
+  const notLoggedInTabs = <span className="tabs center-tabs"> 
+  <Link to="/" className="nav-tabs">HOME</Link>
+  <Link to="/leaderboard" className="nav-tabs">LEADERBOARD</Link>
+  <Link to="/standings" className="nav-tabs">STANDINGS</Link> 
+  </span> 
+
+  const loggedInTabs = <span className="tabs center-tabs">
+  <Link to="/account" className="nav-tabs">HOME</Link>
+  <Link to="/shop" className="nav-tabs">SHOP</Link>
+  <Link to="/badges" className="nav-tabs">BADGES</Link>
+  <Link to="/games" className="nav-tabs">GAMES</Link>
+  <Link to="/leaderboard" className="nav-tabs">LEADERBOARD</Link>
+  <Link to="/standings" className="nav-tabs">STANDINGS</Link> 
+  <Link to="/profile" className="nav-tabs">PROFILE</Link>
+  </span>
+
+  const notLoggedIn = <ul className="nav-list login-logout">
+  <li><span><Link to="/login" className="btn login">SIGN IN</Link></span></li>
+  <li><span><Link to="/signup" className="btn signup">SIGN UP</Link></span></li>
+  </ul>
+
+  const loggedIn = <ul className ="nav-list login-logout">
+  <li><Link to="/logout" className="btn login">SIGN OUT</Link></li>
+  </ul>
+
   return (
     <>
-    <header class="full-screen-header">
-      <nav class="nav nav-top">
-        <span class="app-name-header">
-          <img class="logo" src="../img/orange.png" alt="Product Logo" />Bandwagon
-        </span>
-        <span class="tabs">
-          <Link to="/" className="nav-tabs nav-tabs-home">HOME</Link>
-          <Link to="/leaderboard" className="nav-tabs nav-tabs-home">LEADERBOARD</Link>
-          <Link to="/standings" className="nav-tabs nav-tabs-home">STANDINGS</Link>
-          <Link to="/account" className="nav-tabs nav-tabs-account">ACCOUNT</Link>
-          <Link to="/shop" className="nav-tabs nav-tabs-account">SHOP</Link>
-          <Link to="/badges" className="nav-tabs nav-tabs-account">BADGES</Link>
-          <Link to="/games" className="nav-tabs nav-tabs-account">GAMES</Link>
-          <Link to="/profile" className="nav-tabs nav-tabs-account">PROFILE</Link>
-        </span>
-        <ul class="nav-list">
-          <li><Link to="/login" className="btn login">LOG IN</Link></li>
-          <li><Link to="/signup" className="btn signup">SIGN UP</Link></li>
-        </ul>
+    <header className="full-screen-header">
+      <nav className="nav nav-top">
+        {logoAndWebName}
+        {isLoggedIn ? loggedInTabs : notLoggedInTabs}
+        {isLoggedIn ? loggedIn : notLoggedIn}
+        {/* {isLoggedIn ? <p>True</p> : <p>False</p>} */}
       </nav>
     </header>
     </>
