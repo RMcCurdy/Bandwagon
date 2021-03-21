@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NBAapi.Data;
-using NBAapi.Models;
+using NBAapi.Entities;
 
 namespace NBAapi.Controllers
 {

@@ -1,17 +1,21 @@
 import AppContext from './AppContext';
+import { useState } from 'react';
 
 const AppState = (props) => {
+  const initialGlobalState = {
+    firstname: '',
+    lastname: '',
+    username: '',
+    isLoggedIn: false,
+    isAdmin: false,
+    favoriteBadge: '',
+    message: '',
+  }
+
+  const [globalState, setGlobalState] = useState(initialGlobalState);
+
   return (
-    <AppContext.Provider value={{
-      message: "This is from the context",
-      isLoggedIn: false,
-      theme: 'dark',
-      firstName: 'Robert',
-      lastName: 'McCurdy',
-      favoriteBadge: 'Cheese',
-      username: 'Rajon'
-    }}
-    >
+    <AppContext.Provider value={{globalState, setGlobalState}}>
       {props.children}  
     </AppContext.Provider>
   );

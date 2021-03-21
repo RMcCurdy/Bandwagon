@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using NBAapi.Models;
+using NBAapi.Entities;
 
 namespace NBAapi.Data
 {

@@ -1,0 +1,20 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.add-background {
+  background-color: hsla(29, 97%, 45%, 0.7);
+  height: 100vh;
+}
+
+.milk-404 {
+  max-height: 70vh;
+}
+
+#mouth {
+  visibility: hidden;
+}
