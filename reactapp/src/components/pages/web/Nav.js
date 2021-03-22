@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
-import {Route, BrowserRouter as Router, Link, Switch} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 function Nav() {
-  const {isLoggedIn, isAdmin} = useContext(AppContext);
+  const {isLoggedIn, setIsLoggedIn, isAdmin, firstname} = useContext(AppContext);
 
   const logoAndWebName = <span className="app-name-header header-title">
   <img className="logo" src="../img/orange.png" alt="Product Logo" />Bandwagon
@@ -39,7 +39,7 @@ function Nav() {
 
   const loggedIn = <div style={{minWidth: '400px'}}>
   <ul className ="nav-list login-logout">
-  <Link to="/profile" className="nav-tabs">PROFILE</Link>
+  <Link to="/profile" className="nav-tabs">Hello, {firstname}</Link>
   <li><Link to="/logout" className="btn login">SIGN OUT</Link></li>
   </ul>
   </div>

@@ -1,6 +1,6 @@
 import './App.css';
 import './styles/styles.css';
-import {Route, BrowserRouter as Router, Link, Switch} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Nav from './components/pages/web/Nav';
 import Homebase from './components/pages/web/Homebase';
 
@@ -12,6 +12,7 @@ function App() {
       <AppState>
         <Router>
           <Nav />
+          <div style={{marginTop: '80px'}}></div>
           <Homebase />
         </Router>
       </AppState>

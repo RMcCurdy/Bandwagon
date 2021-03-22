@@ -17,6 +17,14 @@ body {
   padding-left: 2rem;
 }
 
+.page-container {
+  /* border: 2px solid green; */
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  height: 300px;
+}
+
 .nav {
   display: flex;
   /* Can change this justify to allow buttons and header logo to be more centered */

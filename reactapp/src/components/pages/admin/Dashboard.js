@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
 import { Redirect } from 'react-router-dom';
-import NotAuthorized from '../shared/NotAuthorized';
 
 function Dashboard() {
   const {isAdmin} = useContext(AppContext);

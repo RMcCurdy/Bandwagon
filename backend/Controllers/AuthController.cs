@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using backend.Models.Auth;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NBAapi.Data;
 
 namespace backend.Controllers
@@ -33,7 +34,7 @@ namespace backend.Controllers
                 });
             }
 
-            var user = _context.Accounts.FirstOrDefault(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
+            var user = await _context.Accounts.SingleOrDefaultAsync(u => u.Email == loginRequest.Email && u.Password == loginRequest.Password);
             
             if (user == null)
             {

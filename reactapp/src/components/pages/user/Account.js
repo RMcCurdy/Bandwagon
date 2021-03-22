@@ -6,12 +6,10 @@ import { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 
 function Account() {
-  const {globalState, setGlobalState} = useContext(AppContext);
+  const {firstname, username} = useContext(AppContext);
 
   return (
     <div>
-      <p>Hello {globalState.firstName}</p>
-      <p>Hello {globalState.username}</p>
       <News />
       <Schedule />
     </div>

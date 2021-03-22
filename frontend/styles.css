@@ -6,13 +6,6 @@ body {
   background-color: rgb(240, 240, 240);
   margin: 0;
   font-family: Montserrat, sans-serif;
-
-  --title-duration: 500ms;
-  --sub-title-duration: 500ms;
-  --nav-duration: 200ms;
-
-  --sub-title-delay: calc(var(--title-duration) - 200ms);
-  --nav-delay: calc(var(--sub-title-delay) + var(--sub-title-duration));
 }
 
 .app-name-header {
@@ -36,8 +29,6 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
-
-  animation: nav-enter var(--nav-duration) var(--nav-delay) backwards;
 }
 
 .logo {
@@ -96,14 +87,10 @@ body {
 .title {
   font-size: 3rem;
   padding-top: 5rem;
-
-  animation: title-enter var(--title-duration);
 }
 
 .sub-title {
   font-size: 1.5rem;
-
-  animation: sub-title-enter var(--sub-title-duration) var(--sub-title-delay) backwards;
 }
 
 .btn {

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import AppContext from '../../../context/AppContext';
 
 const Login = () => {
-  const {globalState, setGlobalState} = useContext(AppContext);
+  const {setFirstName, setUserName, setIsLoggedIn} = useContext(AppContext);
   
   const history = useHistory();
 
@@ -20,14 +20,15 @@ const Login = () => {
       const success = resp.data.success;
       console.log(success);
       if (success === true) {
-        console.log('the global state is: ', globalState);
-        setGlobalState.isLoggedIn = true;
-        setGlobalState.isAdmin = false;
-        setGlobalState.firstname = resp.data.firstname;
-        setGlobalState.username = resp.data.username;
-        console.log('the UPDATED global state is: ', globalState)
+        const fname = resp.data.firstname;
+        const uname = resp.data.username;
+
+        setFirstName(fname);
+        setUserName(uname);
+        setIsLoggedIn(true);
+
         history.push('/account');
-      }
+    }
       console.log('response is: ', resp);
     });
   } 
@@ -36,7 +37,7 @@ const Login = () => {
     <div className="my-flex-container">
       <div>
         <h1>Login</h1>
-        <p>Hello {globalState.isLoggedIn ? <p>You are already logged in.  Taking you to your Account page...</p> : <p>Please log in below.</p>} </p>
+        {/* Change first name */}
         
         <div className="main">
           <p className="sign">Sign in</p>
@@ -48,13 +49,12 @@ const Login = () => {
           <input className="pass" type="password" placeholder="Password" />
           </div>
           <div>
-          <a className="submit">Sign in</a>
-          <button onClick={login}>
-            Click Me
+          <button onClick={login} className="submit">
+            Sign In
           </button>
           </div>
           <div>
-          <p className="forgot"><a href="#">Forgot Password?</a></p>
+          <p className="forgot"><Link to='/forgot'>Forgot Password?</Link></p>
           </div>
         </div>
 
