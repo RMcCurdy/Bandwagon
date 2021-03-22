@@ -1,0 +1,62 @@
+.leaderboard{
+  margin: 80px auto;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+  
+.leaderboard-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.leaderboard-tabs {
+  display: inline-block;
+  text-align: center;
+}
+
+.leaderboard-btn {
+  cursor: pointer;
+  border: 0;
+  padding-bottom: 0.7em;
+  margin-top: 0.6em;
+  padding-right: 0.6em;
+  font-size: 1.5em;
+  color: black;
+  background-color:none;
+}
+
+.leaderboard-btn:hover,
+.leaderboard-btn:focus {
+  color: hsl(29, 97%, 55%);
+}
+
+   
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+  
+th {
+  text-align: left;
+  padding: 6px;
+  color: white;
+  background: rgb(63, 63, 63);
+  font-weight: normal;
+}
+  
+td {
+  padding: 10px 6px;
+  background-color:rgb(255, 255, 255);
+}
+    
+.item {
+  display:inline;
+}
+  
+.box { 
+  width: 32px; 
+  height: 32px;   
+}
