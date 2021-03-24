@@ -11,13 +11,16 @@ import AppState from './context/AppState';
 function App() {
 
   // const [isLoggedIn] = useContext(AppContext);
+  const style = {
+    marginTop: '6em'
+  }
 
   return (
       <div className="App">
       <AppState>
         <Router>
           <Nav />
-          <div style={{marginTop: '80px'}}></div>
+          <div style={style}></div>
           <Homebase />
         </Router>
       </AppState>

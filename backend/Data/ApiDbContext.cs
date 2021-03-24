@@ -13,6 +13,7 @@ namespace NBAapi.Data
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<Player> Players { get; set; }
+        public virtual DbSet<ProfilePic> ProfilePics { get; set; }
         public virtual DbSet<Vote> Votes { get; set; }
 
          public ApiDbContext(DbContextOptions<ApiDbContext> options)

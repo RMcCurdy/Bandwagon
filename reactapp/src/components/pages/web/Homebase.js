@@ -13,6 +13,7 @@ import Games from '../utils/Games';
 import Shop from '../utils/Shop';
 import Badges from '../utils/Badges';
 import Profile from '../user/Profile';
+import ForgotPass from '../utils/ForgotPass';
 
 // import { useContext } from 'react';
 // import AppContext from '../../reactapp/src/context/AppContext';
@@ -23,7 +24,7 @@ function Homebase() {
 
   return (
     <>
-    <div style={{marginTop: '80px'}}></div>
+    {/* <div style={{marginTop: '80px'}}></div> */}
     <div>
       <Switch>
         <Route path="/account" exact component={Account} />
@@ -37,7 +38,8 @@ function Homebase() {
         <Route path="/games" exact component={Games} />
         <Route path="/shop" exact component={Shop} />
         <Route path="/badges" exact component={Badges} />
-        <Route path="/profile" exact component={Profile} />
+        <Route path="/profile" exact  component={Profile} />
+        <Route path="/forgot" exact  component={ForgotPass} />
         <Route path="/" exact component={Home} />
         {/* {if (isLoggedIn === false) <Route component={Home} />} */}
         <Route component={PageNotFound} />

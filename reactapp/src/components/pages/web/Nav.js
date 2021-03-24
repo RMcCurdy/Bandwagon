@@ -40,6 +40,7 @@ function Nav() {
   const loggedIn = <div style={{minWidth: '400px'}}>
   <ul className ="nav-list login-logout">
   <Link to="/profile" className="nav-tabs">Hello, {firstName}</Link>
+  
   <li><Link to="/logout" className="btn login">SIGN OUT</Link></li>
   </ul>
   </div>

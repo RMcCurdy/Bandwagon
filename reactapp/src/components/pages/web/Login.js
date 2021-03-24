@@ -11,11 +11,19 @@ const Login = () => {
 
   const login = () => {
 
-    const loginTestPerson = {
-      email: 'robert@test.com',
-      password: '1111'
-    };
-    return axios.post('http://localhost:5000/api/Auth', loginTestPerson)
+    // const loginTestPerson = {
+    //   email: 'robert@test.com',
+    //   password: '1111'
+    // };
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('pass').value;
+    
+    const loginPerson = {
+        email: email,
+        password: pass
+      };
+
+    return axios.post('http://localhost:5000/api/Auth', loginPerson)
     .then(resp => {
       const success = resp.data.success;
       console.log(success);
@@ -43,10 +51,10 @@ const Login = () => {
           <p className="sign">Sign in</p>
           <form className="form1" />
           <div>
-          <input className="un" type="text" placeholder="Username" />
+          <input id="email" className="un" type="text" placeholder="Email" />
           </div>
           <div>
-          <input className="pass" type="password" placeholder="Password" />
+          <input id="pass" className="pass" type="password" placeholder="Password" />
           </div>
           <div>
           <button onClick={login} className="submit">
