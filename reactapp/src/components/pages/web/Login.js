@@ -5,7 +5,7 @@ import axios from 'axios';
 import AppContext from '../../../context/AppContext';
 
 const Login = () => {
-  const {setFirstName, setUserName, setIsLoggedIn} = useContext(AppContext);
+  const {setFirstName, setUserName, setIsLoggedIn, setProfilePic} = useContext(AppContext);
   
   const history = useHistory();
 
@@ -17,7 +17,7 @@ const Login = () => {
     // };
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
-    
+
     const loginPerson = {
         email: email,
         password: pass
@@ -30,9 +30,11 @@ const Login = () => {
       if (success === true) {
         const fname = resp.data.firstName;
         const uname = resp.data.username;
+        const profilePic = resp.data.profilePic;
 
         setFirstName(fname);
         setUserName(uname);
+        setProfilePic(profilePic);
         setIsLoggedIn(true);
 
         history.push('/account');

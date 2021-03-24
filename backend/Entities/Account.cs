@@ -11,7 +11,7 @@ namespace NBAapi.Entities
         public string LastName { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public string ProfileImage { get; set; }
+        public string ProfilePic { get; set; }
         public bool IsAdmin { get; set; }
         public int TotalPointsEarned { get; set; }
         public int TotalPointsSpent { get; set; }
