@@ -4,6 +4,7 @@ function Badges() {
   return (
     <div>
       <p>This is the badges</p>
+      <p>Markus to fill in</p>
     </div>
   )
 }
