@@ -4,7 +4,7 @@ namespace backend.Models.Auth
 {
         public class AuthResponse
     {
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
         public string Username { get; set; }
 
         public bool Success { get; set; }

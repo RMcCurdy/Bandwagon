@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 
 function Account() {
-  const {firstname, username} = useContext(AppContext);
+  // const {firstName, username} = useContext(AppContext);
 
   return (
     <div>

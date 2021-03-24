@@ -25,7 +25,7 @@ namespace backend.Controllers
             {
                 return BadRequest(new AuthResponse()
                 {
-                    Firstname = null,
+                    FirstName = null,
                     Username = null,
                     Errors = new List<string>() {
                                 "Login information incorrect."
@@ -40,7 +40,7 @@ namespace backend.Controllers
             {
                 return BadRequest(new AuthResponse()
                 {
-                    Firstname = null,
+                    FirstName = null,
                     Username = null,
                     Errors = new List<string>() {
                                 "Login information incorrect."
@@ -50,7 +50,7 @@ namespace backend.Controllers
             }
 
             var response = new AuthResponse() {
-                Firstname = user.Firstname,
+                FirstName = user.FirstName,
                 Username = user.Username,
                 Errors = new List<string>() {
                             ""

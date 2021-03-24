@@ -20,7 +20,7 @@ const Login = () => {
       const success = resp.data.success;
       console.log(success);
       if (success === true) {
-        const fname = resp.data.firstname;
+        const fname = resp.data.firstName;
         const uname = resp.data.username;
 
         setFirstName(fname);

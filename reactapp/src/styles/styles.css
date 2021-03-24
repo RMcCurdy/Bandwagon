@@ -48,21 +48,21 @@ body {
   justify-content: left;
   align-items: center;
   max-width: 400px;
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
 .login-logout {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
 .center-tabs {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
 
 .nav-top {
