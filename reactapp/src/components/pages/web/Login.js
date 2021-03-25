@@ -10,11 +10,6 @@ const Login = () => {
   const history = useHistory();
 
   const login = () => {
-
-    // const loginTestPerson = {
-    //   email: 'robert@test.com',
-    //   password: '1111'
-    // };
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
 

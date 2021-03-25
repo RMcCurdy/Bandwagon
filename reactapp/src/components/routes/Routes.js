@@ -8,7 +8,7 @@ import Admin from '../pages/admin/Admin';
 import PageNotFound from '../pages/shared/PageNotFound';
 import NotAuthorized from '../pages/shared/NotAuthorized';
 import Standings from '../pages/utils/Standings';
-import Leaderboard from '../pages/utils/Leaderboard';
+import Leaderboard from '../pages/utils/leaderboard/Leaderboard';
 import Games from '../pages/utils/Games';
 import Shop from '../pages/utils/Shop';
 import Badges from '../pages/utils/Badges';

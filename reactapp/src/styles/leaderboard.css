@@ -60,3 +60,29 @@ td {
   width: 32px; 
   height: 32px;   
 }
+
+.leaderboard-header-container {
+  display: flex;
+  padding: 6px;
+  color: white;
+  background: rgb(63, 63, 63);
+  font-weight: normal;
+}
+
+.leaderboard-header-items {
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.leaderboard-items-container {
+  display: flex;
+}
+
+.leaderboard-items {
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  padding: 10px 6px;
+  background-color:rgb(255, 255, 255);
+}

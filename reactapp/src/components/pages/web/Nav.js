@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 
 function Nav() {
-  const {isLoggedIn, setIsLoggedIn, isAdmin, firstName} = useContext(AppContext);
+  const {isLoggedIn, isAdmin, firstName} = useContext(AppContext);
 
   const logoAndWebName = <span className="app-name-header header-title">
   <img className="logo" src="../img/orange.png" alt="Product Logo" />Bandwagon
