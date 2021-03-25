@@ -52,6 +52,7 @@ namespace backend.Controllers
             var response = new AuthResponse() {
                 FirstName = user.FirstName,
                 Username = user.Username,
+                IsAdmin = user.IsAdmin,
                 Errors = new List<string>() {
                             ""
                         },

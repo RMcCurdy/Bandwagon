@@ -2,7 +2,7 @@ import './App.css';
 import './styles/styles.css';
 import { BrowserRouter as Router } from "react-router-dom";
 import Nav from './components/pages/web/Nav';
-import Homebase from './components/pages/web/Homebase';
+import Routes from './components/routes/Routes';
 
 import AppState from './context/AppState';
 // import { useContext } from 'react';
@@ -21,7 +21,7 @@ function App() {
         <Router>
           <Nav />
           <div style={style}></div>
-          <Homebase />
+          <Routes />
         </Router>
       </AppState>
       </div>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
 import { Redirect } from 'react-router-dom';
 
-function Dashboard() {
+function Admin() {
   const {isAdmin} = useContext(AppContext);
   return isAdmin ? (
     <div>
@@ -13,4 +13,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard
+export default Admin

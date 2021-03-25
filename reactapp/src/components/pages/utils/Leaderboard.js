@@ -1,9 +1,10 @@
 import React from 'react'
+import {  } from "module";
 
 function Leaderboard() {
   return (
     <div>
-      <div class="leaderboard">
+      <div className="leaderboard">
 
 <span className="leaderboard-header">
   <h1>Leaderboard</h1>

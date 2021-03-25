@@ -5,7 +5,7 @@ import axios from 'axios';
 import AppContext from '../../../context/AppContext';
 
 const Login = () => {
-  const {setFirstName, setUserName, setIsLoggedIn, setProfilePic} = useContext(AppContext);
+  const {setFirstName, setUserName, setIsLoggedIn, setProfilePic, setIsAdmin} = useContext(AppContext);
   
   const history = useHistory();
 
@@ -31,13 +31,19 @@ const Login = () => {
         const fname = resp.data.firstName;
         const uname = resp.data.username;
         const profilePic = resp.data.profilePic;
+        const isAdmin = resp.data.isAdmin;
 
         setFirstName(fname);
         setUserName(uname);
         setProfilePic(profilePic);
         setIsLoggedIn(true);
+        setIsAdmin(isAdmin);
 
-        history.push('/account');
+        if (isAdmin === true) {
+          history.push('/admin');
+        } else {
+          history.push('/account');
+        }
     }
       console.log('response is: ', resp);
     });

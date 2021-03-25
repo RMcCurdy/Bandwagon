@@ -7,6 +7,7 @@ namespace backend.Models.Auth
         public string FirstName { get; set; }
         public string Username { get; set; }
         public string ProfilePic { get; set; }
+        public bool IsAdmin { get; set; }
         public bool Success { get; set; }
         public List<string> Errors { get; set; }
     }
