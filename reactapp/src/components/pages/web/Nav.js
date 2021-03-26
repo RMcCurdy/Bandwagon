@@ -13,7 +13,6 @@ function Nav() {
   const notLoggedInTabs = <span className="tabs center-tabs"> 
   <Link to="/" className="nav-tabs">HOME</Link>
   <Link to="/leaderboard" className="nav-tabs">LEADERBOARD</Link>
-  <Link to="/standings" className="nav-tabs">STANDINGS</Link> 
   </span> 
 
   const loggedInTabs = <span className="tabs center-tabs">
@@ -22,7 +21,6 @@ function Nav() {
   <Link to="/badges" className="nav-tabs">BADGES</Link>
   <Link to="/games" className="nav-tabs">GAMES</Link>
   <Link to="/leaderboard" className="nav-tabs">LEADERBOARD</Link>
-  <Link to="/standings" className="nav-tabs">STANDINGS</Link> 
   </span>
 
   const loggedInAdminTabs = <span className="tabs center-tabs">

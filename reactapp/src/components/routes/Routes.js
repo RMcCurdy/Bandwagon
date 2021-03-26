@@ -7,7 +7,6 @@ import Logout from '../pages/web/Logout';
 import Admin from '../pages/admin/Admin';
 import PageNotFound from '../pages/shared/PageNotFound';
 import NotAuthorized from '../pages/shared/NotAuthorized';
-import Standings from '../pages/utils/Standings';
 import Leaderboard from '../pages/utils/leaderboard/Leaderboard';
 import Games from '../pages/utils/Games';
 import Shop from '../pages/utils/Shop';
@@ -34,7 +33,6 @@ function Routes() {
         <Route path="/forgot" exact  component={ForgotPass} />
         <Route path="/login" exact component={Login} />
         <Route path="/logout" exact component={Logout} />
-        <Route path="/standings" exact component={Standings} />
         <Route path="/leaderboard" exact component={Leaderboard} />
 
 

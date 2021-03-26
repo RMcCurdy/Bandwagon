@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBAapi.Data;
 
 namespace NBAapi.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210326205915_Finalized Data in Teams and Player")]
+    partial class FinalizedDatainTeamsandPlayer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -212,6 +214,9 @@ namespace NBAapi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Assists")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
 
@@ -219,6 +224,9 @@ namespace NBAapi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Points")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Rebounds")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("TeamId")
@@ -267,6 +275,12 @@ namespace NBAapi.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ThreePointPercent")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TotalAssists")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TotalRebounds")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
