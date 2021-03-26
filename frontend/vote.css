@@ -1,0 +1,45 @@
+.vote{
+    margin: 80px auto;
+    padding-left: 30%;
+    padding-right: 30%;  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+    display: grid;
+  }
+    
+  .vote-game{
+    font-size: 11px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 5px, 5px;
+
+    cursor: pointer;
+  }
+
+  .team1:hover{
+      opacity: 0.7;
+  }
+  .team2:hover{
+    opacity: 0.3;
+}
+
+  .pred{
+      padding-left: 15px;
+      width: 10%;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .vote{
+      margin: 80px auto;
+      padding-left: 20%;
+      padding-right: 20%;  
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }  
+  }
+  
+  
+  
+  
+  
