@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badges.css">
+  <link rel="icon" href="/img/orange.png">
+  <script src="main.js"></script>
+  <title>NBA Predictor App</title>
+</head>
+<body>
+  <header class="full-screen-header">
+    <nav class="nav nav-top">
+      <span class="app-name-header"><img class="logo" src="img/orange.png" alt="Product Logo">Bandwagon</span>
+      <span class="tabs">
+        <button class="nav-tabs">HOME</button>
+        <button class="nav-tabs">STANDINGS</button>
+        <button class="nav-tabs">GAMES</button>
+        <button class="nav-tabs">LEADERBOARD</button>
+      </span>
+      <ul class="nav-list">
+        <li><button class="btn login">LOG IN</button></li>
+        <li><button class="btn signup">SIGN UP</button></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="badges">
+      
+      <span class="badges-header">
+        <h1>Badges</h1> 
+      </span>
+
+        <div class="badges-earned">
+          <p class="badge-title"><b>Badges earned</b></p>
+          <p class="badge-note">Click on one of your badges to set it as current!</p>
+          <img class="cur-badge-check"src="img/green-check.png"  style="width:2em; height:2em;" ></img>
+          <div class="dropdown">
+              <button class="dropbtn">Sorting Method</button>
+              <div class="dropdown-content">
+                <a href="#">Date awarded (ascending)</a>
+                <a href="#">Date awarded (descending)</a>
+                <a href="#">option 3</a>
+                <a href="#">option 4</a>
+              </div>
+            </div>
+          <table class="badge-table">
+              <tbody>
+                  <tr>
+                      <td><img src="img/badge1.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img class="current-badge-selection" src="img/badge2.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img src="img/badge3.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img src="img/badge4.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img src="img/badge5.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img src="img/badge6.png" style="width:4em; height:4em;" ></img></td>
+                  </tr>
+                  <tr>
+                      <td><img src="img/badge7.png" style="width:4em; height:4em;" ></img></td>
+                      <td><img src="img/badge8.png" style="width:4em; height:4em;" ></img></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="all-badges-btn" id="all-badges-btn">
+        <button class="all-badges-toggle"  id="all-badges-toggle" onclick="showTable()" type="button">View/Hide all badges</button>
+        <script>
+            function showTable() {
+              var x = document.getElementById("all-table");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+            </script>
+      </div>
+
+        <!--We can hard code this i think-->
+        <div class="all-badges-table" id="hidden-table">
+        <table class="badge-table" id="all-table" style="display:none">
+            <tbody>
+              <tr><td><p class="all-badges-label">DIAMOND</p></td></tr>
+              <tr>
+                <td><img src="img/badge1.png"style="width:4em; height:4em;" ></img></td>
+                <td><img src="img/badge2.png"style="width:4em; height:4em;" ></img></td>
+                <td><img src="img/badge3.png"style="width:4em; height:4em;" ></img></td>
+                <td><img src="img/badge4.png"style="width:4em; height:4em;" ></img></td>
+                <td><img src="img/badge5.png"style="width:4em; height:4em;" ></img></td>
+                <td><img src="img/badge6.png"style="width:4em; height:4em;" ></img></td>
+            </tr>
+            <tr><td><p class="all-badges-label">GOLD</p></td></tr>
+                <tr>
+                    <td><img src="img/badge1.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge2.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge3.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge4.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge5.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge6.png"style="width:4em; height:4em;" ></img></td>
+                </tr>
+                <tr><td><p class="all-badges-label">SILVER</p></td></tr>
+                <tr>
+                    <td><img src="img/badge7.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge8.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge3.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge4.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge5.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge6.png"style="width:4em; height:4em;" ></img></td>
+                </tr>
+                <tr><td><p class="all-badges-label">BRONZE</p></td></tr>
+                <tr>
+                    <td><img src="img/badge7.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge8.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge3.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge4.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge5.png"style="width:4em; height:4em;" ></img></td>
+                    <td><img src="img/badge6.png"style="width:4em; height:4em;" ></img></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+        
+
+    </div>
+  </main>
+</body>
+</html>
+
