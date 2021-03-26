@@ -2,7 +2,7 @@ import React from 'react'
 
 const LeaderboardHeader = () => {
   return (
-    <div style={{border:'2px solid red'}}>
+    <div>
       <span className="leaderboard-header">
       <h1>Leaderboard</h1>
       </span>

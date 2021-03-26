@@ -77,6 +77,9 @@ td {
 
 .leaderboard-items-container {
   display: flex;
+  border-bottom: 0.5px rgb(63, 63, 63) solid;
+  border-left: 0.5px rgb(63, 63, 63) solid;
+  border-right: 0.5px rgb(63, 63, 63) solid;
 }
 
 .leaderboard-items {
@@ -85,4 +88,14 @@ td {
   flex: 1;
   padding: 10px 6px;
   background-color:rgb(255, 255, 255);
+}
+
+.leaderboard-icons {
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  background-color:rgb(255, 255, 255);
+  width: 4em;
+  padding: 0 0;
+  margin: 0 0;
 }

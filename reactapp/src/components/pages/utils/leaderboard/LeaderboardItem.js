@@ -9,8 +9,8 @@ const LeaderboardItem = (props) => {
       <div className='leaderboard-items'>
         {props.pointsEarned}
       </div>
-      <div className='leaderboard-items'>
-        {props.favouriteTeam}
+      <div className='leaderboard-icons'>
+        <img className='leaderboard-icons' src={'/img/profile-pics/' + props.favouriteTeam} alt="..." />
       </div>
     </div>
   )
