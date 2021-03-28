@@ -9,9 +9,10 @@ const LeaderboardList = () => {
     const { lboard, setLboard } = useContext(AppContext);
 
     useEffect(() => {
-        axios
-            .get('http://localhost:5000/api/Leaderboard')
-            .then((resp) => setLboard(resp.data));
+        axios.get('http://localhost:5000/api/Leaderboard').then((resp) => {
+            console.log('leaderboard response is: ', resp.data);
+            setLboard(resp.data);
+        });
     }, [setLboard]);
 
     return (

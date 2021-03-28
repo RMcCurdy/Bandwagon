@@ -9,8 +9,10 @@ namespace NBAapi.Entities
         public string HomeCity { get; set; }
         public int HomePoints { get; set; }
         public int AwayPoints { get; set; }
-        public int FieldGoalPercent { get; set; }
-        public int ThreePointPercent { get; set; }
+        public int HomeFieldGoalPercent { get; set; }
+        public int AwayFieldGoalPercent { get; set; }
+        public int HomeThreePointPercent { get; set; }
+        public int AwayThreePointPercent { get; set; }
 
         // navigation
         public List<Player> Players { get; set; }

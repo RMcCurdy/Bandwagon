@@ -1,17 +1,17 @@
-.leaderboard{
+.leaderboard {
   margin: 80px auto;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-  
-.leaderboard-header{
+
+.leaderboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-  
+
 .leaderboard-tabs {
   display: inline-block;
   text-align: center;
@@ -25,40 +25,12 @@
   padding-right: 0.6em;
   font-size: 1.5em;
   color: black;
-  background-color:none;
+  background-color: none;
 }
 
 .leaderboard-btn:hover,
 .leaderboard-btn:focus {
   color: hsl(29, 97%, 55%);
-}
-
-   
-table{
-  width: 100%;
-  border-collapse: collapse;
-}
-  
-th {
-  text-align: left;
-  padding: 6px;
-  color: white;
-  background: rgb(63, 63, 63);
-  font-weight: normal;
-}
-  
-td {
-  padding: 10px 6px;
-  background-color:rgb(255, 255, 255);
-}
-    
-.item {
-  display:inline;
-}
-  
-.box { 
-  width: 32px; 
-  height: 32px;   
 }
 
 .leaderboard-header-container {
@@ -77,24 +49,24 @@ td {
 
 .leaderboard-items-container {
   display: flex;
+  /* justify-content: center; */
+  align-items: center;
   border-bottom: 0.5px rgb(63, 63, 63) solid;
   border-left: 0.5px rgb(63, 63, 63) solid;
   border-right: 0.5px rgb(63, 63, 63) solid;
+  border: 1px rgb(63, 63, 63) solid;
+  background-color: rgb(255, 255, 255);
 }
 
 .leaderboard-items {
-  align-items: center;
-  justify-content: space-around;
   flex: 1;
-  padding: 10px 6px;
-  background-color:rgb(255, 255, 255);
+  /* padding: 10px 6px; */
+  background-color: rgb(255, 255, 255);
 }
 
 .leaderboard-icons {
-  align-items: center;
-  justify-content: space-around;
   flex: 1;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   width: 4em;
   padding: 0 0;
   margin: 0 0;

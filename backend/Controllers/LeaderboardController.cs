@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+// may need to remove this using below
+using backend.Models.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,11 +23,21 @@ namespace NBAapi.Controllers
             _context = context;
         }
 
-        // GET: api/Leaderboard
+         // GET: api/Leaderboard
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetLeaderboardData()
+        public async Task<ActionResult<IEnumerable<LeaderboardResponse>>> GetLeaderboardData()
         {
-            return await _context.Accounts.ToListAsync();
+            // return await _context.Accounts.ToListAsync();
+            return await _context.Accounts
+            .Where(u => u.IsAdmin != true)
+            .Select(u => new LeaderboardResponse
+            {
+                Id = u.Id,
+                Username = u.Username,
+                TotalPointsEarned = u.TotalPointsEarned,
+                ProfilePic = u.ProfilePic
+            })
+            .ToListAsync();
         }
 
         // GET: api/Leaderboard/5
