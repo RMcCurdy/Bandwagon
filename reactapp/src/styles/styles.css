@@ -1,6 +1,7 @@
 @import "signInStyles.css";
 @import "404styles.css";
 @import "leaderboard.css";
+@import "badges.css";
 
 * {
   box-sizing: border-box;
