@@ -3,13 +3,13 @@ import React from 'react'
 function Games() {
   return (
     <div className="upcoming-games">
-      
-      <span className="upcomimg-games-header">
+      <span className="upcoming-games-header">
         <h1>Upcoming Games</h1>
       </span>
 
       <div>
-        <h3 className="date-h3">Sunday March 21</h3>
+        <h3 className="game-date">Sunday March 21</h3>
+        <hr/>
         <div className="games-grid">
             <div className="game">
               <table className="game-module">

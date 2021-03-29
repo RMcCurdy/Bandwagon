@@ -4,6 +4,7 @@
 @import "badges.css";
 @import "profile.css";
 @import "upcoming.css";
+@import "shop.css";
 
 * {
   box-sizing: border-box;
