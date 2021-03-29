@@ -19,7 +19,7 @@ const LeaderboardList = () => {
         <div>
             <div>
                 <div>
-                    {lboard[0] ? (
+                    {lboard.length > 0 ? (
                         lboard.map((row) => {
                             return (
                                 <LeaderboardItem
