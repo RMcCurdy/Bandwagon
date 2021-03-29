@@ -8,7 +8,9 @@ function Games() {
         <h1>Upcoming Games</h1>
       </span>
 
-      <GameDayHeader />
+      <div className="games-grid">
+        <GameDayHeader />
+      </div>
 
     </div>
   )
