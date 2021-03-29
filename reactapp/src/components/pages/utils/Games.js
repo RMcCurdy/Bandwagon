@@ -8,7 +8,7 @@ function Games() {
       </span>
 
       <div>
-        <h3 className="game-date">Sunday March 21</h3>
+        <h3 className="game-date">Sunday March 28</h3>
         <hr/>
         <div className="games-grid">
             <div className="game">
