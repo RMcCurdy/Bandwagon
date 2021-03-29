@@ -1,0 +1,80 @@
+.upcoming-games{
+  /* may need to change this margin for space between games */
+    margin: 5em auto;
+    padding-left: 5%;
+    padding-right: 5%;  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+    
+.upcoming-games-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+.game{
+  font-size: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  /* padding: 5px, 5px; */
+  cursor: pointer;
+}
+
+.pred-win {
+  background-color: rgb(0, 255, 0, 0.3)
+}
+
+.pred-lose {
+  background-color: rgb(255, 0, 0, 0.3)
+}
+
+.logo-games {
+  padding: 0;
+}
+
+.logo-img {
+  width: 4em;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.game:hover {
+  opacity: 0.7;
+}
+
+.game-body {
+  text-align: center;
+}
+
+.team-score {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.date-h3 {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.score {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+  .upcoming-games{
+    margin: 80px auto;
+    padding-left: 20%;
+    padding-right: 20%;  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }  
+}

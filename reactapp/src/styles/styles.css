@@ -2,6 +2,8 @@
 @import "404styles.css";
 @import "leaderboard.css";
 @import "badges.css";
+@import "profile.css";
+@import "upcoming.css";
 
 * {
   box-sizing: border-box;
