@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBAapi.Data;
 
 namespace NBAapi.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210329181107_Updated Game Day")]
+    partial class UpdatedGameDay
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,6 +105,9 @@ namespace NBAapi.Migrations
 
                     b.Property<int>("GameDay")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("GameMonth")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("GameTime")
                         .HasColumnType("TEXT");

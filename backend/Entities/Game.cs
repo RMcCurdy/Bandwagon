@@ -15,8 +15,8 @@ namespace NBAapi.Entities
         public int HomeFinalScore { get; set; }
         public int VisitorFinalScore { get; set; }
         // schedule components
-        public DateTime GameDateTime { get; set; }
-        public string LocationCity { get; set; }
+        public string GameTime { get; set; }
+        public int GameDay { get; set; }
         // navigation
         public List<Vote> Votes { get; set; }
     }

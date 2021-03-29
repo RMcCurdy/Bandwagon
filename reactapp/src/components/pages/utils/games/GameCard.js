@@ -1,38 +1,34 @@
 import React from 'react'
 
-function Games() {
+const GamesCard = () => {
   return (
-    <div className="upcoming-games">
-      <span className="upcoming-games-header">
-        <h1>Upcoming Games</h1>
-      </span>
-
-      <div>
-        <h3 className="game-date">Sunday March 28</h3>
-        <hr/>
-        <div className="games-grid">
+    <div>
+      <div className="games-grid">
             <div className="game">
               <table className="game-module">
                 <thead className="top-bar">
                   <tr>
                     <th className="game-time" colSpan="2">5:45pm MST</th>
                     <th className="our-prediction">Win %</th>
+                    <th className="vote">Vote</th>
                     <th className="score">Score</th>
                   </tr>
                 </thead>
                 <tbody className="game-body">
                   <tr><td></td></tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/blazers.svg" alt="POR-logo" /></td>
-                    <td>TRAIL BLAZERS</td>
-                    <td className="pred-win">WIN</td>
-                    <td className="team-score">21</td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/blazers.svg" alt="loading" /></td>
+                    <td>BLAZERS</td>
+                    <td className="pred-win">50</td>
+                    <td className="game-vote">✔</td>
+                    <td className="team-score">0</td>
                   </tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/heat.svg" alt="MIA-logo" /></td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/heat.svg" alt="loading" /></td>
                     <td>HEAT</td>
-                    <td className="pred-lose">LOSE</td>
-                    <td className="team-score">18</td>
+                    <td className="pred-lose">50</td>
+                    <td className="game-vote">✔️</td>
+                    <td className="team-score">0</td>
                   </tr>
                 </tbody>
               </table>
@@ -50,16 +46,16 @@ function Games() {
                 <tbody className="game-body">
                   <tr><td></td></tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/blazers.svg" alt="POR-logo" /></td>
-                    <td>TRAIL BLAZERS</td>
-                    <td className="pred-win">WIN</td>
-                    <td className="team-score">21</td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/rockets.svg" alt="loading" /></td>
+                    <td>ROCKETS</td>
+                    <td className="pred-win">60</td>
+                    <td className="team-score">0</td>
                   </tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/heat.svg" alt="MIA-logo" /></td>
-                    <td>HEAT</td>
-                    <td className="pred-lose">LOSE</td>
-                    <td className="team-score">18</td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/suns.svg" alt="loading" /></td>
+                    <td>SUNS</td>
+                    <td className="pred-lose">40</td>
+                    <td className="team-score">0</td>
                   </tr>
                 </tbody>
               </table>
@@ -77,25 +73,24 @@ function Games() {
                 <tbody className="game-body">
                   <tr><td></td></tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/blazers.svg" alt="POR-logo" /></td>
-                    <td>TRAIL BLAZERS</td>
-                    <td className="pred-win">WIN</td>
-                    <td className="team-score">21</td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/lakers.svg" alt="loading" /></td>
+                    <td>LAKERS</td>
+                    <td className="pred-win">55</td>
+                    <td className="team-score">0</td>
                   </tr>
                   <tr>
-                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/heat.svg" alt="MIA-logo" /></td>
-                    <td>HEAT</td>
-                    <td className="pred-lose">LOSE</td>
-                    <td className="team-score">18</td>
+                    <td className="logo-games"><img className="logo-img" src="../../../img/profile-pics/celtics.svg" alt="loading" /></td>
+                    <td>CELTICS</td>
+                    <td className="pred-lose">45</td>
+                    <td className="team-score">0</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
         </div>
-      </div>
     </div>
   )
 }
 
-export default Games
+export default GamesCard
