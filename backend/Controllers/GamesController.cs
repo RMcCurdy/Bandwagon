@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,10 +24,30 @@ namespace NBAapi.Controllers
 
         // GET: api/Games
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Game>>> GetGames()
+        // public async Task<ActionResult<IEnumerable<GameResponse>>> GetGames()
+        public List<GameResponse> GetGames()
         {
-            return await _context.Games
-            .ToListAsync();
+            var games = from g in _context.Games
+                        join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
+                        join tnvis in _context.Teams on g.VisitorTeamId equals tnvis.Id
+                        select new GameResponse
+                        {
+                            Id = g.Id,
+                            HomeTeamId = g.HomeTeamId,
+                            VisitorTeamId = g.VisitorTeamId,
+                            HomePercent = g.HomePercent,
+                            VisitorPercent = g.VisitorPercent,
+                            HomePointsPayout = g.HomePointsPayout,
+                            VisitorPointsPayout = g.VisitorPointsPayout,
+                            HomeFinalScore = g.HomeFinalScore,
+                            VisitorFinalScore = g.VisitorFinalScore,
+                            GameTime = g.GameTime,
+                            GameDate = g.GameDate,
+                            HomeTeamName = tnhome.TeamName,
+                            VisitorTeamName = tnvis.TeamName
+                        };
+
+            return games.ToList();
         }
 
         // GET: api/Games/5

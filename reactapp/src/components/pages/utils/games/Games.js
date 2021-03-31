@@ -8,9 +8,9 @@ function Games() {
         <h1>Upcoming Games</h1>
       </span>
 
-      <div className="games-grid">
-        <GameDayHeader />
-      </div>
+        <div className="games-grid">
+          <GameDayHeader />
+        </div>
 
     </div>
   )

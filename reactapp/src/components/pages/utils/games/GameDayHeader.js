@@ -6,39 +6,38 @@ import GameCard from './GameCard';
 
 const GameDayHeader = () => {
 
-  const { chosenDate, setChosenDate } = useContext(AppContext);
+  const { gameData, setGameData } = useContext(AppContext);
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/Games').then((resp) => {
-            setChosenDate(resp.data);
+            setGameData(resp.data);
         });
-    }, [setChosenDate]);
+    }, [setGameData]);
 
+    // console.log('game data before return: ', gameData[0])
     return (
-      <div>
-          <div>
-              <div>
-                  {chosenDate[0] ? (
-                      chosenDate.map((row) => {
-                          return (
-                              <GameCard
-                                  key={row.id}
-                                  gameTime={row.gameTime}
-                                  homeTeamId={row.homeTeamId}
-                                  visitorTeamId={row.visitorTeamId}
-                                  homeWinPercent={row.homePercent}
-                                  visitorWinPercent={row.visitorPercent}
-                                  homeFinalScore={row.homeFinalScore}
-                                  visitorFinalScore={row.visitorFinalScore}
-                              />
-                          );
-                      })
-                  ) : (
-                      <p>loading...</p>
-                  )}
-              </div>
-          </div>
-      </div>
+    <>
+        {gameData[0] ? (
+            gameData.map((row) => {
+                return (
+                    <GameCard
+                        key={row.id}
+                        gameTime={row.gameTime}
+                        homeTeamId={row.homeTeamId}
+                        visitorTeamId={row.visitorTeamId}
+                        homeWinPercent={row.homePercent}
+                        visitorWinPercent={row.visitorPercent}
+                        homeFinalScore={row.homeFinalScore}
+                        visitorFinalScore={row.visitorFinalScore}
+                        homeTeamName={row.homeTeamName}
+                        visitorTeamName={row.visitorTeamName}
+                    />
+                );
+            })
+        ) : (
+            <p>loading...</p>
+        )}
+    </>
   );
 }
 

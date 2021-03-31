@@ -17,8 +17,13 @@ const Login = () => {
         email: email,
         password: pass
       };
+    //TODO need to delete this for final version
+    const loginPersonTest = {
+      email: 'robert@test.com',
+      password: '1111'
+    };
 
-    return axios.post('http://localhost:5000/api/Auth', loginPerson)
+    return axios.post('http://localhost:5000/api/Auth', loginPersonTest)
     .then(resp => {
       const success = resp.data.success;
       console.log(success);
