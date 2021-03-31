@@ -22,14 +22,57 @@ namespace NBAapi.Controllers
             _context = context;
         }
 
-        // GET: api/Games
+        // // GET: api/Games
+        // [HttpGet]
+        // // public async Task<ActionResult<IEnumerable<GameResponse>>> GetGames()
+        // public async Task<ActionResult<Game>> GetGame()
+        // {
+        //     // // var game = await _context.Games.FindAsync(id);
+        //     // var game = await _context.Games.ToListAsync();
+
+        //     // if (game == null)
+        //     // {
+        //     //     return NotFound();
+        //     // }
+
+        //     // return game;
+        // }
+
+
+
+
+
+
         [HttpGet]
-        // public async Task<ActionResult<IEnumerable<GameResponse>>> GetGames()
-        public List<GameResponse> GetGames()
+        [Route("GameDates")]  //api/games/gamedates
+        public List<GameDateResponse> GameDates()
+        {
+            var gamedates = from g in _context.Games
+                        select new GameDateResponse
+                        {
+                            GameDate = g.GameDate
+                        };
+
+            return gamedates.Distinct().ToList();
+        }
+
+
+
+
+
+
+
+
+
+        // GET: api/Games/15
+        [HttpGet("{id}")]
+       
+         public List<GameResponse> GetGames(int id)
         {
             var games = from g in _context.Games
                         join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
                         join tnvis in _context.Teams on g.VisitorTeamId equals tnvis.Id
+                        where g.GameDate == id 
                         select new GameResponse
                         {
                             Id = g.Id,
@@ -48,20 +91,6 @@ namespace NBAapi.Controllers
                         };
 
             return games.ToList();
-        }
-
-        // GET: api/Games/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Game>> GetGame(int id)
-        {
-            var game = await _context.Games.FindAsync(id);
-
-            if (game == null)
-            {
-                return NotFound();
-            }
-
-            return game;
         }
 
         // PUT: api/Games/5

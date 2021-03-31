@@ -18,6 +18,18 @@
   align-items: center;
 }
 
+.dropdown-container {
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.dropdown-box {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

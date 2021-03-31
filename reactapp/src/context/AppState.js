@@ -12,10 +12,12 @@ const AppState = (props) => {
   const [favoriteBadge, setFavoriteBadge] = useState('');
   const [message, setMessage] = useState('');
   const [lboard, setLboard] = useState([]);
+  const [gameDates, setGameDates] = useState([]);
+  const [gameDate, setGameDate] = useState(0);
   const [gameData, setGameData] = useState([]);
 
   return (
-    <AppContext.Provider value={{firstName, setFirstName, lastName, setLastName, username, setUserName, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, favoriteBadge, setFavoriteBadge, message, setMessage, lboard, setLboard, gameData, setGameData}}>
+    <AppContext.Provider value={{firstName, setFirstName, lastName, setLastName, username, setUserName, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, favoriteBadge, setFavoriteBadge, message, setMessage, lboard, setLboard, gameDates, setGameDates, gameDate, setGameDate, gameData, setGameData}}>
       {props.children}  
     </AppContext.Provider>
   );
