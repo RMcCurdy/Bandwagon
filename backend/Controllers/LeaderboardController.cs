@@ -30,6 +30,7 @@ namespace NBAapi.Controllers
             // return await _context.Accounts.ToListAsync();
             return await _context.Accounts
             .Where(u => u.IsAdmin != true)
+            .OrderByDescending(pts => pts.TotalPointsBalance)
             .Select(u => new LeaderboardResponse
             {
                 Id = u.Id,

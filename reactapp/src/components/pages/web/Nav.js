@@ -24,7 +24,7 @@ function Nav() {
   </span>
 
   const loggedInAdminTabs = <span className="tabs center-tabs">
-  <Link to="/dashboard" className="nav-tabs">ADMIN DASHBOARD</Link>
+  <Link to="/admin" className="nav-tabs">ADMIN DASHBOARD</Link>
   </span>
 
   

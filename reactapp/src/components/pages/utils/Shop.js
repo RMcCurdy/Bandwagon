@@ -19,43 +19,43 @@ function Shop() {
       
       <div className="cards-grid" style={{clear:'both'}}>
         <div className="card">
-          <h3>Red Border</h3>
+          <h3 className="title">Red Border</h3>
           <div className="shop-box" style={{backgroundColor:'red'}}></div>
           <p>100 points</p>
           <button>BUY</button>
         </div>
         <div className="card">
-          <h3>Blue Border</h3>
+          <h3 className="title">Blue Border</h3>
           <div className="shop-box" style={{backgroundColor:'blue'}}></div>
           <p>100 points</p>
           <button>BUY</button>
         </div>
         <div className="card">
-          <h3>Green Border</h3>
+          <h3 className="title">Green Border</h3>
           <div className="shop-box" style={{backgroundColor:'green'}}></div>
           <p>100 points</p>
           <button>BUY</button>
         </div>  
         <div className="card">
-          <h3>Yellow Border</h3>
+          <h3 className="title">Yellow Border</h3>
           <div className="shop-box" style={{backgroundColor:'yellow'}}></div>
           <p>250 points</p>
           <button>BUY</button>
         </div>
         <div className="card">
-          <h3>Yellow Border</h3>
+          <h3 className="title">Yellow Border</h3>
           <div className="shop-box" style={{backgroundColor:'yellow'}}></div>
           <p>250 points</p>
           <button>BUY</button>
         </div>
         <div className="card">
-          <h3>Yellow Border</h3>
+          <h3 className="title">Yellow Border</h3>
           <div className="shop-box" style={{backgroundColor:'yellow'}}></div>
           <p>250 points</p>
           <button>BUY</button>
         </div>
         <div className="card">
-          <h3>Yellow Border</h3>
+          <h3 className="title">Yellow Border</h3>
           <div className="shop-box" style={{backgroundColor:'yellow'}}></div>
           <p>250 points</p>
           <button>BUY</button>
