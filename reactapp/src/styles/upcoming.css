@@ -4,12 +4,17 @@
   padding-right: 20%;  
   padding-top: 1rem;
   padding-bottom: 1rem;
+  /* border: 2px solid red; */
 }
     
 .upcoming-games-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.game-module {
+  margin: 0 auto;
 }
 
 .game-day {
@@ -33,7 +38,9 @@
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3); */
   grid-gap: 1em;
+  /* justify-items: space-around; */
 }
 
 .game{
@@ -42,6 +49,9 @@
   background-color: #fff;
   /* padding: 5px, 5px; */
   /* margin-bottom: 5em; */
+  border: 1.5px solid #cfcfcf;
+  /* width: 100rem; */
+  width: 20rem;
   cursor: pointer;
 }
 

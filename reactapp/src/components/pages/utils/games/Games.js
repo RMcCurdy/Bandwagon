@@ -23,7 +23,7 @@ function Games() {
       </span>
 
         {/* insert date */}
-        <div class="game-day dropdown-container">
+        <div className="game-day dropdown-container">
           <label for="dates">April</label>
 
           <select className="dropdown-box" name="dates" onChange={(e) => setGameDate(e.target.value)}>
