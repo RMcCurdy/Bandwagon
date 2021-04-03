@@ -32,7 +32,17 @@ namespace NBAapi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Badge>> GetBadge(int id)
         {
-            var badge = await _context.Badges.FindAsync(id);
+            var badgeToReturn = await _context.Badges.FindAsync(id);
+            // var badges = await _context.Badges.ToListAsync();  /// Select Top  1 from tblABC ORDER BY BadgeId DESC 
+            var badgeRow = await _context.AccountBadges
+            .Where(a => a.AccountId == id)
+            .OrderByDescending(o => o.BadgeId)
+            .Take(1)
+            .ToListAsync();
+            // var badge = await _context.Badges.FindAsync(id);
+            int highestBadgeId = badgeRow[0].BadgeId;  
+            var badge = await _context.Badges.FindAsync(highestBadgeId);
+
 
             if (badge == null)
             {

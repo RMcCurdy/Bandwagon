@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 import AppContext from '../../../context/AppContext';
 
 const Login = () => {
-  const {setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setDateCreated, setIsAdmin, setTotalPointsBalance, setTotalPointsEarned, setTotalPointsSpent} = useContext(AppContext);
+  const {setId, setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setDateCreated, setIsAdmin, setTotalPointsBalance, setTotalPointsEarned, setTotalPointsSpent} = useContext(AppContext);
   
   const history = useHistory();
 
@@ -33,6 +33,7 @@ const Login = () => {
       const success = resp.data.success;
       console.log(success);
       if (success === true) {
+        const userId = resp.data.id;
         const fname = resp.data.firstName;
         const lname = resp.data.lastName;
         const uname = resp.data.username;
@@ -44,6 +45,7 @@ const Login = () => {
         const totalPointsBalance = resp.data.totalPointsBalance;
         const isAdmin = resp.data.isAdmin;
 
+        setId(userId);
         setFirstName(fname);
         setLastName(lname);
         setUserName(uname);

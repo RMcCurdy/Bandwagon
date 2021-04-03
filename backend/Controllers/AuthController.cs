@@ -50,6 +50,7 @@ namespace backend.Controllers
             }
 
             var response = new AuthResponse() {
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.Username,

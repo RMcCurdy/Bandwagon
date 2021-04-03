@@ -1,3 +1,4 @@
+using backend.Entities;
 using Microsoft.EntityFrameworkCore;
 using NBAapi.Entities;
 
@@ -10,6 +11,7 @@ namespace NBAapi.Data
         public virtual DbSet<OrderLineItem> OrderLineItems { get; set; }
         public virtual DbSet<Merchandise> Merchandises { get; set; }
         public virtual DbSet<Badge> Badges { get; set; }
+        public virtual DbSet<AccountBadge> AccountBadges { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
         public virtual DbSet<Player> Players { get; set; }

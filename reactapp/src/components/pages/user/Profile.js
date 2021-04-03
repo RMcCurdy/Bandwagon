@@ -1,9 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
+import axios from 'axios';
 
 function Profile() {
 
-    const {firstName, lastName, username, email, profilePic, dateCreated, totalPointsBalance, totalPointsEarned, totalPointsSpent} = useContext(AppContext);
+    const {id, firstName, lastName, username, email, profilePic, topBadge, dateCreated, totalPointsBalance, totalPointsEarned, totalPointsSpent, setTopBadge} = useContext(AppContext);
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/Badges/${id}`).then((resp) => {
+            console.log('top badge response is: ', resp.data);
+            setTopBadge(resp.data.badgeImage);
+        });
+    }, [setTopBadge, id]);
 
     return (
         <div className='profile'>
@@ -21,7 +29,7 @@ function Profile() {
 
                     <div className='username-and-badge'>
                         <p className='shown-username'>{username}</p>
-                        <img className='badge-pic' src='../../../img/badges-test/current-badge.png' alt='badge' ></img> 
+                        <img className='badge-pic' src={`../../../img/badges/${topBadge}`} alt='badge' ></img> 
                     </div>
 
                 </div>
