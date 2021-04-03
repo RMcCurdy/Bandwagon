@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import AppContext from '../../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 
 function Profile() {
