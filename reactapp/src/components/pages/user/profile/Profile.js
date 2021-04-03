@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext from '../../../../context/AppContext';
 import axios from 'axios';
 
 function Profile() {
@@ -38,9 +38,13 @@ function Profile() {
             <hr/>
 
             <div className='user-stats-table'>
+
                 <table className='stat-table' id='stats'>
+
                     <tbody>
+
                     <p className='stats-header'>YOUR STATS</p>
+                    
                         <tr>
                             <td className='stats-label'>POINTS BALANCE</td>
                             <td className='stats-num'>6,245</td>
@@ -53,10 +57,12 @@ function Profile() {
                             <td className='stats-label'>TOTAL POINTS SPENT</td>
                             <td className='stats-num'>5,000</td>
                         </tr>
+
                     </tbody>
+
                 </table>
+
             </div>
-            
 
         </div>
     )
