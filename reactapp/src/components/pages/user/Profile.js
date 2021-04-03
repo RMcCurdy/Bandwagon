@@ -1,10 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 
 function Profile() {
 
     const {id, firstName, lastName, username, email, profilePic, topBadge, dateCreated, totalPointsBalance, totalPointsEarned, totalPointsSpent, setTopBadge} = useContext(AppContext);
+
+    const history = useHistory();
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/Badges/${id}`).then((resp) => {
@@ -13,12 +16,16 @@ function Profile() {
         });
     }, [setTopBadge, id]);
 
+    const redirectToEditProfile = () => {
+        history.push('/editprofile');
+    }
+
     return (
         <div className='profile'>
             
             <span className='profile-header'>
                 <h1>Profile</h1>
-                <button className='edit-profile-btn'>Edit Profile</button>  
+                <button onClick={redirectToEditProfile} className='edit-profile-btn'>Edit Profile</button>  
             </span>
 
             <div className='profile-left'>
@@ -38,7 +45,7 @@ function Profile() {
 
                     <p className='profile-list-item'>Name: {firstName} {lastName}</p>
                     <p className='profile-list-item'>Email: {email}</p>
-                    <p className='profile-list-item'>Created: {dateCreated}</p>
+                    <p className='profile-list-item'>Since: {dateCreated}</p>
 
                 </div>
 
@@ -56,16 +63,16 @@ function Profile() {
                             <td className='stats-header'>YOUR STATS</td>
                         </tr>
                         <tr>
-                            <td className='stats-label'>POINTS BALANCE</td>
-                            <td className='stats-num'>{totalPointsBalance}</td>
-                        </tr>
-                        <tr>
                             <td className='stats-label'>TOTAL POINTS EARNED</td>
                             <td className='stats-num'>{totalPointsEarned}</td>
                         </tr>
                         <tr>
-                            <td className='stats-label'>TOTAL POINTS SPENT</td>
-                            <td className='stats-num'>{totalPointsSpent}</td>
+                            <td className='stats-label stats-bottom-padding'>TOTAL POINTS SPENT</td>
+                            <td className='stats-num stats-bottom-padding'>{totalPointsSpent}</td>
+                        </tr>
+                        <tr>
+                            <td className='stats-label stats-num-line'>POINTS BALANCE</td>
+                            <td className='stats-num stats-num-line'>{totalPointsBalance}</td>
                         </tr>
 
                     </tbody>

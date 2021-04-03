@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NBAapi.Data;
 using NBAapi.Entities;
+
 
 namespace NBAapi.Controllers
 {
@@ -76,12 +78,22 @@ namespace NBAapi.Controllers
         // POST: api/Accounts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<IActionResult> PostAccount(ProfileRequest profileRequest)
         {
-            _context.Accounts.Add(account);
+            var account = await _context.Accounts.FindAsync(profileRequest.Id);
+            if (account == null) {
+                return BadRequest();
+            }
+
+            account.FirstName = profileRequest.FirstName;
+            account.LastName = profileRequest.LastName;
+            account.Email = profileRequest.Email;
+            account.Username = profileRequest.Username;
+            account.ProfilePic = profileRequest.ProfilePic;
+
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.Id }, account);
+            return Ok();
         }
 
         // DELETE: api/Accounts/5

@@ -15,6 +15,7 @@ import Profile from '../pages/user/Profile';
 import ForgotPass from '../pages/utils/ForgotPass';
 import AuthRoute from './AuthRoute';
 import AdminRoute from './AdminRoute';
+import EditProfile from '../pages/user/EditProfile';
 
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
@@ -25,7 +26,6 @@ function Routes() {
 
   return (
     <>
-    {/* <div style={{marginTop: '80px'}}></div> */}
     <div>
       <Switch>
         <Route path="/home" exact component={Home} />
@@ -38,6 +38,7 @@ function Routes() {
 
         <AuthRoute path="/account" exact component={Account} isSignedIn={isLoggedIn} />
         <AuthRoute path="/profile" exact  component={Profile} isSignedIn={isLoggedIn} />
+        <AuthRoute path="/editprofile" exact  component={EditProfile} isSignedIn={isLoggedIn} />
         <AuthRoute path="/games" exact component={Games} isSignedIn={isLoggedIn} />
         <AuthRoute path="/shop" exact component={Shop} isSignedIn={isLoggedIn} />
         <AuthRoute path="/badges" exact component={Badges} isSignedIn={isLoggedIn} />
