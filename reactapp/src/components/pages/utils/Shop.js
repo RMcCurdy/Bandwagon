@@ -9,12 +9,6 @@ function Shop() {
         <button className="purchase-history-btn">See Purchase History</button>  
       </span>
 
-      <div className="shop-tabs">
-        <button className="shop-btn">Profile Borders</button>
-        <button className="shop-btn">Name Colors</button>
-        <button className="shop-btn">Badges</button>
-      </div>
-
       <br></br>
       
       <div className="cards-grid" style={{clear:'both'}}>
