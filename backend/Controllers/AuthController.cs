@@ -51,8 +51,16 @@ namespace backend.Controllers
 
             var response = new AuthResponse() {
                 FirstName = user.FirstName,
+                LastName = user.LastName,
                 Username = user.Username,
+                Email = user.Email,
+                ProfilePic = user.ProfilePic,
+                DateCreated = user.DateCreated,
+                TotalPointsEarned = user.TotalPointsEarned,
+                TotalPointsSpent = user.TotalPointsSpent,
+                TotalPointsBalance = user.TotalPointsBalance,
                 IsAdmin = user.IsAdmin,
+
                 Errors = new List<string>() {
                             ""
                         },

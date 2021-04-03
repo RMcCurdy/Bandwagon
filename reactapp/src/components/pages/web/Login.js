@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { format } from 'date-fns'
 
 import AppContext from '../../../context/AppContext';
 
 const Login = () => {
-  const {setFirstName, setUserName, setIsLoggedIn, setProfilePic, setIsAdmin} = useContext(AppContext);
+  const {setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setDateCreated, setIsAdmin, setTotalPointsBalance, setTotalPointsEarned, setTotalPointsSpent} = useContext(AppContext);
   
   const history = useHistory();
 
@@ -14,9 +15,9 @@ const Login = () => {
     const pass = document.getElementById('pass').value;
 
     const loginPerson = {
-        email: email,
-        password: pass
-      };
+      email: email,
+      password: pass
+    };
     //TODO need to delete this for final version
     const loginPersonUser = {
       email: 'robert@test.com',
@@ -33,15 +34,29 @@ const Login = () => {
       console.log(success);
       if (success === true) {
         const fname = resp.data.firstName;
+        const lname = resp.data.lastName;
         const uname = resp.data.username;
+        const email = resp.data.email;
+        const dateCreated = resp.data.dateCreated;
         const profilePic = resp.data.profilePic;
+        const totalPointsEarned = resp.data.totalPointsEarned;
+        const totalPointsSpent = resp.data.totalPointsSpent;
+        const totalPointsBalance = resp.data.totalPointsBalance;
         const isAdmin = resp.data.isAdmin;
 
         setFirstName(fname);
+        setLastName(lname);
         setUserName(uname);
+        setEmail(email);
         setProfilePic(profilePic);
         setIsLoggedIn(true);
         setIsAdmin(isAdmin);
+        setTotalPointsEarned(totalPointsEarned);
+        setTotalPointsSpent(totalPointsSpent);
+        setTotalPointsBalance(totalPointsBalance);
+        
+        const formattedDate = format(new Date(dateCreated), 'MMMM dd, yyyy');
+        setDateCreated(formattedDate);
 
         if (isAdmin === true) {
           history.push('/admin');
