@@ -4,15 +4,6 @@ import axios from 'axios';
 
 function Profile() {
 
-    const { lboard, setLboard } = useContext(AppContext);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/Accounts').then((resp) => {
-            console.log('leaderboard response is: ', resp.data);
-            setLboard(resp.data);
-        });
-    }, [setLboard]);
-
     return (
         <div className='profile'>
             
