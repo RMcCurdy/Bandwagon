@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Models;
+using backend.Models.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -75,9 +76,18 @@ namespace NBAapi.Controllers
             return NoContent();
         }
 
+        // [HttpGet]
+        // [Route("test")] //api/accounts/profile
+        // public string test()
+        // {
+        //     return "success";
+        // }
+
+
         // POST: api/Accounts
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("profile")] //api/accounts/profile
         public async Task<IActionResult> PostAccount(ProfileRequest profileRequest)
         {
             var account = await _context.Accounts.FindAsync(profileRequest.Id);
@@ -92,6 +102,26 @@ namespace NBAapi.Controllers
             account.ProfilePic = profileRequest.ProfilePic;
 
             await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("signup")] //api/accounts/profile
+        public async Task<IActionResult> SignUp(SignUpRequest signUpRequest)
+        {
+            var newAccount = (new Account()
+            {
+                FirstName = signUpRequest.FirstName,
+                LastName = signUpRequest.LastName,
+                Username = signUpRequest.Username,
+                Email = signUpRequest.Email,
+                Password = signUpRequest.Password,
+                ProfilePic = signUpRequest.ProfilePic
+            });
+            
+            var newAccountCreated = await _context.Accounts.AddAsync(newAccount);
+            await _context.SaveChangesAsync();           
 
             return Ok();
         }

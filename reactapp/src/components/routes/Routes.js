@@ -3,6 +3,7 @@ import {Route, Switch} from "react-router-dom";
 import Home from '../pages/web/Home';
 import Account from '../pages/user/Account';
 import Login  from '../pages/web/Login';
+import SignUp  from '../pages/web/SignUp';
 import Logout from '../pages/web/Logout';
 import Admin from '../pages/admin/Admin';
 import PageNotFound from '../pages/shared/PageNotFound';
@@ -32,6 +33,7 @@ function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/forgot" exact  component={ForgotPass} />
         <Route path="/login" exact component={Login} />
+        <Route path="/signup" exact component={SignUp} />
         <Route path="/logout" exact component={Logout} />
         <Route path="/leaderboard" exact component={Leaderboard} />
 
