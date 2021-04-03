@@ -43,7 +43,7 @@ function Profile() {
 
                     <tbody>
 
-                    <p className='stats-header'>YOUR STATS</p>
+                        <p className='stats-header'>YOUR STATS</p>
                     
                         <tr>
                             <td className='stats-label'>POINTS BALANCE</td>
