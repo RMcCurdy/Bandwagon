@@ -19,16 +19,16 @@ const Login = () => {
       password: pass
     };
     //TODO need to delete this for final version
-    const loginPersonUser = {
-      email: 'robert@test.com',
-      password: '1111'
-    };
-    const loginPersonAdmin = {
-      email: 'admin@test.com',
-      password: '1111'
-    };
+    // const loginPersonUser = {
+    //   email: 'robert@test.com',
+    //   password: '1111'
+    // };
+    // const loginPersonAdmin = {
+    //   email: 'admin@test.com',
+    //   password: '1111'
+    // };
 
-    return axios.post('http://localhost:5000/api/Auth', loginPersonUser)
+    return axios.post('http://localhost:5000/api/Auth', loginPerson)
     .then(resp => {
       const success = resp.data.success;
       console.log(success);

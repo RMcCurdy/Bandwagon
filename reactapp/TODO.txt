@@ -1,0 +1,13 @@
+Dropdown for selecting Favourite Team
+
+Voting on Games and updating a users votes
+
+User buys merch and update points spent and balance
+
+Forgot Password is similar to the "Go Home" -> enter email for password reset (all a joke)
+
+Admin Dashboard utilities
+
+Update Payout for Home and Visitor Team Voting options (can be combined with calculating game odds)
+
+Badges (My Badges and Badges To Earn)

@@ -85,13 +85,14 @@ namespace NBAapi.Controllers
 
 
         // POST: api/Accounts
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // To protect from overposting attacks, from https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("profile")] //api/accounts/profile
         public async Task<IActionResult> PostAccount(ProfileRequest profileRequest)
         {
             var account = await _context.Accounts.FindAsync(profileRequest.Id);
-            if (account == null) {
+            if (account == null)
+            {
                 return BadRequest();
             }
 
@@ -106,8 +107,9 @@ namespace NBAapi.Controllers
             return Ok();
         }
 
+        // =================================================================================================
         [HttpPost]
-        [Route("signup")] //api/accounts/profile
+        [Route("signup")] //api/accounts/signup
         public async Task<IActionResult> SignUp(SignUpRequest signUpRequest)
         {
             var newAccount = (new Account()
@@ -117,13 +119,50 @@ namespace NBAapi.Controllers
                 Username = signUpRequest.Username,
                 Email = signUpRequest.Email,
                 Password = signUpRequest.Password,
-                ProfilePic = signUpRequest.ProfilePic
-            });
-            
-            var newAccountCreated = await _context.Accounts.AddAsync(newAccount);
-            await _context.SaveChangesAsync();           
+                ProfilePic = signUpRequest.ProfilePic,
 
-            return Ok();
+                DateCreated = DateTime.Now,
+                TotalPointsEarned = 0,
+                TotalPointsSpent = 0,
+                TotalPointsBalance = 0,
+                IsAdmin = false,
+
+            });
+
+            await _context.Accounts.AddAsync(newAccount);
+            await _context.SaveChangesAsync();
+
+           
+            // var badgeToGive = new AccountBadgeDto()
+            // {
+            //     AccountId = newAccount.Id,
+            //     BadgeId = 11,
+            // };
+
+            // await _context.AccountBadges.AddAsync(badgeToGive);
+            // await _context.SaveChangesAsync();
+
+            var response = new AuthResponse()
+            {
+                Id = newAccount.Id,
+                FirstName = newAccount.FirstName,
+                LastName = newAccount.LastName,
+                Username = newAccount.Username,
+                Email = newAccount.Email,
+                ProfilePic = newAccount.ProfilePic,
+                DateCreated = newAccount.DateCreated,
+                TotalPointsEarned = newAccount.TotalPointsEarned,
+                TotalPointsSpent = newAccount.TotalPointsSpent,
+                TotalPointsBalance = newAccount.TotalPointsBalance,
+                IsAdmin = newAccount.IsAdmin,
+
+                Errors = new List<string>() {
+                            ""
+                        },
+                Success = true
+            };
+
+            return Ok(response);
         }
 
         // DELETE: api/Accounts/5
