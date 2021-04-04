@@ -24,7 +24,7 @@ function Games() {
 
         {/* insert date */}
         <div className="game-day dropdown-container">
-          <label for="dates">April</label>
+          <label htmlFor="dates">April</label>
 
           <select className="dropdown-box" name="dates" onChange={(e) => setGameDate(e.target.value)}>
           <option>--Select Date--</option>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Entities;
 using backend.Models;
 using backend.Models.Auth;
 using Microsoft.AspNetCore.Http;
@@ -131,16 +132,14 @@ namespace NBAapi.Controllers
 
             await _context.Accounts.AddAsync(newAccount);
             await _context.SaveChangesAsync();
-
            
-            // var badgeToGive = new AccountBadgeDto()
-            // {
-            //     AccountId = newAccount.Id,
-            //     BadgeId = 11,
-            // };
-
-            // await _context.AccountBadges.AddAsync(badgeToGive);
-            // await _context.SaveChangesAsync();
+             // create new starter badge 11 for this new user (in the many-to-many table)
+            await _context.AccountBadges.AddAsync(new AccountBadge()
+            {
+                AccountId = newAccount.Id,
+                BadgeId = 11,
+            });
+            await _context.SaveChangesAsync();
 
             var response = new AuthResponse()
             {

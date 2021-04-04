@@ -4,15 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router';
 
 const SignUp = () => {
-    const {
-        setId,
-        setFirstName,
-        setLastName,
-        setUserName,
-        setEmail,
-        setIsLoggedIn,
-        setProfilePic,
-    } = useContext(AppContext);
+    const { setId, setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance } = useContext(AppContext);
 
     const newUserUbject = {
         firstName: '',
@@ -22,6 +14,7 @@ const SignUp = () => {
         password: '',
         profilePic: '',
     };
+    
     const [newUser, setNewUser] = useState(newUserUbject);
 
     const history = useHistory();
@@ -60,6 +53,10 @@ const SignUp = () => {
                     setEmail(email);
                     setProfilePic(profilePic);
                     setIsLoggedIn(true);
+                    setIsAdmin(false);
+                    setTotalPointsEarned(0);
+                    setTotalPointsSpent(0);
+                    setTotalPointsBalance(0);
                 }
                 console.log('response is: ', resp);
                 history.push('/account');
@@ -70,141 +67,59 @@ const SignUp = () => {
         <div className='profile'>
             <div>
                 <h1>Sign Up</h1>
-                {/* Change first name */}
-
                 <div className='edit-profile-main'>
                     <form onSubmit={signUpHandler}>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='fname'>
-                                First Name
-                            </label>
+                            <label className='edit-profile-label' htmlFor='fname'>First Name</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='fname'
-                                type='text'
-                                name='fname'
-                                value={newUser.firstName}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        firstName: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='fname' type='text' name='fname' value={newUser.firstName}
+                                onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })} />
                         </div>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='lname'>
-                                Last Name
-                            </label>
+                            <label className='edit-profile-label' htmlFor='lname'>Last Name</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='lname'
-                                type='text'
-                                name='lname'
-                                value={newUser.lastName}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        lastName: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='lname' type='text' name='lname' value={newUser.lastName}
+                                onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })} />
                         </div>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='uname'>
-                                Username
-                            </label>
+                            <label className='edit-profile-label' htmlFor='uname'>Username</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='uname'
-                                type='text'
-                                name='uname'
-                                value={newUser.username}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        username: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='uname' type='text' name='uname' value={newUser.username}
+                                onChange={(e) => setNewUser({ ...newUser, username: e.target.value })} />
                         </div>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='email'>
-                                Email
-                            </label>
+                            <label className='edit-profile-label' htmlFor='email'>Email</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='eml'
-                                type='text'
-                                name='email'
-                                value={newUser.email}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        email: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='eml' type='text' name='email' value={newUser.email}
+                                onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} />
                         </div>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='pword'>
-                                Password
-                            </label>
+                            <label className='edit-profile-label' htmlFor='pword'>Password</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='pass'
-                                type='password'
-                                name='pword'
-                                value={newUser.password}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        password: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='pass' type='password'name='pword' value={newUser.password}
+                                onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} />
                         </div>
+
                         <div className='edit-profile-form'>
-                            <label
-                                className='edit-profile-label'
-                                htmlFor='favteam'>
-                                Favourite Team
-                            </label>
+                            <label className='edit-profile-label' htmlFor='favteam'>Favourite Team</label>
                             <br />
-                            <input
-                                className='edit-profile-inputs'
-                                id='fav'
-                                type='text'
-                                name='favteam'
-                                value={newUser.profilePic}
-                                onChange={(e) =>
-                                    setNewUser({
-                                        ...newUser,
-                                        profilePic: e.target.value,
-                                    })
-                                }
-                            />
+                            <input className='edit-profile-inputs' id='fav' type='text' name='favteam' value={newUser.profilePic}
+                                onChange={(e) => setNewUser({ ...newUser, profilePic: e.target.value })} />
                         </div>
+
                         <div style={{ paddingTop: '2rem' }}></div>
+
                         <button type='submit' className='edit-profile-submit'>
                             Sign Up
                         </button>
+
                         <div style={{ paddingTop: '2rem' }}></div>
+
                     </form>
                     <pre>{JSON.stringify(newUser, null, 2)}</pre>
                 </div>
