@@ -67,7 +67,7 @@ namespace NBAapi.Controllers
         // GET: api/Games/15
         [HttpGet("{id}")]
        
-         public List<GameResponse> GetGames(int id)
+         public async Task<IEnumerable<GameResponse>> GetGames(int id)
         {
             var games = from g in _context.Games
                         join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
@@ -90,7 +90,7 @@ namespace NBAapi.Controllers
                             VisitorTeamName = tnvis.TeamName
                         };
 
-            return games.ToList();
+            return await games.ToListAsync();
         }
 
         // PUT: api/Games/5

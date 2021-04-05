@@ -52,6 +52,60 @@ namespace NBAapi.Controllers
             return badge;
         }
 
+        [HttpGet]
+        [Route("have/{id}")]
+        public async Task<IEnumerable<Badge>> GetBadgesHave(int id)
+        {
+            // var badgesToReturn = _context.AccountBadges.FindAsync(id);
+            var haveBadgesToReturn = from b in _context.Badges
+                        join ab in _context.AccountBadges on b.Id equals ab.BadgeId
+                        where ab.AccountId == id 
+                        select new Badge
+                        {
+                            Id = b.Id,
+                            BadgeName = b.BadgeName,
+                            BadgeImage = b.BadgeImage,
+                            BadgeType = b.BadgeType,
+                            BadgeDescription = b.BadgeDescription
+                        };
+
+            return await haveBadgesToReturn.ToListAsync();
+        }
+
+        // [HttpGet]
+        // [Route("need/{id}")]
+        // public async Task<IEnumerable<Badge>> GetBadgesNeed(int id)
+        // {
+        //     // var badgesToReturn = _context.AccountBadges.FindAsync(id);
+        //     var haveBadgesToReturn = await (from b in _context.Badges
+        //                 join ab in _context.AccountBadges on b.Id equals ab.BadgeId
+        //                 where ab.AccountId == id 
+        //                 select new Badge
+        //                 {
+        //                     Id = b.Id,
+        //                     BadgeName = b.BadgeName,
+        //                     BadgeImage = b.BadgeImage,
+        //                     BadgeType = b.BadgeType,
+        //                     BadgeDescription = b.BadgeDescription
+        //                 }).ToListAsync();
+
+        //     List<int> haveBIds = foreach (var haveRow in haveBadgesToReturn)
+        //     {
+        //         haveBIds.Add().where()
+        //     }
+
+        //     List<Badge> needBadges = [];
+        //     foreach (var row in haveBadgesToReturn)
+        //     {
+        //         if(row.Id != )   
+        //     }
+
+
+           
+
+            // return await haveBadgesToReturn.ToListAsync();
+        //}
+
         // PUT: api/Badges/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
