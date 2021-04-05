@@ -72,39 +72,46 @@ namespace NBAapi.Controllers
             return await haveBadgesToReturn.ToListAsync();
         }
 
-        // [HttpGet]
-        // [Route("need/{id}")]
-        // public async Task<IEnumerable<Badge>> GetBadgesNeed(int id)
-        // {
-        //     // var badgesToReturn = _context.AccountBadges.FindAsync(id);
-        //     var haveBadgesToReturn = await (from b in _context.Badges
-        //                 join ab in _context.AccountBadges on b.Id equals ab.BadgeId
-        //                 where ab.AccountId == id 
-        //                 select new Badge
-        //                 {
-        //                     Id = b.Id,
-        //                     BadgeName = b.BadgeName,
-        //                     BadgeImage = b.BadgeImage,
-        //                     BadgeType = b.BadgeType,
-        //                     BadgeDescription = b.BadgeDescription
-        //                 }).ToListAsync();
+        [HttpGet]
+        [Route("need/{id}")]
+        public async Task<IEnumerable<Badge>> GetBadgesNeed(int id)
+        {
+            // var badgesToReturn = _context.AccountBadges.FindAsync(id);
+            var haveBadgesToReturn = await (from b in _context.Badges
+                        join ab in _context.AccountBadges on b.Id equals ab.BadgeId
+                        where ab.AccountId == id 
+                        select new Badge
+                        {
+                            Id = b.Id,
+                            BadgeName = b.BadgeName,
+                            BadgeImage = b.BadgeImage,
+                            BadgeType = b.BadgeType,
+                            BadgeDescription = b.BadgeDescription
+                        }).ToListAsync();
 
-        //     List<int> haveBIds = foreach (var haveRow in haveBadgesToReturn)
-        //     {
-        //         haveBIds.Add().where()
-        //     }
+            
+            List<int> listOfBadgesIds = new List<int>();
+            foreach (var row in haveBadgesToReturn)
+            {
+                listOfBadgesIds.Add(row.Id);
+            }
 
-        //     List<Badge> needBadges = [];
-        //     foreach (var row in haveBadgesToReturn)
-        //     {
-        //         if(row.Id != )   
-        //     }
+            int[] userHaveBadgesIntArray = listOfBadgesIds.ToArray();
 
+            var needBadgesToReturn = (
+                from b in _context.Badges
+                where !userHaveBadgesIntArray.Contains(b.Id)
+                select new Badge
+                {
+                    Id = b.Id,
+                    BadgeName = b.BadgeName,
+                    BadgeImage = b.BadgeImage,
+                    BadgeType = b.BadgeType,
+                    BadgeDescription = b.BadgeDescription
+                }).ToListAsync();
 
-           
-
-            // return await haveBadgesToReturn.ToListAsync();
-        //}
+            return await needBadgesToReturn;
+        }
 
         // PUT: api/Badges/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
