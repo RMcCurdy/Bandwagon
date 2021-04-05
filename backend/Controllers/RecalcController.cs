@@ -74,6 +74,8 @@ namespace NBAapi.Controllers
 
                 row.HomePercent = Convert.ToInt32(homePercent);
                 row.VisitorPercent = Convert.ToInt32(visitorPercent);
+                row.HomePointsPayout = Convert.ToInt32(visitorPercent);
+                row.VisitorPointsPayout = Convert.ToInt32(homePercent);
 
             }
             _context.SaveChanges();

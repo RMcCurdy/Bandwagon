@@ -14,6 +14,7 @@ import Shop from '../pages/utils/Shop';
 import Badges from '../pages/utils/Badges';
 import Profile from '../pages/user/Profile';
 import ForgotPass from '../pages/utils/ForgotPass';
+import ForgotPassSent from '../pages/utils/ForgotPassSent';
 import AuthRoute from './AuthRoute';
 import AdminRoute from './AdminRoute';
 import EditProfile from '../pages/user/EditProfile';
@@ -32,6 +33,7 @@ function Routes() {
         <Route path="/home" exact component={Home} />
         <Route path="/" exact component={Home} />
         <Route path="/forgot" exact  component={ForgotPass} />
+        <Route path="/forgotsent" exact  component={ForgotPassSent} />
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={SignUp} />
         <Route path="/logout" exact component={Logout} />

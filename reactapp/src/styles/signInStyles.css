@@ -80,6 +80,41 @@ cursor: pointer;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
+.forgot-pass-profile-label {
+  padding: 0 17% 5% 17%;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(145, 145, 145);
+}
+
+.forgot-pass-sent-profile-label {
+  padding: 0 17% 5% 17%;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 1.25rem;
+  color: rgb(145, 145, 145);
+}
+
+.forgot-pass-input {
+  width: 50%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Montserrat', sans-serif;
+  }
+
 .forgot {
   text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
   color: hsl(29, 97%, 65%);

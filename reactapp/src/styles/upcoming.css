@@ -51,16 +51,16 @@
   /* margin-bottom: 5em; */
   border: 1.5px solid #cfcfcf;
   /* width: 100rem; */
-  width: 23rem;
+  width: 25rem;
   cursor: pointer;
 }
 
 .pred-win {
-  background-color: rgb(0, 255, 0, 0.3)
+  background-color: rgb(255, 150, 44)
 }
 
 .pred-lose {
-  background-color: rgb(255, 0, 0, 0.3)
+  background-color: rgb(255,203,153)
 }
 
 .logo-games {
@@ -90,4 +90,14 @@
 .score {
   padding-left: auto;
   padding-right: auto;
+}
+
+.logo-left {
+  /* border: 1px solid red; */
+  text-align: left;
+}
+
+.team-name-left {
+  /* border: 1px solid green; */
+  text-align: left;
 }
