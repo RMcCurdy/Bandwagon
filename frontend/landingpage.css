@@ -1,0 +1,163 @@
+.landingpage{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0px;
+}
+
+.container-welcome{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  padding-top: 12em;
+  padding-bottom: 6em; 
+}
+
+.welcome-text{
+  vertical-align: middle; 
+  text-align: center; 
+  padding-top: 2rem;
+  font-size: 42px;
+}
+
+.welcome-logo{
+  width: 0px;
+  visibility: hidden;
+}
+
+.descriptions-section{
+  display: flex;
+  justify-content: center;
+  margin-left: -2em;
+}
+
+.descriptions-list{
+  align-items: center;
+  list-style-type: none;
+}
+
+.descriptions-item{
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+
+.container-image{
+  width: 80%;
+}
+
+.forprofile{
+  width: 50%;
+}
+  
+.container-signupnow{
+  display: block;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 6em;
+}
+
+.signupnow{
+  padding-top: 2em;
+}
+
+.btn-signupnow{
+  cursor: pointer;
+  border-radius: 1em;
+  
+  border: 0;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 0.7em;
+  padding-top: 0.7em;
+  margin-left: 0.5em;
+  font-size: 1em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+  color: white;
+  background-color:hsl(29, 97%, 45%);
+}
+
+
+@media only screen and (min-width: 600px) {  
+  .container-welcome{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: white; 
+    padding-top: 12em;
+    padding-bottom: 8em; 
+    height:6px;
+  }
+
+  .welcome-text{
+    padding-top: 2rem;
+    font-size: 42px;
+    display: inline-block;
+  }  
+
+}
+
+@media only screen and (min-width: 800px) {  
+  .welcome-logo{
+    visibility: visible;
+    width: 2.7rem;
+    padding-right: 0.5rem;
+    margin-top: 1.5em;
+  }
+
+  .descriptions-list{
+    display:block;
+    justify-content: space-evenly;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .descriptions-item{
+    margin: 0 1em;
+  }
+}
+
+/*
+@media only screen and (min-width: 500px) {
+  .shop-btn {
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cards-grid {
+    grid-template-columns: auto auto auto auto;
+  }
+  .shop-btn {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .cards-grid {
+    grid-template-columns: auto auto auto auto auto;
+  }
+  .shop-btn {
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .shop-btn {
+    padding-right: 0.6em;
+    font-size: 1.5em;
+  }
+}
+
+*/
