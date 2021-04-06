@@ -14,8 +14,6 @@ function Games() {
       });
   }, [setGameDates, setGameDate]);
 
-
-
   return (
     <div className="upcoming-games">
       <span className="upcoming-games-header">
@@ -26,18 +24,18 @@ function Games() {
         <div className="game-day dropdown-container">
           <label htmlFor="dates">April</label>
 
+          {gameDates[0] ?
           <select className="dropdown-box" name="dates" onChange={(e) => setGameDate(e.target.value)}>
-          <option>--Select Date--</option>
-          {gameDates[0] ? (
-            gameDates.map((row) => {
+          <option key={10000}>--Select Date--</option>
+          {gameDates.map((row, idx) => {
                 return (
-                  <option value={`${row.gameDate}`}>{row.gameDate}</option>
-                );
-            })
-        ) : (
-            <p>loading...</p>
+                  <option key={idx} value={`${row.gameDate}`}>{row.gameDate}</option>
+                )
+              })
+          }
+           </select> : (
+          <p>loading...</p>
         )}
-          </select>
         </div>
         <div className="games-grid">
         {gameDate > 0 ? <GameDayHeader gameDate={gameDate} /> : <p style={{marginLeft: '-2em', justifyContent: 'flex-start'}}>Please select a date from the dropdown</p>}

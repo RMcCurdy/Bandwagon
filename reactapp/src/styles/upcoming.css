@@ -29,6 +29,14 @@
   font-size: 1.5rem;
 }
 
+.dropdown-container-sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
 .dropdown-box {
   margin-left: 0.5rem;
   font-size: 1.5rem;

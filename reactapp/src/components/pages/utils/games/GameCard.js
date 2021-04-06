@@ -3,7 +3,7 @@ import React from 'react';
 const GameCard = (props) => {
   return (
       <div className="game">
-        <table cellspacing="8" className="game-module">
+        <table cellSpacing="8" className="game-module">
           <thead className="top-bar">
             <tr>
               <th className="game-time" colSpan="2">{props.gameTime}</th>

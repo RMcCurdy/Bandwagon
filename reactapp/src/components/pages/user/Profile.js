@@ -32,7 +32,7 @@ function Profile() {
 
                 <div className='user-profile-pic'>
 
-                    <img className='profile-pic' src={`../../../img/profile-pics/${profilePic}`} alt='pic' ></img>
+                    <img className='profile-pic' src={`../../../img/profile-pics/${profilePic}.svg`} alt='pic' ></img>
 
                     <div className='username-and-badge'>
                         <p className='shown-username'>{username}</p>

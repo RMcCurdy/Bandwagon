@@ -5,11 +5,24 @@ import AppContext from '../../../context/AppContext';
 
 function Logout() {
 
-  const {setIsLoggedIn} = useContext(AppContext);
-
+  const {setIsLoggedIn, setId, setFirstName, setLastName, setUserName, setEmail, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance, setTeams, setGameDates, setGameData} = useContext(AppContext);
+  
   useEffect(() => {
+    setId('');
+    setFirstName('');
+    setLastName('');
+    setUserName('');
+    setEmail('');
+    setProfilePic('');
+    setIsAdmin(false);
+    setTotalPointsBalance(0);
+    setTotalPointsEarned(0);
+    setTotalPointsSpent(0);
+    setTeams([]);
+    setGameDates([]);
+    setGameData([]);
     setIsLoggedIn(false);
-  });
+  }, [setIsLoggedIn, setId, setFirstName, setLastName, setUserName, setEmail, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance, setTeams, setGameDates, setGameData]);
 
   return (
     <div className="page-container">

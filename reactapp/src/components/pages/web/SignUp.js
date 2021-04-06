@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import { useHistory } from 'react-router';
+import SelectDropdownTeams from '../utils/SelectDropdownTeams';
 
 const SignUp = () => {
-    const { setId, setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance } = useContext(AppContext);
+    const { profilePic, setId, setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance } = useContext(AppContext);
 
     const newUserUbject = {
         firstName: '',
@@ -28,7 +29,7 @@ const SignUp = () => {
             username: newUser.username,
             email: newUser.email,
             password: newUser.password,
-            profilePic: newUser.profilePic,
+            profilePic: profilePic,
         };
 
         console.log('signUpDataToPost is: ', signUpDataToPost);
@@ -108,8 +109,9 @@ const SignUp = () => {
                         <div className='edit-profile-form'>
                             <label className='edit-profile-label' htmlFor='favteam'>Favourite Team</label>
                             <br />
-                            <input className='edit-profile-inputs' id='fav' type='text' name='favteam' value={newUser.profilePic}
-                                onChange={(e) => setNewUser({ ...newUser, profilePic: e.target.value })} />
+                            <SelectDropdownTeams />
+                            {/* <input className='edit-profile-inputs' id='fav' type='text' name='favteam' value={newUser.profilePic}
+                                onChange={(e) => setNewUser({ ...newUser, profilePic: e.target.value })} /> */}
                         </div>
 
                         <div style={{ paddingTop: '2rem' }}></div>
@@ -122,6 +124,7 @@ const SignUp = () => {
 
                     </form>
                     <pre>{JSON.stringify(newUser, null, 2)}</pre>
+                    {/* <pre>{JSON.stringify(team, null, 2)}</pre> */}
                 </div>
             </div>
         </div>

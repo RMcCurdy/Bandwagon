@@ -1,6 +1,3 @@
-Badges (My Badges and Badges To Earn)
-Dropdown for selecting Favourite Team
-
 Voting on Games and updating a users votes
 
 User buys merch and update points spent and balance

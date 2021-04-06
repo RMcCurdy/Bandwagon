@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 function Nav() {

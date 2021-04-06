@@ -1,11 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import { useHistory } from 'react-router';
+import SelectDropdownTeams from '../utils/SelectDropdownTeams';
 
 const EditProfile = () => {
 
-  const {id, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, profilePic, setProfilePic } = useContext(AppContext);
+  const {id, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, profilePic } = useContext(AppContext);
 
   const history = useHistory();
 
@@ -60,8 +61,9 @@ const EditProfile = () => {
           </div>
           <div className='edit-profile-form'>
             <label className="edit-profile-label" htmlFor="favteam">Favourite Team</label><br/>
-            <input className="edit-profile-inputs" type="text" name="favteam" value={profilePic}
-            onChange={e => setProfilePic(e.target.value)}/>
+            <SelectDropdownTeams />
+            {/* <input className="edit-profile-inputs" type="text" name="favteam" value={profilePic}
+            onChange={e => setProfilePic(e.target.value)}/> */}
           </div>
           <div style={{paddingTop:'2rem'}}>
           </div>

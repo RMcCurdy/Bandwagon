@@ -8,9 +8,9 @@ const AppState = (props) => {
   const [lastName, setLastName] = useState('');
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
-  const [totalPointsBalance, setTotalPointsBalance] = useState('');
-  const [totalPointsSpent, setTotalPointsSpent] = useState('');
-  const [totalPointsEarned, setTotalPointsEarned] = useState('');
+  const [totalPointsBalance, setTotalPointsBalance] = useState(0);
+  const [totalPointsSpent, setTotalPointsSpent] = useState(0);
+  const [totalPointsEarned, setTotalPointsEarned] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [profilePic, setProfilePic] = useState('');
@@ -21,9 +21,10 @@ const AppState = (props) => {
   const [gameDates, setGameDates] = useState([]);
   const [gameDate, setGameDate] = useState(0);
   const [gameData, setGameData] = useState([]);
+  const [teams, setTeams] = useState([]);
 
   return (
-    <AppContext.Provider value={{id, setId, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, totalPointsBalance, setTotalPointsBalance, totalPointsSpent, setTotalPointsSpent, totalPointsEarned, setTotalPointsEarned, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, dateCreated, setDateCreated, topBadge, setTopBadge, message, setMessage, lboard, setLboard, gameDates, setGameDates, gameDate, setGameDate, gameData, setGameData}}>
+    <AppContext.Provider value={{id, setId, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, totalPointsBalance, setTotalPointsBalance, totalPointsSpent, setTotalPointsSpent, totalPointsEarned, setTotalPointsEarned, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, dateCreated, setDateCreated, topBadge, setTopBadge, message, setMessage, lboard, setLboard, gameDates, setGameDates, gameDate, setGameDate, gameData, setGameData, teams, setTeams}}>
       {props.children}  
     </AppContext.Provider>
   );
