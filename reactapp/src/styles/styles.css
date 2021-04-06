@@ -100,6 +100,13 @@ body {
   font-size: 1rem;
 }
 
+.active{
+  color:hsl(29, 97%, 45%);
+  border-bottom: 2px solid hsl(29, 97%, 45%);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 /* Change background color of buttons on hover */
 .nav-tabs:hover {
   color: hsl(29, 97%, 45%);

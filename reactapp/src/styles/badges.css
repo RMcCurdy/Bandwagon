@@ -1,5 +1,5 @@
 .badges {
-  margin: 5em auto;
+  margin: 2em auto;
   padding-left: 20%;
   padding-right: 20%;  
   padding-top: 1rem;
@@ -10,11 +10,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 20%;
+  padding-right: 20%; 
 }
 
 .badges-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1em;
 }
 
