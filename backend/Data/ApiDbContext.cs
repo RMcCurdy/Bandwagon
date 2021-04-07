@@ -21,22 +21,30 @@ namespace NBAapi.Data
         public virtual DbSet<ProfilePic> ProfilePics { get; set; }
         public virtual DbSet<Vote> Votes { get; set; }
 
-         public ApiDbContext(DbContextOptions<ApiDbContext> options)
+        public ApiDbContext(DbContextOptions<ApiDbContext> options)
             : base(options)
         {
             
         }
 
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     optionsBuilder
+        //         .LogTo(Console.WriteLine,
+        //     new[]
+        //     {
+        //         DbLoggerCategory.Database.Command.Name
+        //     },
+        //     LogLevel.Information,
+        //     DbContextLoggerOptions.SingleLine | DbContextLoggerOptions.LocalTime);
+        // }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .LogTo(Console.WriteLine,
-            new[]
-            {
-                DbLoggerCategory.Database.Command.Name
-            },
-            LogLevel.Information,
-            DbContextLoggerOptions.SingleLine | DbContextLoggerOptions.LocalTime);
+                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name },
+                LogLevel.Information)
+                .EnableSensitiveDataLogging();
         }
 
     }

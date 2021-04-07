@@ -31,6 +31,7 @@ const GameDayHeader = (props) => {
                         visitorFinalScore={row.visitorFinalScore}
                         homeTeamName={row.homeTeamName}
                         visitorTeamName={row.visitorTeamName}
+                        votedForTeamId={row.votedForTeamId}
                     />
                 );
             })

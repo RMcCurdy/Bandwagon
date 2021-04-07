@@ -1,5 +1,7 @@
 Voting on Games and updating a users votes
 
-User buys merch and update points spent and balance
+
 
 Admin Dashboard utilities
+
+User buys merch and update points spent and balance
