@@ -1,5 +1,8 @@
+using System;
 using backend.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Logging;
 using NBAapi.Entities;
 
 namespace NBAapi.Data
@@ -23,5 +26,18 @@ namespace NBAapi.Data
         {
             
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .LogTo(Console.WriteLine,
+            new[]
+            {
+                DbLoggerCategory.Database.Command.Name
+            },
+            LogLevel.Information,
+            DbContextLoggerOptions.SingleLine | DbContextLoggerOptions.LocalTime);
+        }
+
     }
 }
