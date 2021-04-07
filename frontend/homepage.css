@@ -1,0 +1,184 @@
+.homepage{
+  margin: 80px auto;
+  padding-left: 5%;
+  padding-right: 5%;  
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+  
+.homepage-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+
+
+.news-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  grid-gap: 15px;
+}
+
+.news-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  max-width: 340px;
+  min-width: 120px; 
+  background-color: #fff;
+  padding: 5px, 10px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+
+.news-info-title{
+  font-size: 12px;
+
+
+}
+
+.news-image{
+
+  width: 180px;
+  height: 100px;
+
+}
+
+
+.news-title{
+  padding-left: 5px;
+
+}
+
+
+
+.news-info{
+  font-size: 10px;
+
+}
+
+
+.learn-more{
+
+  font-size: 8px;
+}
+
+
+
+.news-text{
+
+  padding-left: 5px;
+  padding-right: 5px;
+
+
+}
+
+
+
+.upcoming-games{
+
+  padding-left: 5px;
+
+}
+
+
+
+  .games {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+ 
+  .game{
+    font-size: 11px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    padding: 5px, 5px;
+    max-width: 310px;
+    cursor: pointer;
+  }
+
+  .game:hover{
+      opacity: 0.7;
+  }
+
+  .pred{
+      width: 10%;
+  }
+
+  .game-body{
+      text-align: center;
+  }
+
+  .team-score{
+      padding-left: 80px;
+      
+  }
+
+
+.game-time{
+
+
+  padding-right: 10px;
+
+}
+
+
+  .score{
+  
+
+    padding-left: 80px;
+  }
+  
+ .date-h3{
+     padding-top: 5px;
+     font-size: 12px;
+ }
+
+
+.ug-title{
+
+padding-top: 45px;
+
+font-size: 14px;
+
+}
+
+
+ .news-item:hover{
+      opacity: 0.7;
+  }
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+  .news-grid {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .news-grid {
+    grid-template-columns: auto auto auto auto auto;
+  }
+  
+}
+
+@media only screen and (min-width: 1000px) {
+  .homepage{
+    margin: 80px auto;
+    padding-left: 20%;
+    padding-right: 20%;  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }  
+}
+
+
+
+
