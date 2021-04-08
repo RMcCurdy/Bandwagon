@@ -65,14 +65,16 @@ namespace NBAapi.Controllers
 
 
         // GET: api/Games/15
-        [HttpGet("{id}")]
+        [HttpGet("{gameDateInt}/{accountId}")]
        
-         public async Task<IEnumerable<GameResponse>> GetGames(int id)
+         public async Task<IEnumerable<GameResponse>> GetGames(int gameDateInt, int accountId)
         {
             var games = from g in _context.Games
                         join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
                         join tnvis in _context.Teams on g.VisitorTeamId equals tnvis.Id
-                        where g.GameDate == id 
+                        join vts in _context.Votes on g.Id equals vts.GameId into gamesGroup
+                        from vts in gamesGroup.DefaultIfEmpty()
+                        where (g.GameDate == gameDateInt) && (vts.AccountId == accountId || vts == null)
                         select new GameResponse
                         {
                             Id = g.Id,
@@ -87,7 +89,9 @@ namespace NBAapi.Controllers
                             GameTime = g.GameTime,
                             GameDate = g.GameDate,
                             HomeTeamName = tnhome.TeamName,
-                            VisitorTeamName = tnvis.TeamName
+                            VisitorTeamName = tnvis.TeamName,
+                            VotedAccountId = vts == null ? 0 : vts.AccountId,
+                            VotedForTeamId = vts == null ? 0 : vts.VotedForTeamId
                         };
 
             return await games.ToListAsync();

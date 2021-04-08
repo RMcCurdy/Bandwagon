@@ -11,6 +11,8 @@ namespace backend.Models
         public int VisitorPointsPayout { get; set; }
         public int HomeFinalScore { get; set; }
         public int VisitorFinalScore { get; set; }
+        public int VotedAccountId { get; set; }
+        public int VotedForTeamId { get; set; }
         // schedule components
         public string GameTime { get; set; }
         public int GameDate { get; set; }

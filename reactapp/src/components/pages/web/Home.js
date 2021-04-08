@@ -7,7 +7,7 @@ function Home() {
 
   // images for slide show
   const slideImages = [
-    '../../../img/landingpage/games.png',
+    '../../../img/landingpage/gamesPreview.png',
     '../../../img/landingpage/vote.png',
     '../../../img/landingpage/profile.png',
     '../../../img/landingpage/leaderboard.png'
@@ -17,8 +17,8 @@ function Home() {
     duration: 3000,
     transitionDuration: 700,
     infinite: true,
-    prevArrow: <div style={{width: "2em", marginRight: "-30px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/leftArrow.png" alt="leftArrow"/></div>,
-    nextArrow: <div style={{width: "2em", marginLeft: "-50px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/rightArrow.png" alt="rightArrow"/></div>
+    prevArrow: <div style={{width: "2em", marginRight: "-30px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/leftArrow.png" alt="leftArrow" style={{width: '3vw'}}/></div>,
+    nextArrow: <div style={{width: "2em", marginLeft:"-3.5em", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/rightArrow.png" alt="rightArrow" style={{width: '3vw'}}/></div>
   };
 
   return (
@@ -32,7 +32,7 @@ function Home() {
       <div className="slideshow-container">
         <Slide easing="ease" {...properties}>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'40vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Vote on games based on statistical analysis</span>
             </div>
           </div>

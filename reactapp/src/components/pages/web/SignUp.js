@@ -1,10 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 import SelectDropdownTeams from '../utils/SelectDropdownTeams';
 
 const SignUp = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const { profilePic, setId, setFirstName, setLastName, setUserName, setEmail, setIsLoggedIn, setProfilePic, setIsAdmin, setTotalPointsEarned, setTotalPointsSpent, setTotalPointsBalance } = useContext(AppContext);
 
     const newUserUbject = {

@@ -41,6 +41,10 @@
   background-color: #ffc56d; */
 }
 
+.slideshow-container {
+  width: 98%;
+}
+
 .container-info-grey {
   padding: 3rem 0;
   background-color: rgb(240, 240, 240);

@@ -6,13 +6,13 @@ import GameCard from './GameCard';
 
 const GameDayHeader = (props) => {
 
-  const { gameData, setGameData, gameDate } = useContext(AppContext);
+  const { id, gameData, setGameData, gameDate } = useContext(AppContext);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/Games/${gameDate}`).then((resp) => {
+        axios.get(`http://localhost:5000/api/Games/${gameDate}/${id}`).then((resp) => {
             setGameData(resp.data);
         });
-    }, [setGameData, gameDate]);
+    }, [id, setGameData, gameDate]);
 
     // console.log('game data before return: ', gameData[0])
     return (
