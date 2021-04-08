@@ -11,6 +11,30 @@
   background-position: 0% 75%;
   background-size: cover;
   margin-top: -1em;
+  border-bottom: 3px solid #3b3b3b;
+}
+/* 
+.slideshow-container {
+  height: 10em;
+} */
+
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 60vh;
+  padding: 5em 0;
+}
+
+.each-slide span {
+  font-size: 2vw;
+}
+
+.slideshow-header-text {
+  color: #3b3b3b;
+  text-shadow: 2px 2px rgb(240, 240, 240);
 }
 
 .container-info-grey {

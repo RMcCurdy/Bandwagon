@@ -6,6 +6,7 @@
 @import "upcoming.css";
 @import "shop.css";
 @import "landingpage.css";
+@import "react-slideshow-image/dist/styles.css";
 
 * {
   box-sizing: border-box;
