@@ -22,6 +22,7 @@ const GameDayHeader = (props) => {
                 return (
                     <GameCard
                         key={row.id}
+                        gameId={row.id}
                         gameTime={row.gameTime}
                         homeTeamId={row.homeTeamId}
                         visitorTeamId={row.visitorTeamId}
@@ -31,6 +32,7 @@ const GameDayHeader = (props) => {
                         visitorFinalScore={row.visitorFinalScore}
                         homeTeamName={row.homeTeamName}
                         visitorTeamName={row.visitorTeamName}
+                        accountId={row.votedAccountId}
                         votedForTeamId={row.votedForTeamId}
                     />
                 );
