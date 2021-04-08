@@ -76,70 +76,59 @@
 
 
 
-.upcoming-games{
+.featured-game{
 
-  padding-left: 5px;
+  position: relative;
+  left: 120px ;
 
 }
 
 
-
-  .games {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
-  }
  
   .game{
     font-size: 11px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     padding: 5px, 5px;
-    max-width: 310px;
+    max-width: 500px;
     cursor: pointer;
+
   }
 
   .game:hover{
       opacity: 0.7;
   }
 
-  .pred{
-      width: 10%;
-  }
+ 
 
   .game-body{
       text-align: center;
   }
 
-  .team-score{
-      padding-left: 80px;
-      
-  }
+ 
 
 
 .game-time{
 
 
-  padding-right: 10px;
+  padding-left: 0px;
 
 }
 
 
-  .score{
-  
-
-    padding-left: 80px;
-  }
   
  .date-h3{
      padding-top: 5px;
+     padding-right: 30px;
      font-size: 12px;
+     text-align: center;
  }
 
 
-.ug-title{
+.fg-title{
 
 padding-top: 45px;
-
+padding-right: 40px;
+text-align: center;
 font-size: 14px;
 
 }
@@ -150,7 +139,37 @@ font-size: 14px;
   }
 
 
+.logo1:hover{
 
+
+  opacity: 0.5;
+}
+
+.logo2:hover{
+
+
+  opacity: 0.5;
+}
+
+
+
+.versus-text{
+
+
+  padding-left: 175px;
+  padding-right: 175px;
+}
+
+.logo2{
+
+  padding-left: 0px;
+
+}
+
+.team-name2{
+
+   padding-left: 0px;
+}
 
 
 
