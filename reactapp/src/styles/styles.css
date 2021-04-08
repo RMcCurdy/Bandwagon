@@ -5,6 +5,7 @@
 @import "profile.css";
 @import "upcoming.css";
 @import "shop.css";
+@import "landingpage.css";
 
 * {
   box-sizing: border-box;

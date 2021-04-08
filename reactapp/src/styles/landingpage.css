@@ -1,0 +1,87 @@
+.landingpage {
+  margin: 0px;
+}
+
+.container-welcome {
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10rem 0;
+  background-image: url(../img/court2.jpg);
+  background-position: 0% 75%;
+  background-size: cover;
+  margin-top: -1em;
+}
+
+.container-info-grey {
+  padding: 3rem 0;
+  background-color: rgb(240, 240, 240);
+}
+
+.container-info-white {
+  padding: 3rem 0;
+  background-color: white;
+  
+}
+
+.welcome-text {
+  position: relative;
+  margin: 0;
+  vertical-align: middle; 
+  text-align: center; 
+  font-size: 3vw;
+  color: white;
+  text-shadow: 3px 3px #ff9900;
+}
+
+.welcome-text-description {
+  margin: 0;
+  position: relative;
+  vertical-align: middle; 
+  text-align: center; 
+  font-size: 1.5vw;
+  padding-top: 1em;
+  color: white;
+  text-shadow: 3px 3px #3b3b3b;
+}
+
+.welcome-logo {
+  width: 30%;
+}
+
+.container-info-image {
+  width: 60%;
+}
+
+.container-info-text {
+  font-size: 2vw;
+  margin: 0;
+  padding-bottom: 0.5em;
+}
+  
+.container-signupnow {
+  display: block;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 10em;
+  padding-bottom: 16em;
+  background-color: white;
+}
+
+.btn-signupnow {
+  cursor: pointer;
+  border-radius: 1em;
+  font-family: inherit;
+  border: 0;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 0.7em;
+  padding-top: 0.7em;
+  margin-left: 0.5em;
+  font-size: 1.5em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+  color: white;
+  background-color:hsl(29, 97%, 55%);
+}
