@@ -17,6 +17,14 @@
   margin: 0 auto;
 }
 
+.voted-for {
+  background-color: rgb(110, 255, 110);
+}
+
+.not-voted-for {
+  background-color: transparent;
+}
+
 .game-day {
   display: flex;
   justify-content: space-between;

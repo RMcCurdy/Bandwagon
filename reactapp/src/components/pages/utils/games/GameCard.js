@@ -18,10 +18,10 @@ const GameCard = (props) => {
               <td className="logo-games logo-left"><img className="logo-img" src={`../../../img/profile-pics/${props.homeTeamName}.svg`} alt="loading" /></td>
               <td className="team-name-left">{props.homeTeamName}</td>
               <td className="pred-win">{props.homeWinPercent}</td>
-              <td className="game-vote">
+              <td className={`${props.homeTeamId === props.votedForTeamId ? "voted-for" : "not-voted-for"}`}>
                 {props.homeTeamId === props.votedForTeamId
                   ? '✔️'
-                  : '[]'}
+                  : ''}
               </td>
               <td className="team-score">{props.homeFinalScore}</td>
             </tr>
@@ -29,10 +29,10 @@ const GameCard = (props) => {
               <td className="logo-games logo-left"><img className="logo-img" src={`../../../img/profile-pics/${props.visitorTeamName}.svg`} alt="loading" /></td>
               <td className="team-name-left">{props.visitorTeamName}</td>
               <td className="pred-lose">{props.visitorWinPercent}</td>
-              <td className="game-vote">
+              <td className={`${props.visitorTeamId === props.votedForTeamId ? "voted-for" : "not-voted-for"}`}>
                 {props.visitorTeamId === props.votedForTeamId
                   ? '✔️'
-                  : '[]'}
+                  : ''}
               </td>
               <td className="team-score">{props.visitorFinalScore}</td>
             </tr>
