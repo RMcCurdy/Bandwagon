@@ -35,6 +35,10 @@
 .slideshow-header-text {
   color: #3b3b3b;
   text-shadow: 2px 2px rgb(240, 240, 240);
+  padding-bottom: 51vh;
+  /* padding: 0.5em 1em;
+  border-radius: 25px;
+  background-color: #ffc56d; */
 }
 
 .container-info-grey {

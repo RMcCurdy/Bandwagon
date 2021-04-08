@@ -6,18 +6,18 @@ import { NavLink } from "react-router-dom";
 function Home() {
 
   const slideImages = [
-    '../../../img/landingpage/gamesPreview.png',
-    '../../img/gamesPreview.png',
-    '../../img/gamesPreview.png',
-    '../../img/gamesPreview.png'
+    '../../../img/landingpage/games.png',
+    '../../../img/landingpage/vote.png',
+    '../../../img/landingpage/profile.png',
+    '../../../img/landingpage/leaderboard.png'
   ];
 
   const properties = {
     duration: 5000,
     transitionDuration: 500,
     infinite: true,
-    prevArrow: <div style={{width: "30px", marginRight: "-30px"}}></div>,
-    nextArrow: <div style={{width: "30px", marginLeft: "-50px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/games.png" alt="rightArrow"/></div>
+    prevArrow: <div style={{width: "2em", marginRight: "-30px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/leftArrow.png" alt="leftArrow"/></div>,
+    nextArrow: <div style={{width: "2em", marginLeft: "-50px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/rightArrow.png" alt="rightArrow"/></div>
   };
 
   return (
@@ -36,22 +36,22 @@ function Home() {
       <div className="slideshow-container">
         <Slide easing="ease" {...properties}>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Vote on games based on statistical analysis</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[1]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{'backgroundImage': `url(${slideImages[1]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Earn points to redeem prizes</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[2]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{'backgroundImage': `url(${slideImages[2]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Earn badges by completing challenges</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[3]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{'backgroundImage': `url(${slideImages[3]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Compete against others for the top spot on the Leaderboard</span>
             </div>
           </div>
