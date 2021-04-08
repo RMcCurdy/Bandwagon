@@ -1,14 +1,24 @@
 import React from 'react'
 import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import 'react-slideshow-image/dist/styles.css';
+import { NavLink } from "react-router-dom";
 
 function Home() {
 
   const slideImages = [
-    '../../img/green.jpg',
+    '../../../img/landingpage/gamesPreview.png',
+    '../../img/gamesPreview.png',
     '../../img/gamesPreview.png',
     '../../img/gamesPreview.png'
   ];
+
+  const properties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    prevArrow: <div style={{width: "30px", marginRight: "-30px"}}></div>,
+    nextArrow: <div style={{width: "30px", marginLeft: "-50px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/games.png" alt="rightArrow"/></div>
+  };
 
   return (
     <div>
@@ -24,20 +34,25 @@ function Home() {
       </div> */}
 
       <div className="slideshow-container">
-        <Slide easing="ease">
+        <Slide easing="ease" {...properties}>
           <div className="each-slide">
             <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-              <span className="slideshow-header-text">Slide 1</span>
+              <span className="slideshow-header-text">Vote on games based on statistical analysis</span>
             </div>
           </div>
           <div className="each-slide">
             <div style={{'backgroundImage': `url(${slideImages[1]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-              <span className="slideshow-header-text">Slide 2</span>
+              <span className="slideshow-header-text">Earn points to redeem prizes</span>
             </div>
           </div>
           <div className="each-slide">
             <div style={{'backgroundImage': `url(${slideImages[2]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-              <span className="slideshow-header-text">Slide 3</span>
+              <span className="slideshow-header-text">Earn badges by completing challenges</span>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[3]})`, backgroundSize:'25vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+              <span className="slideshow-header-text">Compete against others for the top spot on the Leaderboard</span>
             </div>
           </div>
         </Slide>
@@ -60,7 +75,7 @@ function Home() {
       
       <div className="container-signupnow">
         <h2 className="container-info-text">What are you waiting for? Sign up now!</h2>
-        <button className="btn-signupnow">SIGN UP</button>
+        <div style={{paddingTop: '1em'}}><NavLink to="/signup" className="btn-signupnow">SIGN UP</NavLink></div>
       </div>
     
     </div>

@@ -67,7 +67,7 @@ const SignUp = () => {
     return (
         <div className='profile'>
             <div>
-                <h1>Sign Up</h1>
+                <h1>Create a new Account</h1>
                 <div className='edit-profile-main'>
                     <form onSubmit={signUpHandler}>
 
@@ -123,7 +123,7 @@ const SignUp = () => {
                         <div style={{ paddingTop: '2rem' }}></div>
 
                     </form>
-                    <pre>{JSON.stringify(newUser, null, 2)}</pre>
+                    {/* <pre>{JSON.stringify(newUser, null, 2)}</pre> */}
                     {/* <pre>{JSON.stringify(team, null, 2)}</pre> */}
                 </div>
             </div>
