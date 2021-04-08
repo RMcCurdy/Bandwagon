@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 function Home() {
 
+  // images for slide show
   const slideImages = [
     '../../../img/landingpage/games.png',
     '../../../img/landingpage/vote.png',
@@ -13,8 +14,8 @@ function Home() {
   ];
 
   const properties = {
-    duration: 5000,
-    transitionDuration: 500,
+    duration: 3000,
+    transitionDuration: 700,
     infinite: true,
     prevArrow: <div style={{width: "2em", marginRight: "-30px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/leftArrow.png" alt="leftArrow"/></div>,
     nextArrow: <div style={{width: "2em", marginLeft: "-50px", backgroundColor: 'transparent'}}><img src="../../../img/landingpage/rightArrow.png" alt="rightArrow"/></div>
@@ -27,11 +28,6 @@ function Home() {
         <p className="welcome-text">Welcome to Bandwagon</p><br/>
         <p className="welcome-text-description">Jump on the Bandwagon before it's too late!</p>
       </div>
-
-      {/* <div className="container-info-grey">
-        <h2 className="container-info-text">Vote on games based on statistical analysis!</h2>
-        <img className="container-info-image" src="../../../img/landingpage/games.png" alt="future games"/>
-      </div> */}
 
       <div className="slideshow-container">
         <Slide easing="ease" {...properties}>
@@ -58,7 +54,13 @@ function Home() {
         </Slide>
       </div>
 
-      {/* <div className="container-info-white">
+      {/* 
+      <div className="container-info-grey">
+        <h2 className="container-info-text">Vote on games based on statistical analysis!</h2>
+        <img className="container-info-image" src="../../../img/landingpage/games.png" alt="future games"/>
+      </div>
+      
+      <div className="container-info-white">
         <h2 className="container-info-text">Earn points to redeem prizes!</h2>
         <img className="container-info-image" src="../../../img/landingpage/vote.png" alt="game voting process "/>
       </div>
@@ -71,7 +73,8 @@ function Home() {
       <div className="container-info-white">
         <h2 className="container-info-text">Compete against others for the top spot on the Leaderboard</h2>
         <img className="container-info-image" src="../../../img/landingpage/leaderboard.png" alt="Product Logo"/>
-      </div> */}
+      </div> 
+      */}
       
       <div className="container-signupnow">
         <h2 className="container-info-text">What are you waiting for? Sign up now!</h2>
