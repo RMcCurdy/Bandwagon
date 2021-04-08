@@ -21,7 +21,7 @@ const GameCard = (props) => {
               <td className={`${props.homeTeamId === props.votedForTeamId ? "voted-for" : "not-voted-for"}`}>
                 {props.homeTeamId === props.votedForTeamId
                   ? '✔️'
-                  : ''}
+                  : 'vote'}
               </td>
               <td className="team-score">{props.homeFinalScore}</td>
             </tr>
@@ -32,7 +32,7 @@ const GameCard = (props) => {
               <td className={`${props.visitorTeamId === props.votedForTeamId ? "voted-for" : "not-voted-for"}`}>
                 {props.visitorTeamId === props.votedForTeamId
                   ? '✔️'
-                  : ''}
+                  : 'vote'}
               </td>
               <td className="team-score">{props.visitorFinalScore}</td>
             </tr>

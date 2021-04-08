@@ -19,10 +19,28 @@
 
 .voted-for {
   background-color: rgb(110, 255, 110);
+  border: 2px solid rgb(69, 190, 69);
+  border-radius: 10px;
+}
+
+.voted-for:hover {
+  box-shadow: 2px 4px 5px grey;
+  cursor: pointer;
+  border: 2px solid rgb(2, 95, 2);
 }
 
 .not-voted-for {
-  background-color: transparent;
+  font-size: 0.8em;
+  color: gray;
+  background-color: rgb(243, 243, 243);
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.not-voted-for:hover {
+  box-shadow: 2px 4px 5px grey;
+  cursor: pointer;
+  border: 2px solid rgb(44, 44, 44);
 }
 
 .game-day {
@@ -68,15 +86,16 @@
   border: 1.5px solid #cfcfcf;
   /* width: 100rem; */
   width: 25rem;
-  cursor: pointer;
 }
 
 .pred-win {
-  background-color: rgb(255, 150, 44)
+  background-color: rgb(255, 150, 44);
+  border-radius: 10px;
 }
 
 .pred-lose {
-  background-color: rgb(255,203,153)
+  background-color: rgb(255,203,153);
+  border-radius: 10px;
 }
 
 .logo-games {
@@ -90,9 +109,9 @@
   align-items: center;
 }
 
-.game:hover {
-  opacity: 0.7;
-}
+/* .game:hover {
+  border: 2px solid rgb(180, 180, 180);
+} */
 
 .game-body {
   text-align: center;
