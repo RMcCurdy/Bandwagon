@@ -10,6 +10,7 @@ const GameDayHeader = (props) => {
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/Games/${gameDate}/${id}`).then((resp) => {
+            console.log('gamedayheader games response is: ', resp.data);
             setGameData(resp.data);
         });
     }, [id, setGameData, gameDate]);
@@ -18,10 +19,10 @@ const GameDayHeader = (props) => {
     return (
     <>
         {gameData[0] ? (
-            gameData.map((row) => {
+            gameData.map((row, idx) => {
                 return (
                     <GameCard
-                        key={row.id}
+                        key={idx}
                         gameId={row.id}
                         gameTime={row.gameTime}
                         homeTeamId={row.homeTeamId}
@@ -32,7 +33,7 @@ const GameDayHeader = (props) => {
                         visitorFinalScore={row.visitorFinalScore}
                         homeTeamName={row.homeTeamName}
                         visitorTeamName={row.visitorTeamName}
-                        accountId={row.votedAccountId}
+                        accountId={id}
                         votedForTeamId={row.votedForTeamId}
                     />
                 );

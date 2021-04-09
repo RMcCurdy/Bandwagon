@@ -17,6 +17,16 @@
   margin: 0 auto;
 }
 
+.vote-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 2.8rem;
+  margin: 0;
+  padding: 0;
+}
+
 .voted-for {
   background-color: rgb(110, 255, 110);
   border: 2px solid rgb(69, 190, 69);
@@ -41,6 +51,10 @@
   box-shadow: 2px 4px 5px grey;
   cursor: pointer;
   border: 2px solid rgb(44, 44, 44);
+  background-color: rgb(110, 255, 110);
+  font-size: 0.9rem;
+  color: green;
+  border: 2px solid green;
 }
 
 .game-day {

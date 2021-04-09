@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -74,14 +75,54 @@ namespace NBAapi.Controllers
         }
 
         // POST: api/Votes
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Vote>> PostVote(Vote vote)
+        public async Task<ActionResult<VoteResponse>> PostVote(VoteRequest voteRequest)
         {
-            _context.Votes.Add(vote);
-            await _context.SaveChangesAsync();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
-            return CreatedAtAction("GetVote", new { id = vote.Id }, vote);
+            var userVote = await _context.Votes
+                .Where(v => v.AccountId == voteRequest.AccountId && v.GameId == voteRequest.GameId)
+                .FirstOrDefaultAsync();
+                
+            if (userVote == null)
+            {
+                // then this user has not voted on this game yet, so ADD a NEW vote
+                var newVote = (new Vote()
+                {
+                    VotedForTeamId = voteRequest.VotedForTeamId,
+                    PointsAwarded = 0,
+                    AccountId = voteRequest.AccountId,
+                    GameId = voteRequest.GameId
+                });
+
+
+                _context.Votes.Add(newVote);
+                await _context.SaveChangesAsync();
+
+                var newVoteResponse = (new VoteResponse()
+                {
+                    VotedForTeamId = newVote.VotedForTeamId
+                });
+
+                return newVoteResponse;
+            }
+            else
+            {
+                // else, this user HAS voted on this game, so UPDATE the user's vote
+                // we know the userVote data
+                userVote.VotedForTeamId = voteRequest.VotedForTeamId;
+                var savedUserVote = await _context.SaveChangesAsync();
+
+                var newVoteResponse = (new VoteResponse()
+                {
+                    VotedForTeamId = userVote.VotedForTeamId
+                });
+
+                return newVoteResponse;
+            }
         }
 
         // DELETE: api/Votes/5
