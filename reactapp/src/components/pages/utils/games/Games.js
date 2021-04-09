@@ -25,8 +25,15 @@ function Games() {
           <label htmlFor="dates">April</label>
 
           {gameDates[0] ?
-          <select className="dropdown-box" name="dates" onChange={(e) => setGameDate(e.target.value)}>
-          <option key={10000}>--Select Date--</option>
+          <select className="dropdown-box" name="dates" onChange={(e) => {
+            if (e.target.value !== 'select') {
+              console.log('this is the selected date: ', e.target.value);
+              setGameDate(e.target.value)
+            } else {
+              setGameDate([])
+            }
+            }}>
+          <option key={10000} value={'select'}>--Select Date--</option>
           {gameDates.map((row, idx) => {
                 return (
                   <option key={idx} value={`${row.gameDate}`}>{row.gameDate}</option>
