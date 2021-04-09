@@ -12,9 +12,7 @@
   align-items: center;
 }
   
-.news-header {
-  font-size: 4em;
-}
+
 
 .news-grid {
   display: grid;
@@ -44,6 +42,12 @@
 
   width: 180px;
   height: 100px;
+
+}
+
+
+.news-title{
+  padding-left: 5px;
 
 }
 
@@ -78,6 +82,21 @@
   left: 120px ;
 
 }
+
+
+ 
+  .game{
+    font-size: 11px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    padding: 5px, 5px;
+    max-width: 500px;
+    cursor: pointer;
+
+  }
+
+  .game:hover{
+      opacity: 0.7;
+  }
 
  
 
@@ -151,3 +170,34 @@ font-size: 14px;
 
    padding-left: 0px;
 }
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+  .news-grid {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .news-grid {
+    grid-template-columns: auto auto auto auto auto;
+  }
+  
+}
+
+@media only screen and (min-width: 1000px) {
+  .homepage{
+    margin: 80px auto;
+    padding-left: 20%;
+    padding-right: 20%;  
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }  
+}
+
+
+
+

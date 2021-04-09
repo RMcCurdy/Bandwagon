@@ -7,6 +7,7 @@
 @import "shop.css";
 @import "landingpage.css";
 @import "react-slideshow-image/dist/styles.css";
+@import "homepage.css";
 
 * {
   box-sizing: border-box;
@@ -16,6 +17,13 @@ body {
   background-color: rgb(240, 240, 240);
   margin: 0;
   font-family: Montserrat, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
 }
 
 .app-name-header {
