@@ -110,6 +110,11 @@ button:focus {
   font-size: 1rem;
 }
 
+.my-points-balance {
+  font-size: 0.75em;
+  color: rgb(255, 145, 0);
+}
+
 .active{
   color:hsl(29, 97%, 45%);
   border-bottom: 2px solid hsl(29, 97%, 45%);

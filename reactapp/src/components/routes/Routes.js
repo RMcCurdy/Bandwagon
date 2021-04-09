@@ -10,7 +10,7 @@ import PageNotFound from '../pages/shared/PageNotFound';
 import NotAuthorized from '../pages/shared/NotAuthorized';
 import Leaderboard from '../pages/utils/leaderboard/Leaderboard';
 import Games from '../pages/utils/games/Games';
-import Shop from '../pages/utils/Shop';
+import Shop from '../pages/utils/shop/Shop';
 import Badges from '../pages/utils/Badges';
 import Profile from '../pages/user/Profile';
 import ForgotPass from '../pages/utils/ForgotPass';

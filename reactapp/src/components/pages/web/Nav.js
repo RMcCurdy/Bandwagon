@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 function Nav() {
-  const {isLoggedIn, isAdmin, firstName} = useContext(AppContext);
+  const {isLoggedIn, isAdmin, firstName, totalPointsBalance} = useContext(AppContext);
 
   const logoAndWebName = <span className="app-name-header header-title">
   <img className="logo" src="../img/orange.png" alt="Product Logo" />Bandwagon
@@ -37,7 +37,7 @@ function Nav() {
 
   const loggedIn = <div style={{minWidth: '400px'}}>
   <ul className ="nav-list login-logout">
-  <NavLink to="/profile" className="nav-tabs" activeClassName="active">Hello, {firstName}</NavLink>
+  <NavLink to="/profile" className="nav-tabs" activeClassName="active">Hello, {firstName} <div className="my-points-balance">My Points: {totalPointsBalance}</div></NavLink>
   
   <li><NavLink to="/logout" className="btn login" activeClassName="active">SIGN OUT</NavLink></li>
   </ul>
