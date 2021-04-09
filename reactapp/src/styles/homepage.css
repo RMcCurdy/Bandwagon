@@ -1,7 +1,7 @@
 .homepage{
-  margin: 80px auto;
-  padding-left: 5%;
-  padding-right: 5%;  
+  margin: 2em auto;
+  padding-left: 15%;
+  padding-right: 15%;  
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -12,192 +12,107 @@
   align-items: center;
 }
   
+/* NBA News CSS */
 
+.news-title {
+  text-align: left;
+  font-size: 2.5em;
+  padding-bottom: 0.5em;
+}
 
 .news-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  grid-gap: 15px;
+  grid-gap: 2em;
 }
 
 .news-item {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-  max-width: 340px;
-  min-width: 120px; 
   background-color: #fff;
-  padding: 5px, 10px;
-  padding-top: 15px;
   text-align: center;
-}
-
-
-.news-info-title{
-  font-size: 12px;
-
-
+  padding: 1em;
 }
 
 .news-image{
-
-  width: 180px;
-  height: 100px;
-
+  border-radius: 35px;
+  padding: 1em;
+  max-width: 21em;
 }
 
-
-.news-title{
-  padding-left: 5px;
-
+.news-info-title{
+  font-size: 1.5em;
+  margin: 0;
 }
 
-
-
-.news-info{
-  font-size: 10px;
-
+.news-text {
+  padding-top: 0.5em;
+  font-size: 1em;
+  margin: 0;
 }
 
-
-.learn-more{
-
-  font-size: 8px;
+.learn-more {
+  font-size: 0.75em;
 }
 
+/* Featured Match CSS */
 
-
-.news-text{
-
-  padding-left: 5px;
-  padding-right: 5px;
-
-
+.fg-container {
+  margin: 0 auto;
+  padding-top: 3em;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 .featured-game{
-
-  position: relative;
-  left: 120px ;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
- 
-  .game{
-    font-size: 11px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    padding: 5px, 5px;
-    max-width: 500px;
-    cursor: pointer;
-
-  }
-
-  .game:hover{
-      opacity: 0.7;
-  }
-
- 
-
-  .game-body{
-      text-align: center;
-  }
-
- 
-
-
-.game-time{
-
-
-  padding-left: 0px;
-
-}
-
-
   
- .date-h3{
-     padding-top: 5px;
-     padding-right: 30px;
-     font-size: 12px;
-     text-align: center;
- }
-
+.date-h3{
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+}
 
 .fg-title{
-
-padding-top: 45px;
-padding-right: 40px;
-text-align: center;
-font-size: 14px;
-
+  justify-content: center;
+  align-items: center;
 }
 
-
- .news-item:hover{
-      opacity: 0.7;
-  }
-
-
-.logo1:hover{
-
-
-  opacity: 0.5;
+.fg-title-text {
+  font-size: 2em;
+  margin: 0;
 }
 
-.logo2:hover{
-
-
-  opacity: 0.5;
+.game-home-account {
+  font-size: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  justify-content: space-around;
+  border: 1.5px solid #cfcfcf;
+  width: 25rem;
 }
 
+.game-phx-lac {
+  padding: 0.5em 1.5em;
+  width: 100%;
+}
 
+.logo-container-home-page {
+  align-content: center;
+  width: 7em;
+}
+
+.game-time {
+  font-size: 1.25em;
+}
 
 .versus-text{
-
-
-  padding-left: 175px;
-  padding-right: 175px;
+  font-size: 1.5em;
 }
 
-.logo2{
-
-  padding-left: 0px;
-
+.team-name-home-page {
+  font-size: 1.5em;
 }
-
-.team-name2{
-
-   padding-left: 0px;
-}
-
-
-
-
-
-@media only screen and (min-width: 600px) {
-  .news-grid {
-    grid-template-columns: auto auto auto auto;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .news-grid {
-    grid-template-columns: auto auto auto auto auto;
-  }
-  
-}
-
-@media only screen and (min-width: 1000px) {
-  .homepage{
-    margin: 80px auto;
-    padding-left: 20%;
-    padding-right: 20%;  
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }  
-}
-
-
-
-

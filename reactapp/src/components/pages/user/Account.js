@@ -5,7 +5,7 @@ function Account() {
     <div className="homepage">
 
        <div className="news-title">
-        <span className="news-header">NEWS</span>
+        <span className="news-header">NBA News</span>
       </div>
 
       <div className="news-grid" style={{clear:'both'}}>
@@ -15,85 +15,84 @@ function Account() {
           <div className="news-info">
             <h3 className="news-info-title">Anunoby Ejected </h3>
              <p className="news-text">
-              OG Anunoby was ejected after an altercation with Harrell.
+             Raptors' OG Anunoby Ejected After Altercation With Montrezl Harrell
             </p>
-              <p className="learn-more">
+              <a href="https://www.sportsnet.ca/nba/article/raptors-og-anunoby-ejected-altercation-montrezl-harrell" rel="noreferrer" target="_blank" className="learn-more">
               Click to learn more.
-            </p>
-
+            </a>
           </div>
         </div>  
-
 
         <div className="news-item">
           <img className="news-image" src="../../../img/homepage/harden.jpg" alt="harden"/>
           <div className="news-info">
-            <h3 className="news-info-title">Harden traded to Pelicans</h3>
+            <h3 className="news-info-title">Harden Injury</h3>
              <p className="news-text">
-              A record deal sees James Harden joining the Pelicans in May.
+             Brooklyn Nets Announce Injury Update For James Harden's Right Hamstring Strain
             </p>
-             <p className="learn-more">
+             <a href="https://thespun.com/nba/brooklyn-nets/james-harden-injury-update-hamstring-strain" rel="noreferrer" target="_blank" className="learn-more">
               Click to learn more.
-            </p>
+            </a>
           </div>
-        </div>  
-
-
+        </div> 
 
         <div className="news-item">
           <img className="news-image" src="../../../img/homepage/lebron.jpg" alt="lebron"/>
           <div className="news-info">
-            <h3 className="news-info-title">Here is more news</h3>
+            <h3 className="news-info-title">LeBron vs. Super Teams</h3>
             <p className="news-text">
-              More news occured in basketball today.
-              Here is the news.
+              How Will LeBron Stack Up Against Yet Another Super Team, The Brooklyn Nets
             </p>
-              <p className="learn-more">
+              <a href="https://www.espn.com/nba/story/_/id/30915504/los-angeles-lakers-lebron-james-talks-brooklyn-nets-trio-ahead-matchup" rel="noreferrer" target="_blank" className="learn-more">
               Click to learn more.
-            </p>
+            </a>
           </div>
         </div>  
-
-
         
       </div>
 
-      <div className="fg-title">
-       <h3>FEATURED MATCHUP TODAY</h3>
-      </div>
+      <div className="fg-container">
 
-       <div className="day">
-          <h3 className="date-h3">Thursday April 8</h3>
-       </div>
+        <div className="fg-title">
+        <p className="fg-title-text">Featured Match Today</p>
+        </div>
 
-      <div className="featured-game">
+        <div className="day">
+          <p className="date-h3">Thursday April 15</p>
+        </div>
 
-                <div className="game">
-                    <table className="game-phx-lac" >
-                        <thead className="top-bar">
-                            <tr className="tr">
-                                <th></th>
-                                <th className="game-time">10:00pm ET</th>
-                                 <th></th>
-                            </tr>
-                        </thead>
-                        <tbody className="game-body">
-                            <tr><td></td></tr>
-                            <tr className="logos">
-                                <td className="logo1" ><img className="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/phx.png&amp;w=56&amp;h=56" alt="logo1"/></td>
-                                <td className="versus-text">  <h3>VS </h3>   </td>
-                                <td className="logo2" ><img className="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/lac.png&amp;w=56&amp;h=56" alt="logo2"/></td>
-                            </tr>
-                            <tr className="names">
-                             <td className="team-name1" ><b>SUNS</b></td>
-                             <td></td>
-                             <td className="team-name2" ><b>CLIPPERS</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-               
-            
+        <div className="featured-game">
+
+          <div className="game-home-account">
+
+            <table className="game-phx-lac" >
+
+              <thead className="top-bar">
+                <tr>
+                  <th className="game-time" colSpan='3'>8:00pm MST</th>
+                </tr>
+              </thead>
+
+              <tbody className="game-body">
+                <tr>
+                  <td className="logo-container-home-page"><img src="../../img/profile-pics/lakers.svg" alt="logo1"/></td>
+                  <td className="versus-text">VS</td>
+                  <td className="logo-container-home-page"><img src="../../img/profile-pics/celtics.svg" alt="logo2"/></td>
+                </tr>
+
+                <tr>
+                  <td className="team-name-home-page">LAKERS</td>
+                  <td/>
+                  <td className="team-name-home-page">CELTICS</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>   
+              
+        </div>
        
       </div>
 

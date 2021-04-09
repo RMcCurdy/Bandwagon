@@ -85,7 +85,7 @@
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1vw);
   /* grid-template-columns: repeat(3); */
   grid-gap: 1em;
   /* justify-items: space-around; */
