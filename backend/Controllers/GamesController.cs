@@ -48,26 +48,18 @@ namespace NBAapi.Controllers
         public List<GameDateResponse> GameDates()
         {
             var gamedates = from g in _context.Games
-                        select new GameDateResponse
-                        {
-                            GameDate = g.GameDate
-                        };
+                            select new GameDateResponse
+                            {
+                                GameDate = g.GameDate
+                            };
 
             return gamedates.Distinct().OrderBy(g => g.GameDate).ToList();
         }
 
 
-
-
-
-
-
-
-
-        // GET: api/Games/15
         [HttpGet("{gameDateInt}/{accountId}")]
-       
-         public async Task<IEnumerable<GameResponse>> GetGames(int gameDateInt, int accountId)
+
+        public async Task<IEnumerable<GameResponse>> GetGames(int gameDateInt, int accountId)
         {
             var games = from g in _context.Games
                         join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
@@ -94,7 +86,90 @@ namespace NBAapi.Controllers
                             VotedForTeamId = vts == null ? 0 : vts.VotedForTeamId
                         };
 
-            return await games.ToListAsync();
+            var gamesResp = await games.ToListAsync();
+
+            return gamesResp;
+        }
+
+        // GET: api/v2/Games/15
+        [HttpGet("v2/{gameDateInt}/{accountId}")]
+
+        public async Task<IEnumerable<GameResponse>> GetGames2(int gameDateInt, int accountId)
+        {
+            // get games for this game date // eg get games for april 15
+            var gamesTeams = from g in _context.Games
+                             join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
+                             join tnvis in _context.Teams on g.VisitorTeamId equals tnvis.Id
+                             where (g.GameDate == gameDateInt)
+                             select new GameResponse
+                             {
+                                 Id = g.Id,
+                                 HomeTeamId = g.HomeTeamId,
+                                 VisitorTeamId = g.VisitorTeamId,
+                                 HomePercent = g.HomePercent,
+                                 VisitorPercent = g.VisitorPercent,
+                                 HomePointsPayout = g.HomePointsPayout,
+                                 VisitorPointsPayout = g.VisitorPointsPayout,
+                                 HomeFinalScore = g.HomeFinalScore,
+                                 VisitorFinalScore = g.VisitorFinalScore,
+                                 GameTime = g.GameTime,
+                                 GameDate = g.GameDate,
+                                 HomeTeamName = tnhome.TeamName,
+                                 VisitorTeamName = tnvis.TeamName,
+                                 VotedAccountId = accountId,
+                                 VotedForTeamId = 0
+                             };
+
+            var gameCount = gamesTeams.Count();
+
+            // from https://stackoverflow.com/questions/5765785/add-elements-to-object-array/34724136
+            // List<Subject> subjects = new List<Subject>();
+            // subjects.add(new Subject{....});
+            List<GameResponse> gameResponseLoop = new List<GameResponse>();
+            foreach (var g in gamesTeams)
+            {
+                // get the vote for this game from this user, if it exists (get 0 if not exist)
+                var returnedVotedForTeamId = await GetUserVoteForGame(g.Id, accountId);
+
+                gameResponseLoop.Add(new GameResponse
+                {
+                    Id = g.Id,
+                    HomeTeamId = g.HomeTeamId,
+                    VisitorTeamId = g.VisitorTeamId,
+                    HomePercent = g.HomePercent,
+                    VisitorPercent = g.VisitorPercent,
+                    HomePointsPayout = g.HomePointsPayout,
+                    VisitorPointsPayout = g.VisitorPointsPayout,
+                    HomeFinalScore = g.HomeFinalScore,
+                    VisitorFinalScore = g.VisitorFinalScore,
+                    GameTime = g.GameTime,
+                    GameDate = g.GameDate,
+                    HomeTeamName = g.HomeTeamName,
+                    VisitorTeamName = g.VisitorTeamName,
+                    VotedAccountId = accountId,
+                    VotedForTeamId = returnedVotedForTeamId
+                });
+            }
+
+            var gameResponseLoopCount = gameResponseLoop.Count();
+
+            var gamesResp = gameResponseLoop;
+
+            return gamesResp;
+        }
+        private async Task<int> GetUserVoteForGame(int gameId, int accountId)
+        {
+            var vote = await _context.Votes.Where(v => v.GameId == gameId && v.AccountId == accountId).FirstOrDefaultAsync();
+            if (vote == null)
+            {
+                // VotedForTeamId = 0
+                return 0;
+            }
+            else
+            {
+                // VotedForTeamId = 0
+                return vote.VotedForTeamId;
+            }
         }
 
         // PUT: api/Games/5
@@ -130,7 +205,7 @@ namespace NBAapi.Controllers
 
         // POST: api/Games
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost] //post a single game
         public async Task<ActionResult<Game>> PostGame(Game game)
         {
             _context.Games.Add(game);
@@ -138,6 +213,33 @@ namespace NBAapi.Controllers
 
             return CreatedAtAction("GetGame", new { id = game.Id }, game);
         }
+
+        [HttpPost] //post a single game
+        [Route("savescores")]
+        public async Task<string> PostGameScores(List<Game> gamesList)  //public async Task<IEnumerable<GameResponse>> GetGames2(int gameDateInt, int accountId)
+        {
+
+            foreach (var g in gamesList)
+            {
+                // var gameId = g.Id;
+                // var homeFinalScore = g.HomeFinalScore;
+                // var visitorFinalScore = g.VisitorFinalScore;
+
+                var game = await _context.Games.FindAsync(g.Id);
+                if (game != null)
+                {
+                    game.HomeFinalScore = g.HomeFinalScore;
+                    game.VisitorFinalScore = g.VisitorFinalScore;
+
+                    _context.Games.Update(game);
+                }
+            }
+            await _context.SaveChangesAsync();
+
+            return "successfully saved scores";
+        }
+
+
 
         // DELETE: api/Games/5
         [HttpDelete("{id}")]

@@ -42,20 +42,14 @@ const GameCard = (props) => {
                         <td className='team-name-left'>{homeTeamName}</td>
                         <td className='pred-win'>{homeWinPercent}</td>
                         <td rowSpan='2'>
-                            {/* <Votes
-                                accountId={accountId}
-                                gameId={gameId}
-                                homeTeamId={homeTeamId}
-                                visitorTeamId={visitorTeamId}
-                                votedForTeamId={votedForTeamId}
-                            /> */}
-                            <Votes
-                                accountId={accountId}
-                                gameId={gameId}
-                                homeTeamId={homeTeamId}
-                                visitorTeamId={visitorTeamId}
-                                votedForTeamId={votedForTeamId}
-                            />
+                                <Votes
+                                    accountId={accountId}
+                                    gameId={gameId}
+                                    homeTeamId={homeTeamId}
+                                    visitorTeamId={visitorTeamId}
+                                    votedForTeamId={votedForTeamId}
+                                    isDisabled={(homeFinalScore > 0 || visitorFinalScore > 0) ? 'disabled' : ''}
+                                />  
                         </td>
                         <td className='team-score'>{homeFinalScore}</td>
                     </tr>
@@ -71,7 +65,6 @@ const GameCard = (props) => {
                             {props.visitorTeamName}
                         </td>
                         <td className='pred-lose'>{visitorWinPercent}</td>
-                        {/* <td>removed due to rowspan=2</td> */}
                         <td className='team-score'>{visitorFinalScore}</td>
                     </tr>
                 </tbody>

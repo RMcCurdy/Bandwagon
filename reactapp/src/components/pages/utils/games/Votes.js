@@ -7,6 +7,7 @@ const Votes = (props) => {
     const homeTeamId = props.homeTeamId;
     const visitorTeamId = props.visitorTeamId;
     const originalVoteForTeamId = props.votedForTeamId;
+    const isDisabled = props.isDisabled;
     //==========================================
 
     const [newVoteForTeamId, setNewVoteForTeamId] = useState(originalVoteForTeamId);
@@ -61,18 +62,20 @@ const Votes = (props) => {
                 <button
                     value={homeTeamId}
                     onClick={(e) => {handleVoteClick(e.target.value);}}
-                    className={`${
+                    className={`${isDisabled} ${
                         homeTeamId === newVoteForTeamId
                             ? 'vote-button voted-for'
                             : 'vote-button not-voted-for'
-                    }`}>
+                    }`}
+                    
+                    >
                     {homeTeamId === newVoteForTeamId ? '✔️' : 'vote'}
                 </button>
                 <div style={{ marginBottom: '8px' }}></div>
                 <button
                     value={visitorTeamId}
                     onClick={(e) => {handleVoteClick(e.target.value);}}
-                    className={`${
+                    className={`${isDisabled} ${
                         visitorTeamId === newVoteForTeamId
                             ? 'vote-button voted-for'
                             : 'vote-button not-voted-for'

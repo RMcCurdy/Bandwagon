@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { format } from 'date-fns'
+import { format } from 'date-fns';
+import { sha256 } from 'js-sha256';
 
 import AppContext from '../../../context/AppContext';
 
@@ -13,19 +14,25 @@ const Login = () => {
   const login = () => {
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
+    const passhash = sha256(pass);
 
+    const shaw256TestPassword = sha256('1111');
+
+    // eslint-disable-next-line
     const loginPerson = {
       email: email,
-      password: pass
+      password: passhash
     };
     //TODO need to delete this for final version
+    // eslint-disable-next-line
     const loginPersonUser = {
       email: 'robert@test.com',
-      password: '1111'
+      password: shaw256TestPassword
     };
+    // eslint-disable-next-line
     const loginPersonAdmin = {
       email: 'admin@test.com',
-      password: '1111'
+      password: shaw256TestPassword
     };
 
     return axios.post('http://localhost:5000/api/Auth', loginPersonUser)
