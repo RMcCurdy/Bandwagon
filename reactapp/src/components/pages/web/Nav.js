@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
 import { NavLink } from "react-router-dom";
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function Nav() {
   const {isLoggedIn, isAdmin, firstName, totalPointsBalance} = useContext(AppContext);
@@ -37,7 +40,7 @@ function Nav() {
 
   const loggedIn = <div style={{minWidth: '400px'}}>
   <ul className ="nav-list login-logout">
-  <NavLink to="/profile" className="nav-tabs" activeClassName="active">Hello, {firstName} <div className="my-points-balance">My Points: {totalPointsBalance}</div></NavLink>
+  <NavLink to="/profile" className="nav-tabs" activeClassName="active">Hello, {firstName} <div className="my-points-balance">My Points: {numberWithCommas(totalPointsBalance)}</div></NavLink>
   
   <li><NavLink to="/logout" className="btn login" activeClassName="active">SIGN OUT</NavLink></li>
   </ul>

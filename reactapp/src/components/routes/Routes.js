@@ -18,6 +18,7 @@ import ForgotPassSent from '../pages/utils/ForgotPassSent';
 import AuthRoute from './AuthRoute';
 import AdminRoute from './AdminRoute';
 import EditProfile from '../pages/user/EditProfile';
+import ShopSuccess from '../pages/utils/shop/ShopSuccess';
 
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
@@ -45,6 +46,7 @@ function Routes() {
         <AuthRoute path="/editprofile" exact  component={EditProfile} isSignedIn={isLoggedIn} />
         <AuthRoute path="/games" exact component={Games} isSignedIn={isLoggedIn} />
         <AuthRoute path="/shop" exact component={Shop} isSignedIn={isLoggedIn} />
+        <AuthRoute path="/shopsuccess" exact component={ShopSuccess} isSignedIn={isLoggedIn} />
         <AuthRoute path="/badges" exact component={Badges} isSignedIn={isLoggedIn} />
 
 

@@ -21,10 +21,12 @@ const AppState = (props) => {
   const [gameDates, setGameDates] = useState([]);
   const [gameDate, setGameDate] = useState(0);
   const [gameData, setGameData] = useState([]);
+  const [merchandise, setMerchandise] = useState([]);
   const [teams, setTeams] = useState([]);
+  const [orderId, setOrderId] = useState(0);
 
   return (
-    <AppContext.Provider value={{id, setId, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, totalPointsBalance, setTotalPointsBalance, totalPointsSpent, setTotalPointsSpent, totalPointsEarned, setTotalPointsEarned, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, dateCreated, setDateCreated, topBadge, setTopBadge, message, setMessage, lboard, setLboard, gameDates, setGameDates, gameDate, setGameDate, gameData, setGameData, teams, setTeams}}>
+    <AppContext.Provider value={{id, setId, firstName, setFirstName, lastName, setLastName, username, setUserName, email, setEmail, totalPointsBalance, setTotalPointsBalance, totalPointsSpent, setTotalPointsSpent, totalPointsEarned, setTotalPointsEarned, isLoggedIn, setIsLoggedIn, isAdmin, setIsAdmin, profilePic, setProfilePic, dateCreated, setDateCreated, topBadge, setTopBadge, message, setMessage, lboard, setLboard, gameDates, setGameDates, gameDate, setGameDate, gameData, setGameData, merchandise, setMerchandise, teams, setTeams, orderId, setOrderId}}>
       {props.children}  
     </AppContext.Provider>
   );

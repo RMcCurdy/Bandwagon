@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -76,12 +77,38 @@ namespace NBAapi.Controllers
         // POST: api/OrderLineItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<OrderLineItem>> PostOrderLineItem(OrderLineItem orderLineItem)
+        public async Task<ActionResult<int>> PostOrderLineItem(OrderRequest orderRequest)
         {
-            _context.OrderLineItems.Add(orderLineItem);
+            var newOrder = (new Order()
+                {
+                    OrderDate = DateTime.Now,
+                    OrderTotal = 0,
+                    AccountId = orderRequest.AccountId
+                });
+
+            _context.Orders.Add(newOrder);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrderLineItem", new { id = orderLineItem.Id }, orderLineItem);
+            var newOrderId = newOrder.Id;
+
+            var newOrderItem = (new OrderLineItem()
+                {
+                    ItemName = orderRequest.ItemName,
+                    Price = orderRequest.Price,
+                    Quantity = orderRequest.Quantity,
+                    Subtotal = orderRequest.Subtotal,
+                    MerchandiseIdRef = orderRequest.MerchandiseIdRef,
+                    OrderId = newOrderId
+                });
+
+            _context.OrderLineItems.Add(newOrderItem);
+            await _context.SaveChangesAsync();
+
+            newOrder.OrderTotal = newOrderItem.Price;            
+            await _context.SaveChangesAsync();
+
+            // return CreatedAtAction("OrderCreated", new { id = newOrderId });
+            return newOrderId;
         }
 
         // DELETE: api/OrderLineItems/5

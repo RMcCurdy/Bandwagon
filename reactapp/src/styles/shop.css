@@ -67,13 +67,13 @@
 }
 
 .title {
+  padding-top: 0.5em;
   padding-left: 10px;
   padding-right: 10px;
   height: 40px;
 }
 
-
-.card button {
+.btn-shop {
   border: none;
   outline: 0;
   padding: 6px;
@@ -81,8 +81,14 @@
   background-color: hsl(29, 97%, 55%);
   text-align: center;
   cursor: pointer;
+  font-family: inherit;
   width: 100%;
   font-size: 1em;
+}
+
+.btn-shop-confirm {
+  font-size: 0.8em;
+  background-color: rgb(56, 192, 56);
 }
 
 .card button:hover {
