@@ -53,7 +53,7 @@ namespace NBAapi.Controllers
                             GameDate = g.GameDate
                         };
 
-            return gamedates.Distinct().ToList();
+            return gamedates.Distinct().OrderBy(g => g.GameDate).ToList();
         }
 
 
