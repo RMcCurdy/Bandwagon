@@ -46,9 +46,10 @@ const Votes = (props) => {
                             : 'vote-button not-voted-for'
                     }`}>
                     {props.homeTeamId === voteRef.current
-                        ? `✔️ ${props.accountId} g${props.gameId}|${props.homeTeamId}`
-                        : `usr ${props.accountId} g${props.gameId}|${props.homeTeamId}`}
+                        ? `✔️`
+                        : `vote`}
                 </button>
+                {/* usr ${props.accountId} g${props.gameId}|${props.homeTeamId} */}
                 <div style={{ marginBottom: '8px' }}></div>
                 <button
                     disabled={props.isVotingDisabled}
@@ -67,9 +68,10 @@ const Votes = (props) => {
                             : 'vote-button not-voted-for'
                     }`}>
                     {visitorTeamId === voteRef.current
-                        ? `✔️ ${props.accountId} g${props.gameId}|${props.visitorTeamId}`
-                        : `usr ${props.accountId} g${props.gameId}|${props.visitorTeamId}`}
+                        ? `✔️`
+                        : `vote`}
                 </button>
+                {/* usr ${props.accountId} g${props.gameId}|${props.visitorTeamId} */}
             </div>
         </>
     );

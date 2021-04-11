@@ -105,8 +105,8 @@ const GameCard = (props) => {
                 <thead className='top-bar'>
                     <tr>
                         <th className='game-time' colSpan='2'>
-                            {/* {gameTime} */}
-                            {props.gameDate} | #{props.gameId}
+                            {gameTime}
+                            {/* {props.gameDate} | #{props.gameId} */}
                         </th>
                         <th className='our-prediction'>Win %</th>
                         <th className='vote'>Vote</th>
