@@ -91,7 +91,7 @@
   background-color: rgb(56, 192, 56);
 
   /* Initially we don't want any height, and we want the contents to be hidden */
-  /* max-height: 0; */
+  /* height: 0; */
   /* overflow: hidden; */
 
   /* Set our transitions up. */
@@ -99,9 +99,10 @@
   /* -moz-transition: max-height 0.8s; */
   /* transition: max-height 0.8s; */
 }
-.btn-shop-confirm-show {
-  max-height: 20px;
-}
+
+/* .btn-shop-confirm-show {
+  height: 20px;
+} */
 
 .card button:hover {
   opacity: 0.7;
