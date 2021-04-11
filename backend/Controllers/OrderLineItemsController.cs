@@ -77,7 +77,7 @@ namespace NBAapi.Controllers
         // POST: api/OrderLineItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<int>> PostOrderLineItem(OrderRequest orderRequest)
+        public async Task<ActionResult<OrderResponse>> PostOrderLineItem(OrderRequest orderRequest)
         {
             var newOrder = (new Order()
                 {
@@ -108,7 +108,14 @@ namespace NBAapi.Controllers
             await _context.SaveChangesAsync();
 
             // return CreatedAtAction("OrderCreated", new { id = newOrderId });
-            return newOrderId;
+
+            var orderResponse = (new OrderResponse()
+            {
+                OrderId = newOrderId,
+                OrderTotal = newOrder.OrderTotal
+            });
+
+            return orderResponse;
         }
 
         // DELETE: api/OrderLineItems/5

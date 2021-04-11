@@ -35,7 +35,7 @@ const Login = () => {
       password: shaw256TestPassword
     };
 
-    return axios.post('http://localhost:5000/api/Auth', loginUser)
+    return axios.post('http://localhost:5000/api/Auth', loginAdmin)
     .then(resp => {
       const success = resp.data.success;
       console.log(success);

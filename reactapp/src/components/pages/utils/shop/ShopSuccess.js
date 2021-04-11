@@ -5,6 +5,8 @@ const ShopSuccess = () => {
   return (
     <>
     <h1>Thanks for shopping!</h1>
+    <h2>Your order will arrive in 3-5 business days</h2>
+    <h2>An email has been sent to you with your order details</h2>
     <img src={'/img/gifs/truck.gif'} alt="truck"/>
     <br/>
     <div className="shop-success">
