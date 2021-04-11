@@ -43,7 +43,7 @@ const AdminScoreContainer = () => {
                 // alignItems: 'center',
                 width: '800px',
                 margin: '0 auto',
-                border: '2px solid purple',
+                border: '2px solid #6b6b6b',
                 borderRadius: '1.5rem',
                 padding: '1em',
                 // margin: '6em',
@@ -51,7 +51,7 @@ const AdminScoreContainer = () => {
             <h4>Hello Admin, select a Date, then update the scores.</h4>
             <GameDateDropdown handleGameDateSelect={handleGameDateSelect} />
             <div>
-                {gameData.length > 0 ? (                  
+                {gameData.length > 0 ? (
                     <AdminScoreItemList />
                 ) : (
                     <p>Please select a date above.</p>

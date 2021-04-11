@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import AdminScoreItem from './AdminScoreItem';
+import AdminRecalcPayouts from './AdminRecalcPayouts';
 
 const AdminScoreItemList = (props) => {
     const { id, gameData, setGameData, gameDate } = useContext(AppContext);
@@ -40,20 +41,32 @@ const AdminScoreItemList = (props) => {
 
     return (
         <>
-            <p>JSON game data is:</p>
-            <pre>{JSON.stringify({ gameData })}</pre>
+            {/* <p>JSON game data is:</p> */}
+            {/* <pre>{JSON.stringify({ gameData })}</pre> */}
             <div
                 style={{
                     justifyContent: 'center',
                     alignItems: 'center',
                     width: '600px',
                     margin: '0 auto',
-                    border: '2px solid blue',
+                    border: '2px solid #FF962C',
+                    backgroundColor: '#fff',
                     borderRadius: '1.5rem',
                     padding: '0em',
                     // margin: '6em',
                 }}>
-                <div>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
+                    <div
+                        style={{
+                            marginTop: '1rem',
+                            // border: '2px solid green',
+                        }}></div>
                     {gameData ? (
                         gameData.map((row, idx) => {
                             return (
@@ -81,7 +94,25 @@ const AdminScoreItemList = (props) => {
                         <p>loading...</p>
                     )}
                 </div>
-                <button onClick={handleSaveScores}>Save Scores</button>
+                <div
+                    style={{
+                        marginTop: '1.5rem',
+                        marginBottom: '2rem',
+                    }}>
+                    <button
+                        className='btn login'
+                        style={{
+                            border: '2px solid #FFCB99',
+                            boxShadow: '2px 4px 5px grey',
+                            fontFamily: 'inherit'
+                        }}
+                        onClick={handleSaveScores}>
+                        Save Scores
+                    </button>
+                </div>
+                <div>
+                    <AdminRecalcPayouts />
+                </div>
             </div>
         </>
     );

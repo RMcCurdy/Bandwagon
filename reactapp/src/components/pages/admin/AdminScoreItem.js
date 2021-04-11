@@ -60,8 +60,8 @@ const AdminScoreItem = (props) => {
         // <p>
         //     gameDate: {gameDate}, gameId: {gameId}, acctId: {accountId}
         // </p>
-        <div className='game'>
-            <pre>{JSON.stringify({ gameData })}</pre>
+        <div className='game' style={{ margin: '0.5rem auto' }}>
+            {/* <pre>{JSON.stringify({ gameData })}</pre> */}
             <table cellSpacing='8' className='game-module'>
                 <thead className='top-bar'>
                     <tr>

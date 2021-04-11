@@ -1,33 +1,33 @@
-.shop{
+.shop {
   margin: 80px auto;
   padding-left: 5%;
-  padding-right: 5%;  
+  padding-right: 5%;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-  
-.shop-header{
+
+.shop-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-  
+
 .purchase-history-btn {
   cursor: pointer;
   border-radius: 1em;
   border: 0;
   margin-top: 0.6em;
   font-size: 1em;
-  
+
   color: hsl(0, 0%, 22%);
-  background-color:none;
+  background-color: none;
 }
-  
+
 .purchase-history-btn:hover,
 .purchase-history-btn:focus {
-  color: hsl(0,0%, 42%);
+  color: hsl(0, 0%, 42%);
 }
-  
+
 .shop-tabs {
   display: inline-block;
   text-align: center;
@@ -42,7 +42,7 @@
   margin-left: 0.2em;
   font-size: 1.2em;
   color: black;
-  background-color:none;
+  background-color: none;
 }
 
 .shop-btn:hover,
@@ -60,20 +60,20 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   max-width: 140px;
-  min-width: 120px; 
+  min-width: 120px;
   background-color: #fff;
   padding: 5px, 10px;
   text-align: center;
 }
 
-h3 {
+.title {
+  padding-top: 0.5em;
   padding-left: 10px;
   padding-right: 10px;
   height: 40px;
 }
 
-
-.card button {
+.btn-shop {
   border: none;
   outline: 0;
   padding: 6px;
@@ -81,74 +81,87 @@ h3 {
   background-color: hsl(29, 97%, 55%);
   text-align: center;
   cursor: pointer;
+  font-family: inherit;
   width: 100%;
   font-size: 1em;
+}
+
+.btn-shop-confirm {
+  font-size: 0.8em;
+  background-color: rgb(56, 192, 56);
+
+  /* Initially we don't want any height, and we want the contents to be hidden */
+  /* max-height: 0; */
+  /* overflow: hidden; */
+
+  /* Set our transitions up. */
+  /* -webkit-transition: max-height 0.8s; */
+  /* -moz-transition: max-height 0.8s; */
+  /* transition: max-height 0.8s; */
+}
+.btn-shop-confirm-show {
+  max-height: 20px;
 }
 
 .card button:hover {
   opacity: 0.7;
 }
 
-.shop-box { 
+.shop-box {
   margin-left: auto;
   margin-right: auto;
-  width: 4em; 
-  height: 4em;   
+  width: 4em;
+  height: 4em;
 }
 
-
-@media only screen and (min-width: 400px) {  
+@media only screen and (min-width: 400px) {
   .shop-btn {
-    padding-right: 0.2em;
-    padding-left: 0.2em;
-    font-size: 1.2em;
+      padding-right: 0.2em;
+      padding-left: 0.2em;
+      font-size: 1.2em;
   }
 }
 
 @media only screen and (min-width: 500px) {
   .shop-btn {
-    padding-right: 0.2em;
-    padding-left: 0.2em;
-    font-size: 1.5em;
+      padding-right: 0.2em;
+      padding-left: 0.2em;
+      font-size: 1.5em;
   }
 }
 
 @media only screen and (min-width: 600px) {
   .cards-grid {
-    grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
   }
   .shop-btn {
-    padding-right: 0.4em;
-    padding-left: 0.4em;
-    font-size: 1.5em;
+      padding-right: 0.4em;
+      padding-left: 0.4em;
+      font-size: 1.5em;
   }
 }
 
 @media only screen and (min-width: 800px) {
   .cards-grid {
-    grid-template-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
   }
   .shop-btn {
-    padding-right: 0.3em;
-    padding-left: 0.3em;
-    font-size: 1.5em;
+      padding-right: 0.3em;
+      padding-left: 0.3em;
+      font-size: 1.5em;
   }
 }
 
 @media only screen and (min-width: 1000px) {
   .shop-btn {
-    padding-right: 0.6em;
-    font-size: 1.5em;
+      padding-right: 0.6em;
+      font-size: 1.5em;
   }
-  .shop{
-    margin: 80px auto;
-    padding-left: 20%;
-    padding-right: 20%;  
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }  
+  .shop {
+      margin: 80px auto;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+  }
 }
-
-
-
-

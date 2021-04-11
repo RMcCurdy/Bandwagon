@@ -12,6 +12,7 @@ function Admin() {
             <AdminRecalc />
             <hr />
             <AdminScoreContainer />
+            <hr />
         </>
     ) : (
         <Redirect to='/notauthorized' />
