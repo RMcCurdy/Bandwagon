@@ -25,17 +25,17 @@ const Login = () => {
     };
     //TODO need to delete this for final version
     // eslint-disable-next-line
-    const loginPersonUser = {
+    const loginUser = {
       email: 'robert@test.com',
       password: shaw256TestPassword
     };
     // eslint-disable-next-line
-    const loginPersonAdmin = {
+    const loginAdmin = {
       email: 'admin@test.com',
       password: shaw256TestPassword
     };
 
-    return axios.post('http://localhost:5000/api/Auth', loginPersonUser)
+    return axios.post('http://localhost:5000/api/Auth', loginUser)
     .then(resp => {
       const success = resp.data.success;
       console.log(success);

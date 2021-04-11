@@ -25,7 +25,7 @@ const AdminScoreItemList = (props) => {
     // useEffect(() => {
     //     if (gameData > 0) {
     //         axios
-    //             .get(`http://localhost:5000/api/Games/v2/${gameDate}/${id}`)
+    //             .get(`http://localhost:5000/api/Games/${gameDate}/${id}`)
     //             .then((resp) => {
     //                 console.log(
     //                     'AdminScoreList > games response is: ',

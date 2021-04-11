@@ -27,6 +27,20 @@
   padding: 0;
 }
 
+.vote-locked-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.1rem;
+  width: 2.8rem;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(144, 205, 255);
+  border: 2px solid rgb(57, 142, 240);
+  border-radius: 10px;
+  cursor: no-drop;
+}
+
 .voted-for {
   background-color: rgb(110, 255, 110);
   border: 2px solid rgb(69, 190, 69);

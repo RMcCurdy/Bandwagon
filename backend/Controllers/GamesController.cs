@@ -57,42 +57,8 @@ namespace NBAapi.Controllers
         }
 
 
+        // back to api/games/15
         [HttpGet("{gameDateInt}/{accountId}")]
-
-        public async Task<IEnumerable<GameResponse>> GetGames(int gameDateInt, int accountId)
-        {
-            var games = from g in _context.Games
-                        join tnhome in _context.Teams on g.HomeTeamId equals tnhome.Id
-                        join tnvis in _context.Teams on g.VisitorTeamId equals tnvis.Id
-                        join vts in _context.Votes on g.Id equals vts.GameId into gamesGroup
-                        from vts in gamesGroup.DefaultIfEmpty()
-                        where (g.GameDate == gameDateInt) && (vts.AccountId == accountId || vts == null)
-                        select new GameResponse
-                        {
-                            Id = g.Id,
-                            HomeTeamId = g.HomeTeamId,
-                            VisitorTeamId = g.VisitorTeamId,
-                            HomePercent = g.HomePercent,
-                            VisitorPercent = g.VisitorPercent,
-                            HomePointsPayout = g.HomePointsPayout,
-                            VisitorPointsPayout = g.VisitorPointsPayout,
-                            HomeFinalScore = g.HomeFinalScore,
-                            VisitorFinalScore = g.VisitorFinalScore,
-                            GameTime = g.GameTime,
-                            GameDate = g.GameDate,
-                            HomeTeamName = tnhome.TeamName,
-                            VisitorTeamName = tnvis.TeamName,
-                            VotedAccountId = vts == null ? 0 : vts.AccountId,
-                            VotedForTeamId = vts == null ? 0 : vts.VotedForTeamId
-                        };
-
-            var gamesResp = await games.ToListAsync();
-
-            return gamesResp;
-        }
-
-        // GET: api/v2/Games/15
-        [HttpGet("v2/{gameDateInt}/{accountId}")]
 
         public async Task<IEnumerable<GameResponse>> GetGames2(int gameDateInt, int accountId)
         {

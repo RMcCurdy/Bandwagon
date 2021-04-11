@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import axios from 'axios';
 
 const Votes = (props) => {
@@ -7,50 +7,20 @@ const Votes = (props) => {
     const homeTeamId = props.homeTeamId;
     const visitorTeamId = props.visitorTeamId;
     const originalVoteForTeamId = props.votedForTeamId;
-    const isDisabled = props.isDisabled;
+    const isvotingDisabled = props.isVotingDisabled;
     //==========================================
 
-    const [newVoteForTeamId, setNewVoteForTeamId] = useState(originalVoteForTeamId);
+    const voteRef = useRef(props.votedForTeamId);
+    voteRef.current = props.votedForTeamId;
 
-    const voteRef = useRef(originalVoteForTeamId);
-    // voteRef.current = originalVoteForTeamId;
+    // useEffect(() => {
+    //     // const handleVoteClickaddTwo = (e) => {
+    //     //     return setCount(e.target.value);
+    //     // };
 
-    const handleVoteClick = (newVoteId) => {
-        voteRef.current = newVoteId;
-        console.log('handleVoteClick > newVoteId is: ', newVoteId);
-        console.log('handleVoteClick > voteRef.current is: ', voteRef.current);
-
-        //create request obj
-        const gameVoteRequest = {
-            accountId: accountId,
-            gameId: gameId,
-            votedForTeamId: newVoteId,
-        };
-        console.log('gameVoteRequest obj is: ', gameVoteRequest);
-
-        axios
-            .post(`http://localhost:5000/api/votes/`, gameVoteRequest)
-            .then((resp) => {
-                const votedForTeamIdReturnedFromDatabase = resp.data;
-                console.log(
-                    'votedForTeamIdReturnedFromDatabase response is: ',
-                    votedForTeamIdReturnedFromDatabase,
-                ); //14
-                // finally, once the data has come back from the api votes table
-                setNewVoteForTeamId(
-                    votedForTeamIdReturnedFromDatabase.votedForTeamId,
-                );
-            });
-    };
-
-    useEffect(() => {
-        // const handleVoteClickaddTwo = (e) => {
-        //     return setCount(e.target.value);
-        // };
-
-        // document.title = `Voted for TeamId ${newVoteForTeamId}`;
-        console.log('useEffect received vote id update :', newVoteForTeamId );
-    }, [newVoteForTeamId]);
+    //     // document.title = `Voted for TeamId ${newVoteForTeamId}`;
+    //     console.log('Votes > useEffect > newVoteForTeamId :', voteRef.current);
+    // }, [voteRef]);
 
     return (
         <>
@@ -60,27 +30,45 @@ const Votes = (props) => {
             </div> */}
             <div>
                 <button
-                    value={homeTeamId}
-                    onClick={(e) => {handleVoteClick(e.target.value);}}
-                    className={`${isDisabled} ${
-                        homeTeamId === newVoteForTeamId
-                            ? 'vote-button voted-for'
-                            : 'vote-button not-voted-for'
-                    }`}
-                    
-                    >
-                    {homeTeamId === newVoteForTeamId ? '✔️' : 'vote'}
-                </button>
-                <div style={{ marginBottom: '8px' }}></div>
-                <button
-                    value={visitorTeamId}
-                    onClick={(e) => {handleVoteClick(e.target.value);}}
-                    className={`${isDisabled} ${
-                        visitorTeamId === newVoteForTeamId
+                    disabled={props.isVotingDisabled}
+                    value={props.homeTeamId}
+                    onClick={(e) => {
+                        props.handleVoteClick(
+                            props.accountId,
+                            props.gameId,
+                            e.target.value,
+                            props.gameDate,
+                        );
+                    }}
+                    className={`${
+                        props.homeTeamId === voteRef.current
                             ? 'vote-button voted-for'
                             : 'vote-button not-voted-for'
                     }`}>
-                    {visitorTeamId === newVoteForTeamId ? '✔️' : 'vote'}
+                    {props.homeTeamId === voteRef.current
+                        ? `✔️ ${props.accountId} g${props.gameId}|${props.homeTeamId}`
+                        : `usr ${props.accountId} g${props.gameId}|${props.homeTeamId}`}
+                </button>
+                <div style={{ marginBottom: '8px' }}></div>
+                <button
+                    disabled={props.isVotingDisabled}
+                    value={props.visitorTeamId}
+                    onClick={(e) => {
+                        props.handleVoteClick(
+                            props.accountId,
+                            props.gameId,
+                            e.target.value,
+                            props.gameDate,
+                        );
+                    }}
+                    className={`${
+                        props.visitorTeamId === voteRef.current
+                            ? 'vote-button voted-for'
+                            : 'vote-button not-voted-for'
+                    }`}>
+                    {visitorTeamId === voteRef.current
+                        ? `✔️ ${props.accountId} g${props.gameId}|${props.visitorTeamId}`
+                        : `usr ${props.accountId} g${props.gameId}|${props.visitorTeamId}`}
                 </button>
             </div>
         </>
