@@ -6,7 +6,8 @@ const ShopSuccess = () => {
     <>
     <h1>Thanks for shopping!</h1>
     <img src={'/img/gifs/truck.gif'} alt="truck"/>
-    <div>
+    <br/>
+    <div className="shop-success">
       <Link to="/account" className="nav-tabs">Go to Home</Link>
       <Link to="/shop" className="nav-tabs">Shop More</Link>
     </div>

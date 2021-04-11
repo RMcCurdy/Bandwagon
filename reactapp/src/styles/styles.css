@@ -110,6 +110,10 @@ button:focus {
   font-size: 1rem;
 }
 
+.shop-success {
+  padding-top: 1.5em;
+}
+
 .my-points-balance {
   font-size: 0.75em;
   color: rgb(255, 145, 0);
