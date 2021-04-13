@@ -14,123 +14,139 @@
 <body>
   <header class="full-screen-header">
     <nav class="nav nav-top">
-      <span class="app-name-header"><img class="logo" src="img/orange.png" alt="Product Logo">Bandwagon</span>
+      <span class="app-name-header">
+        <img class="logo" src="img/orange.png" alt="Product Logo">
+        <span class="nav-app-name">Bandwagon</span>
+      </span>
+      <button onclick="myFunction()" class="mobile-menu">≡</button>
       <span class="tabs">
-       
+        <button class="nav-tabs">HOME</button>
+        <button class="nav-tabs">STANDINGS</button>
+        <button class="nav-tabs">GAMES</button>
+        <button class="nav-tabs">LEADERBOARD</button>
       </span>
       <ul class="nav-list">
         <li><button class="btn login">LOG IN</button></li>
         <li><button class="btn signup">SIGN UP</button></li>
       </ul>
+      <nav id="dropdown" class="dropdown">
+        <ul class="tabs-list">
+          <li><button class="nav-btn btn">HOME</button></li>
+          <li><button class="nav-btn btn">STANDINGS</button></li>
+          <li><button class="nav-btn btn">GAMES</button></li>
+          <li><button class="nav-btn btn">LEADERBOARD</button></li>
+          <li><button class="nav-btn btn">LOG IN</button></li>
+          <li><button class="nav-btn btn">SIGN UP</button></li>
+        </ul>
+      </nav>
+
     </nav>
+
+    <script>
+      function myFunction() {
+        document.getElementById("dropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.mobile-menu')) {
+          var dropdowns = document.getElementsByClassName("tabs");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+
+
   </header>
   <main>
     <div class="homepage">
-      
-     <!-- <span class="homepage-header">
-        <h1>HOMEPAGE</h1>
-      </span>-->
 
-       <div class="news-title">
+      <div class="news-title">
         <h3>NEWS</h3>
       </div>
 
-
-
-      <div class="news-grid" style="clear:both">
-
-        <div class="news-item">
-          <img class="news-image" src="img/homepage/anunoby.jpg"></img>
-          <div class="news-info">
-            <h3 class="news-info-title">Anunoby Ejected </h3>
-             <p class="news-text">
-              OG Anunoby was ejected after an altercation with Harrell.
-            </p>
+      <div class="news-container">
+        <div class="news-grid" style="clear:both">
+          <div class="news-item">
+            <img class="news-image" src="img/homepage/anunoby.jpg"></img>
+            <div class="news-info">
+              <h3 class="news-info-title">Anunoby Ejected </h3>
+              <p class="news-text">
+                OG Anunoby was ejected after an altercation with Harrell.
+              </p>
+                <p class="learn-more">
+                Click to learn more.
+              </p>
+            </div>
+          </div>  
+          <div class="news-item">
+            <img class="news-image" src="img/homepage/harden.jpg"></img>
+            <div class="news-info">
+              <h3 class="news-info-title">Harden traded to Pelicans</h3>
+              <p class="news-text">
+                A record deal sees James Harden joining the Pelicans in May.
+              </p>
               <p class="learn-more">
-              Click to learn more.
-            </p>
-
-          </div>
-        </div>  
-
-
-        <div class="news-item">
-          <img class="news-image" src="img/homepage/harden.jpg"></img>
-          <div class="news-info">
-            <h3 class="news-info-title">Harden traded to Pelicans</h3>
-             <p class="news-text">
-              A record deal sees James Harden joining the Pelicans in May.
-            </p>
-             <p class="learn-more">
-              Click to learn more.
-            </p>
-          </div>
-        </div>  
-
-
-
-        <div class="news-item">
-          <img class="news-image" src="img/homepage/lebron.jpg"></img>
-          <div class="news-info">
-            <h3 class="news-info-title">Here is more news</h3>
-            <p class="news-text">
-              More news occured in basketball today.
-              Here is the news.
-            </p>
-              <p class="learn-more">
-              Click to learn more.
-            </p>
-          </div>
-        </div>  
-
-
-        
+                Click to learn more.
+              </p>
+            </div>
+          </div>  
+          <div class="news-item">
+            <img class="news-image" src="img/homepage/lebron.jpg"></img>
+            <div class="news-info">
+              <h3 class="news-info-title">Here is more news</h3>
+              <p class="news-text">
+                More news occured in basketball today.
+                Here is the news.
+              </p>
+                <p class="learn-more">
+                Click to learn more.
+              </p>
+            </div>
+          </div>  
+        </div>
       </div>
 
       <div class="fg-title">
        <h3>FEATURED MATCHUP TODAY</h3>
       </div>
 
-
-       <div class="day">
-          <h3 class="date-h3">Thursday April 8</h3>
-       </div>
-
-      <div class="featured-game">
-      
-     
-           
-
-                <div class="game">
-                    <table class="game-phx-lac" >
-                        <thead class="top-bar">
-                            <tr class="tr">
-                                <th></th>
-                                <th class="game-time">10:00pm ET</th>
-                                 <th></th>
-                            </tr>
-                        </thead>
-                        <tbody class="game-body">
-                            <tr><td></td></tr>
-                            <tr class="logos">
-                                <td class="logo1" ><img class="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/phx.png&amp;w=56&amp;h=56"></td>
-                                <td class="versus-text">  <h3>VS </h3>   </td>
-                                <td class="logo2" ><img class="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/lac.png&amp;w=56&amp;h=56"></td>
-                            </tr>
-                            <tr class="names">
-                             <td class="team-name1" ><b>SUNS</b></td>
-                             <td></td>
-                             <td class="team-name2" ><b>CLIPPERS</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-               
-            
-       
+      <div class="day">
+        <h3 class="date-h3">Thursday April 8</h3>
       </div>
 
-    </div>
+      <div class="featured-game">
+        <div class="game">
+          <table class="game-phx-lac" >
+            <thead class="top-bar">
+              <tr class="tr">
+                <th></th>
+                <th class="game-time">10:00pm ET</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="game-body">
+              <tr><td></td></tr>
+              <tr class="logos">
+                <td class="logo1" ><img class="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/phx.png&amp;w=56&amp;h=56"></td>
+                  <td class="versus-text">  <h3>VS</h3>   </td>
+                  <td class="logo2" ><img class="logo-img" src="https://secure.espn.com/combiner/i?img=/i/teamlogos/nba/500/lac.png&amp;w=56&amp;h=56"></td>
+                </tr>
+                  <tr class="names">
+                  <td class="team-name1" ><b>SUNS</b></td>
+                  <td></td>
+                  <td class="team-name2" ><b>CLIPPERS</b></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </main>
 </body>
