@@ -21,3 +21,13 @@ Landing Page - Website Banner, Carousel of images, and sign up button
 Need to run through testing of users voting, 
 admins setting points, and paying out votes, 
 and then users shopping for merch with those points
+
+SQL injection example:
+David ; DELETE FROM Secrets --
+
+CREATE TABLE USERS (
+	Id data_type PRIMARY KEY,
+   	Name data_type NOT NULL
+);
+
+DROP Table USERS

@@ -97,7 +97,7 @@ namespace NBAapi.Controllers
                     Price = orderRequest.Price,
                     Quantity = orderRequest.Quantity,
                     Subtotal = orderRequest.Subtotal,
-                    MerchandiseIdRef = orderRequest.MerchandiseIdRef,
+                    MerchandiseId = orderRequest.MerchandiseId,
                     OrderId = newOrderId
                 });
 

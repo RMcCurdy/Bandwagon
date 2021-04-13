@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBAapi.Data;
 
 namespace NBAapi.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210413215002_Secrets for SQL Injection")]
+    partial class SecretsforSQLInjection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -190,7 +192,7 @@ namespace NBAapi.Migrations
                     b.Property<string>("ItemName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("MerchandiseId")
+                    b.Property<int>("MerchandiseIdRef")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("OrderId")

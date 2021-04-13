@@ -25,7 +25,7 @@ const ShopItem = (props) => {
             price: props.price,
             quantity: 1,
             subtotal: props.price,
-            merchandiseIdRef: props.merchId,
+            merchandiseId: props.merchId,
             accountId: props.accountId,
         };
         console.log('shopOrderToUpdate: ', shopOrderToUpdate);

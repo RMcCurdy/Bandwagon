@@ -9,7 +9,7 @@ namespace NBAapi.Entities
         // unique
         public int Quantity { get; set; }
         public int Subtotal { get; set; }
-        public int MerchandiseIdRef { get; set; }
+        public int MerchandiseId { get; set; }
 
         // navigation
         // public int MerchandiseId { get; set; }
