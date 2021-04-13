@@ -36,6 +36,61 @@ body {
   padding-right: 0.5rem;
 }
 
+.nav-app-name {
+  font-size: 1em;
+  color: hsl(0, 0%, 91%);
+  margin-left: -0.2em;
+}  
+
+.mobile-menu {
+  display: none;
+  padding-right: 0.6em;
+  margin-top: -0.2em;
+  border: 0;
+  font-size: 2.5em;
+  color: hsl(0, 0%, 91%);
+  background-color:rgb(63, 63, 63);
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: 1em;
+  
+  border: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.7em;
+  padding-top: 0.7em;
+  margin-left: 0.5em;
+  font-size: 1em;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+
+.login {
+  color: hsl(28, 33%, 97%);
+  background-color:hsl(29, 97%, 55%);
+}
+
+.login:hover,
+.login:focus {
+  color: hsl(28, 33%, 87%);
+  background-color: hsl(29, 97%, 45%);
+}
+
+.signup {
+  color: hsl(36, 12%, 26%);
+  background-color:hsl(36, 7%, 84%);
+}
+
+.signup:hover,
+.signup:focus {
+  color: hsl(36, 12%, 16%);
+  background-color:hsl(36, 7%, 74%);
+}
+
+
 /* Style the tab buttons */
 .nav-tabs {
   background-color: rgb(63, 63, 63);
@@ -77,6 +132,24 @@ body {
   color:rgb(161, 161, 161);
 }
 
+.dropdown {
+  display: none;
+  align-items: right;
+  text-align: right;
+  position: fixed;
+  z-index: 2;
+  width: 66%;
+  right: 0;
+  top: 0;
+  background-color: rgb(99, 99, 99);
+  text-decoration: none;
+  height: 100vh;
+  margin-top: 5em;
+}
+
+.show {display:block;}
+
+
 .animation-name {
   display: flex;
   flex-direction: column;
@@ -93,41 +166,6 @@ body {
   font-size: 1.5rem;
 }
 
-.btn {
-  cursor: pointer;
-  border-radius: 1em;
-  
-  border: 0;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.7em;
-  padding-top: 0.7em;
-  margin-left: 0.5em;
-  font-size: 1em;
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-}
-
-.login {
-  color: hsl(28, 33%, 97%);
-  background-color:hsl(29, 97%, 55%);
-}
-
-.login:hover,
-.login:focus {
-  color: hsl(28, 33%, 87%);
-  background-color: hsl(29, 97%, 45%);
-}
-
-.signup {
-  color: hsl(36, 12%, 26%);
-  background-color:hsl(36, 7%, 84%);
-}
-
-.signup:hover,
-.signup:focus {
-  color: hsl(36, 12%, 16%);
-  background-color:hsl(36, 7%, 74%);
-}
 
 @keyframes title-enter {
   from {
@@ -147,11 +185,60 @@ body {
   }
 }
 
-@media (max-width: 700px) {
-  .full-screen-header {
-    background-position-x: 65%;
+@media (max-width: 600px) {
+  .logo {
+    width: 2.7rem;
+    margin-left: -1rem;
   }
+  
+  .nav-app-name {
+    font-size: 0.8em;
+    color: hsl(0, 0%, 91%);
+    margin-left: -0.2em;
+  }  
+
 }
+
+@media (max-width: 1300px) {
+
+  .logo {
+    width: 2.5rem;
+    margin-left: -1rem;
+  }
+  
+  .mobile-menu{
+    display: block;
+  }
+
+  .tabs {
+    display: none;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-btn {
+    color: hsl(0, 0%, 91%);
+    background-color: rgb(99,99,99);
+    border: 0;
+    margin: 0.3em;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    color: hsl(29, 97%, 45%);
+  }
+  
+  .tabs-list {
+    list-style: none;
+    list-style-type: none;
+    font-size: 1.2em;
+  }
+  
+    
+}
+
 
 .games {
   display: flex;

@@ -14,7 +14,11 @@
 <body>
   <header class="full-screen-header">
     <nav class="nav nav-top">
-      <span class="app-name-header"><img class="logo" src="img/orange.png" alt="Product Logo">Bandwagon</span>
+      <span class="app-name-header">
+        <img class="logo" src="img/orange.png" alt="Product Logo">
+        <span class="nav-app-name">Bandwagon</span>
+      </span>
+      <button onclick="myFunction()" class="mobile-menu">≡</button>
       <span class="tabs">
         <button class="nav-tabs">HOME</button>
         <button class="nav-tabs">STANDINGS</button>
@@ -25,7 +29,40 @@
         <li><button class="btn login">LOG IN</button></li>
         <li><button class="btn signup">SIGN UP</button></li>
       </ul>
+      <nav id="dropdown" class="dropdown">
+        <ul class="tabs-list">
+          <li><button class="nav-btn btn">HOME</button></li>
+          <li><button class="nav-btn btn">STANDINGS</button></li>
+          <li><button class="nav-btn btn">GAMES</button></li>
+          <li><button class="nav-btn btn">LEADERBOARD</button></li>
+          <li><button class="nav-btn btn">LOG IN</button></li>
+          <li><button class="nav-btn btn">SIGN UP</button></li>
+        </ul>
+      </nav>
+
     </nav>
+
+    <script>
+      function myFunction() {
+        document.getElementById("dropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.mobile-menu')) {
+          var dropdowns = document.getElementsByClassName("tabs");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+
+
   </header>
   <main>
     <div class="leaderboard">
