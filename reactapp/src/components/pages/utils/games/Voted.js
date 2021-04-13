@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
-import axios from 'axios';
+import React, { useRef } from 'react';
 
 const Voted = (props) => {
     // const accountId = props.accountId;

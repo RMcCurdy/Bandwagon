@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react';
 import ShopItem from './ShopItem';
 import axios from 'axios';
 import AppContext from '../../../../context/AppContext';
-import { useHistory } from 'react-router';
 // import {
 //     ModalProvider,
 //     Modal,
@@ -12,9 +11,8 @@ import { useHistory } from 'react-router';
 // import ShopModal from '../ShopModal';
 
 function Shop(props) {
-    const history = useHistory();
 
-    const { setOrderId } = useContext(AppContext);
+    // const { setOrderId } = useContext(AppContext);
 
     
 
@@ -26,10 +24,7 @@ function Shop(props) {
         id,
         merchandise,
         setMerchandise,
-        totalPointsBalance,
-        totalPointsSpent,
-        setTotalPointsBalance,
-        setTotalPointsSpent,
+        totalPointsBalance
     } = useContext(AppContext);
 
     useEffect(() => {

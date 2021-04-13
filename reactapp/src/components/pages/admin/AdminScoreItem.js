@@ -1,26 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
-import axios from 'axios';
 
 const AdminScoreItem = (props) => {
-    const { id, gameData, setGameData, gameDate } = useContext(AppContext);
+    const { gameData, setGameData } = useContext(AppContext);
 
     const idx = props.objId;
 
-    const gameId = props.gameId;
-    const mygameDate = props.gameDate;
     const gameTime = props.gameTime;
-    const homeTeamId = props.homeTeamId;
-    const visitorTeamId = props.visitorTeamId;
     const homeWinPercent = props.homeWinPercent;
     const visitorWinPercent = props.visitorWinPercent;
     const homeTeamName = props.homeTeamName;
     const visitorTeamName = props.visitorTeamName;
-    const accountId = props.accountId;
-    const votedForTeamId = props.votedForTeamId;
-
-    let homeFinalScore = props.homeFinalScore;
-    let visitorFinalScore = props.visitorFinalScore;
 
     //https://stackoverflow.com/questions/54035639/react-select-onchange-by-index
     const handleScoreUpdateHome = (finalScoreHome) => {

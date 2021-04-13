@@ -1,27 +1,13 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useContext } from 'react';
 import Votes from './Votes';
 import Voted from './Voted';
 import axios from 'axios';
 import AppContext from '../../../../context/AppContext';
 
 const GameCard = (props) => {
-    const gameId = props.gameId;
     const gameTime = props.gameTime;
-    // const gameDate = props.gameDate;
-    const homeTeamId = props.homeTeamId;
-    const visitorTeamId = props.visitorTeamId;
-    const homeWinPercent = props.homeWinPercent;
-    const visitorWinPercent = props.visitorWinPercent;
-    const homeFinalScore = props.homeFinalScore;
-    const visitorFinalScore = props.visitorFinalScore;
-    const homeTeamName = props.homeTeamName;
-    const visitorTeamName = props.visitorTeamName;
-    const accountId = props.accountId;
-    const votedForTeamId = props.votedForTeamId;
-    const isVotingDisabled = props.isVotingDisabled;
 
     const {
-        clickVotedForTeamId,
         setClickVotedForTeamId,
         setGameDate,
     } = useContext(AppContext);

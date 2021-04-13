@@ -16,3 +16,8 @@ Because we are using entity framework, all queries are converted to parameterize
 CSS for Mobile
 
 Landing Page - Website Banner, Carousel of images, and sign up button
+
+***
+Need to run through testing of users voting, 
+admins setting points, and paying out votes, 
+and then users shopping for merch with those points

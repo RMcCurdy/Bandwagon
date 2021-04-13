@@ -1,13 +1,7 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
-import axios from 'axios';
+import React, { useRef } from 'react';
 
 const Votes = (props) => {
-    const accountId = props.accountId;
-    const gameId = props.gameId;
-    const homeTeamId = props.homeTeamId;
     const visitorTeamId = props.visitorTeamId;
-    const originalVoteForTeamId = props.votedForTeamId;
-    const isvotingDisabled = props.isVotingDisabled;
     //==========================================
 
     const voteRef = useRef(props.votedForTeamId);

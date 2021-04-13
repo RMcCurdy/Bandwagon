@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import AdminScoreItem from './AdminScoreItem';
 import AdminRecalcPayouts from './AdminRecalcPayouts';
 
 const AdminScoreItemList = (props) => {
-    const { id, gameData, setGameData, gameDate } = useContext(AppContext);
+    const { id, gameData } = useContext(AppContext);
 
     const handleSaveScores = () => {
         console.log('starting to save game data...');
