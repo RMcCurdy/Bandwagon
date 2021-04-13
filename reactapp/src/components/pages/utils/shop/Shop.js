@@ -45,15 +45,8 @@ function Shop(props) {
                 <ShopModal handleShopOrder={handleShopOrder} />
             </ModalProvider> */}
             <span className='shop-header'>
-                <h1>Shop</h1>
-                <div
-                    style={{
-                        border: '2px solid hsl(29, 97%, 45%)',
-                        borderRadius: '15px',
-                        padding: '0.25em 1em',
-                        backgroundColor: 'hsl(29, 97%, 55%)',
-                        color: 'white',
-                    }}>
+                <h1 className='shop-header-text'>Shop</h1>
+                <div className='shop-header-my-balance'>
                     <h2>My Balance: {numberWithCommas(totalPointsBalance)}</h2>
                 </div>
             </span>

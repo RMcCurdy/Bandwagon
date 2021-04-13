@@ -54,15 +54,37 @@
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
-  grid-gap: 20px;
+  /* justify-content: center; */
+  grid-gap: 1em;
+}
+
+.shop-header-my-balance {
+  border: 2px solid hsl(29, 97%, 45%);
+  border-radius: 15px;
+  padding: 0.25em 1em;
+  background-color: hsl(29, 97%, 55%);
+  color: white;
+}
+
+@media (max-width: 420px) {
+  .cards-grid {
+    justify-content: center;
+    border-radius: 2px solid red;
+    grid-template-columns: repeat(2, 8em);
+  }
+  .shop-header-text {
+    margin-right: 20px;
+  }
+  .shop-header-my-balance {
+    font-size: 0.8rem;
+  }
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  max-width: 140px;
-  min-width: 120px; 
+  max-width: 9rem;
+  min-width: 8rem; 
   background-color: #fff;
-  padding: 5px, 10px;
   text-align: center;
 }
 
@@ -97,10 +119,13 @@
 }
 
 .shop-box { 
-  margin-left: auto;
-  margin-right: auto;
-  width: 4em; 
-  height: 4em;   
+  min-height: 8.5rem;
+  /* border: 2px solid green; */
+}
+
+.shop-item-image {
+  margin: auto 0;
+  width: 80%;
 }
 
 

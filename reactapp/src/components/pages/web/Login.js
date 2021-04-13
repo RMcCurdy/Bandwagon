@@ -39,7 +39,7 @@ const Login = () => {
         //TODO need to delete this for final version
         // eslint-disable-next-line
         const loginUser = {
-            email: 'robert@test.com',
+            email: 'john@test.com',
             password: shaw256TestPassword,
         };
         // eslint-disable-next-line

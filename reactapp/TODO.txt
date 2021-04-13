@@ -5,3 +5,14 @@ Admin Dashboard utilities
 User buys merch and update points spent and balance
 
 Update Landing Page photos to resemble the finished site (games, shop, badges, etc.)
+
+sample sql injection to "truncate" a db table called (eg) Secrets
+firstName field: "David ; DELETE FROM Secrets --"
+David ; DROP table USERS
+note: sqlLite truncates using the "DELETE" keyword
+
+Because we are using entity framework, all queries are converted to parameterized sql statements and therefore protect against sql injections such as the "DELETE" example.
+
+CSS for Mobile
+
+Landing Page - Website Banner, Carousel of images, and sign up button

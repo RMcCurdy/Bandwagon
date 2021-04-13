@@ -54,11 +54,11 @@ function Account() {
       <div className="fg-container">
 
         <div className="fg-title">
-        <p className="fg-title-text">Featured Match Today</p>
+        <p className="fg-title-text">Featured Match of the Day</p>
         </div>
 
         <div className="day">
-          <p className="date-h3">Thursday April 15</p>
+          <p className="date-h3">Wednesday April 14</p>
         </div>
 
         <div className="featured-game">
@@ -75,15 +75,15 @@ function Account() {
 
               <tbody className="game-body">
                 <tr>
-                  <td className="logo-container-home-page"><img src="../../img/profile-pics/lakers.svg" alt="logo1"/></td>
+                  <td className="logo-container-home-page"><img src="../../img/profile-pics/heat.svg" alt="logo1"/></td>
                   <td className="versus-text">VS</td>
-                  <td className="logo-container-home-page"><img src="../../img/profile-pics/celtics.svg" alt="logo2"/></td>
+                  <td className="logo-container-home-page"><img src="../../img/profile-pics/nuggets.svg" alt="logo2"/></td>
                 </tr>
 
                 <tr>
-                  <td className="team-name-home-page">LAKERS</td>
+                  <td className="team-name-home-page">HEAT</td>
                   <td/>
-                  <td className="team-name-home-page">CELTICS</td>
+                  <td className="team-name-home-page">NUGGETS</td>
                 </tr>
 
               </tbody>

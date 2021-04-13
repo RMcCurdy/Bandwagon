@@ -59,13 +59,11 @@ function Games() {
                 {gameDate > 0 ? (
                     <GameDayHeader gameDate={gameDate} />
                 ) : (
-                    <p
-                        style={{
-                            marginLeft: '-2em',
-                            justifyContent: 'flex-start',
-                        }}>
-                        Please select a date from the dropdown
-                    </p>
+                    <div className='games-select-date'>
+                        <p>
+                            Please select a date from the dropdown
+                        </p>
+                    </div>
                 )}
             </div>
         </div>

@@ -1,7 +1,7 @@
 .badges {
-  margin: 2em auto;
-  padding-left: 20%;
-  padding-right: 20%;  
+  margin: 2rem auto;
+  padding-left: 15%;
+  padding-right: 15%;  
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -10,18 +10,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20%;
-  padding-right: 20%; 
 }
 
-.badges-grid {
+/* .badges-grid {
   display: grid;
-  grid-template-columns: repeat(2, 0.5fr);
+  grid-template-columns: auto auto auto;
+  align-items: center;
   grid-gap: 1em;
+} */
+
+.badges-item {
+  /* border: 2px solid blue; */
+  min-width: 11rem;
+  padding: 0 1rem;
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .badge-note {
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 .all-badges-toggle {

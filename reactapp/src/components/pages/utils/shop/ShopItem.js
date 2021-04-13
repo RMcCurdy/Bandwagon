@@ -57,14 +57,12 @@ const ShopItem = (props) => {
             <div className='card'>
                 <h3 className='title'>{props.itemName}</h3>
                 <div className='shop-box'>
-                    <img
-                        src={'/img/merchandise/' + props.itemImage + '.png'}
-                        alt='...'
-                        style={{ width: '60px' }}
-                    />
+                    <img className='shop-item-image' src={'/img/merchandise/' + props.itemImage + '.png'} alt='...'/>
                 </div>
-                <p>{numberWithCommas(props.price)}</p>
-                <p>points</p>
+                <div>
+                    <span>{numberWithCommas(props.price)}</span>
+                </div>
+                <span>points</span>
                 <button className='btn-shop' onClick={handleVisibleConfirm}>BUY</button>
                 {confirm ? <ConfirmBuy handleShopOrderConfirm={handleShopOrderConfirm}/> : ''}
             </div>

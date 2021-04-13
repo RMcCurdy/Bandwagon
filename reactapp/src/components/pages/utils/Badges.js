@@ -30,12 +30,12 @@ function Badges() {
 }, [setBadgesNeed, id]);
 
   return (
-      <>
+      <div className='badges'>
       <span className='badges-header'>
         <h1>My Badges</h1>
       </span>
 
-            <div style={{ display: 'flex' }} className='badges'>
+            <div className='badges-container'>
         {badgesHave[0] ? (
           badgesHave.map((row) => {
             return (
@@ -50,11 +50,12 @@ function Badges() {
               <p>loading...</p>
               )}
               </div>
-              <hr />
+              <hr style={{padding:'0'}} />
+              
             <span className='badges-header'>
                 <h1>Badges I Need</h1>
             </span>
-            <div style={{ display: 'flex' }} className='badges'>
+            <div className='badges-container'>
                 {badgesHave[0] ? (
                     badgesNeed.map((row) => {
                         return (
@@ -69,7 +70,7 @@ function Badges() {
                     <p>loading...</p>
                 )}
             </div>
-    </>
+    </div>
   )
 }
 

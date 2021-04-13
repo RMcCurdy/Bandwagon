@@ -66,10 +66,10 @@ function Profile() {
                     </div>
                 </div>
 
-                <div className='user-info'>
-                    <p className='profile-list-item'>
+                <div className='user-info-container'>
+                    <span className='profile-list-item'>
                         Name: {firstName} {lastName}
-                    </p>
+                    </span>
                     <p className='profile-list-item'>Email: {email}</p>
                     <p className='profile-list-item'>Since: {dateCreated}</p>
                 </div>

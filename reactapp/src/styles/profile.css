@@ -16,7 +16,6 @@
   cursor: pointer;
   border-radius: 1em;
   border: 0;
-  margin-top: 0.6em;
   font-size: 1.25em;
 
   color: hsl(0, 0%, 22%);
@@ -54,12 +53,6 @@
   margin: 0;
 }
 
-.user-info {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
-
 .edit-profile-btn:hover,
 .edit-profile-btn:focus {
   color: hsl(0,0%, 42%);
@@ -69,12 +62,47 @@
   width: 50%;
   float: left;
   padding: 0;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 } 
 
+.user-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 2px solid purple; */
+}
+
+@media (max-width: 420px) {
+  .profile {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .profile-list-item {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-label {
+    font-size: 1rem !important;
+  }
+  .profile-pic {
+    width: 8rem;
+  }
+  .badge-pic {
+    height: 4rem;
+  }
+  .shown-username {
+    font-size: 1.75rem;
+    padding-right: 0.5rem;
+  }
+}
+
 .profile-list-item {
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.5rem;
+  padding: 1rem 1rem 0 1rem;
+  /* border: 2px solid red; */
+  min-width: 15rem;
 }
 
 .stats-header {

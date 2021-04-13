@@ -7,10 +7,10 @@ function Home() {
 
   // images for slide show
   const slideImages = [
-    '../../../img/landingpage/gamesPreview.png',
-    '../../../img/landingpage/vote.png',
-    '../../../img/landingpage/profile.png',
-    '../../../img/landingpage/leaderboard.png'
+    '../../../img/landingpage/games-homepage.png',
+    '../../../img/landingpage/shop-homepage.png',
+    '../../../img/landingpage/badges-homepage.png',
+    '../../../img/landingpage/leaderboard-homepage.png'
   ];
 
   const properties = {
@@ -25,60 +25,42 @@ function Home() {
     <div>
 
       <div className="container-welcome">
-        <p className="welcome-text">Welcome to Bandwagon</p><br/>
-        <p className="welcome-text-description">Jump on the Bandwagon before it's too late!</p>
+        <span className="welcome-text">Welcome to Bandwagon</span><br/><br/>
+        <span className="welcome-text-description">Jump on the Bandwagon before it's too late!</span>
       </div>
 
       <div className="slideshow-container">
         <Slide easing="ease" {...properties}>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`, backgroundSize:'40vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{backgroundImage: `url(${slideImages[0]})`, backgroundSize:'70vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Vote on games based on statistical analysis</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[1]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{backgroundImage: `url(${slideImages[1]})`, backgroundSize:'45vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Earn points to redeem prizes</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[2]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{backgroundImage: `url(${slideImages[2]})`, backgroundSize:'60vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Earn badges by completing challenges</span>
             </div>
           </div>
           <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[3]})`, backgroundSize:'50vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+            <div style={{backgroundImage: `url(${slideImages[3]})`, backgroundSize:'55vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
               <span className="slideshow-header-text">Compete against others for the top spot on the Leaderboard</span>
             </div>
           </div>
         </Slide>
       </div>
-
-      {/* 
-      <div className="container-info-grey">
-        <h2 className="container-info-text">Vote on games based on statistical analysis!</h2>
-        <img className="container-info-image" src="../../../img/landingpage/games.png" alt="future games"/>
-      </div>
-      
-      <div className="container-info-white">
-        <h2 className="container-info-text">Earn points to redeem prizes!</h2>
-        <img className="container-info-image" src="../../../img/landingpage/vote.png" alt="game voting process "/>
-      </div>
-
-      <div className="container-info-grey">
-        <h2 className="container-info-text">Earn badges by completing challenges!</h2>
-        <img className="container-info-image" src="../../../img/landingpage/profile.png" alt="Product Logo"/>
-      </div>
-
-      <div className="container-info-white">
-        <h2 className="container-info-text">Compete against others for the top spot on the Leaderboard</h2>
-        <img className="container-info-image" src="../../../img/landingpage/leaderboard.png" alt="Product Logo"/>
-      </div> 
-      */}
       
       <div className="container-signupnow">
         <h2 className="container-info-text">What are you waiting for? Sign up now!</h2>
         <div style={{paddingTop: '1em'}}><NavLink to="/signup" className="btn-signupnow">SIGN UP</NavLink></div>
+      </div>
+
+      <div className='container-copyright-footer'>
+      <footer> <small>&copy; Copyright 2021, Awesome Corporation</small> </footer> 
       </div>
     
     </div>
