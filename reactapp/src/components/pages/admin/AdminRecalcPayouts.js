@@ -1,10 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 
 const AdminRecalcPayouts = () => {
-    const reCalculatePayoutsHandler = () => {
-        // axios.get('http://localhost:5000/api/RecalcPayouts').then((resp) => {
-        //     console.log('recalc response is: ', resp.data);
-        // });
+    const handleRecalculatePayouts = () => {
+        axios.get('http://localhost:5000/api/Recalc/payouts/v2').then((resp) => {
+            console.log('recalc predictions resp: ', resp.data);
+        });
     };
 
     return (
@@ -16,7 +17,7 @@ const AdminRecalcPayouts = () => {
                 padding: '1em',
             }}>
             <button
-                onClick={reCalculatePayoutsHandler}
+                onClick={handleRecalculatePayouts}
                 className='login btn'
                 style={{
                     fontFamily: 'inherit',

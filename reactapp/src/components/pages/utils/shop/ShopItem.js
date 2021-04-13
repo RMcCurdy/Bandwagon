@@ -52,6 +52,10 @@ const ShopItem = (props) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
+    const buyButton = <button className='btn-shop' onClick={handleVisibleConfirm}>BUY</button>
+
+    const blockButton = <button className='btn-shop-blocked'>NEED MORE</button>
+
     return (
         <div>
             <div className='card'>
@@ -63,7 +67,7 @@ const ShopItem = (props) => {
                     <span>{numberWithCommas(props.price)}</span>
                 </div>
                 <span>points</span>
-                <button className='btn-shop' onClick={handleVisibleConfirm}>BUY</button>
+                {(totalPointsBalance < props.price) ? blockButton : buyButton}
                 {confirm ? <ConfirmBuy handleShopOrderConfirm={handleShopOrderConfirm}/> : ''}
             </div>
         </div>

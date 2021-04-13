@@ -45,10 +45,10 @@
   background-color:none;
 }
 
-.shop-btn:hover,
+/* .shop-btn:hover,
 .shop-btn:focus {
   color: hsl(29, 97%, 55%);
-}
+} */
 
 .cards-grid {
   display: grid;
@@ -108,14 +108,27 @@
   font-size: 1em;
 }
 
+.btn-shop:hover {
+  opacity: 0.7;
+}
+
+.btn-shop-blocked {
+  border: none;
+  outline: 0;
+  padding: 6px;
+  color: white;
+  background-color: hsl(29, 96%, 70%);
+  text-align: center;
+  cursor: not-allowed;
+  font-family: inherit;
+  width: 100%;
+  font-size: 1em;
+}
+
 .btn-shop-confirm {
   font-size: 0.8em;
   background-color: rgb(56, 192, 56);
   transition: height 2s;
-}
-
-.card button:hover {
-  opacity: 0.7;
 }
 
 .shop-box { 

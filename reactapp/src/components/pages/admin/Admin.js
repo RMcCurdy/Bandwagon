@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import { Redirect } from 'react-router-dom';
-import AdminRecalc from './AdminRecalc';
+import AdminRecalcPredictions from './AdminRecalcPredictions';
 import AdminScoreContainer from './AdminScoreContainer';
 
 function Admin() {
@@ -9,10 +9,11 @@ function Admin() {
 
     return isAdmin ? (
         <>
-            <AdminRecalc />
+            <AdminRecalcPredictions />
             <hr />
             <AdminScoreContainer />
             <hr />
+            
         </>
     ) : (
         <Redirect to='/notauthorized' />

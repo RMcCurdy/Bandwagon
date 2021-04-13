@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import GameDateDropdown from '../utils/games/GameDateDropdown';
@@ -12,6 +12,8 @@ const AdminScoreContainer = () => {
     // local
     // const [dropdownDate, setDropdownDate] = useState(0);
     // const [localgameData, setLocalGameData] = useState([]);
+    
+    // const testGameData = [...gameData];
 
     const handleGameDateSelect = (gameDateInt) => {
         console.log(
