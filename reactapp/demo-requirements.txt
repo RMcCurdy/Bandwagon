@@ -1,5 +1,4 @@
 Were the scenario and system details fully described?
-
 Intro with the problem and how we solved this. **(Robert)**
 
 
