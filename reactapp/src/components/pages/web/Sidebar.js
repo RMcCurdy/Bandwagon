@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   
 
-  const { isLoggedIn, isAdmin, showSidebar, setShowSidebar } = useContext(AppContext);
+  const { isLoggedIn, isAdmin } = useContext(AppContext);
 
   function toggleSidebar() {
     document.getElementById("dropdown").classList.toggle("show");
@@ -24,8 +24,8 @@ const Sidebar = () => {
 
   const loggedInTabs = <div>
   <BsJustify className={'sidebar-button-show'} size={40} color={'white'} style={{border:'2px solid white', borderRadius:'5px'}} onClick={toggleSidebar}/>
-  <nav id="dropdown" class="dropdown">
-    <ul class="tabs-list-sidebar">
+  <nav id="dropdown" className={'dropdown'}>
+    <ul className={'tabs-list-sidebar'}>
       <li><NavLink to="/account" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>HOME</NavLink></li>
       <li><NavLink to="/shop" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>SHOP</NavLink></li>
       <li><NavLink to="/badges" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>BADGES</NavLink></li>
@@ -39,8 +39,8 @@ const Sidebar = () => {
 
   const loggedInAdminTabs = <div>
   <BsJustify className={'sidebar-button-show'} size={40} color={'white'} style={{border:'2px solid white', borderRadius:'5px'}} onClick={toggleSidebar}/>
-  <nav id="dropdown" class="dropdown">
-    <ul class="tabs-list-sidebar">
+  <nav id="dropdown" className={'dropdown'}>
+    <ul className={'tabs-list-sidebar'}>
       <li><NavLink to="/admin" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>ADMIN DASHBOARD</NavLink></li>
       <li><NavLink to="/profile" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>MY PROFILE</NavLink></li>
       <li><NavLink to="/logout" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>SIGN OUT</NavLink></li>
@@ -50,8 +50,8 @@ const Sidebar = () => {
 
   const notLoggedInTabs = <div>
   <BsJustify className={'sidebar-button-show'} size={40} color={'white'} style={{border:'2px solid white', borderRadius:'5px'}} onClick={toggleSidebar}/>
-  <nav id="dropdown" class="dropdown">
-    <ul class="tabs-list-sidebar">
+  <nav id="dropdown" className={'dropdown'}>
+    <ul className={'tabs-list-sidebar'}>
       <li><NavLink to="/home" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>HOME</NavLink></li>
       <li><NavLink to="/leaderboard" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>LEADERBOARD</NavLink></li>
       <li><NavLink to="/login" className="nav-btn-sidebar btn" activeClassName="active" onClick={toggleSidebar}>SIGN IN</NavLink></li>

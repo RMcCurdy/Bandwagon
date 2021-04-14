@@ -36,30 +36,6 @@ const GameCard = (props) => {
             });
     };
 
-    // useEffect(() => {
-    //     // console.log('newvoteForTeamId is: ', newVoteForTeamId);
-    //     const handleVoteClick = (accountId, gameId, newVoteId) => {
-    //         const gameVoteRequest = {
-    //             accountId: accountId,
-    //             gameId: gameId,
-    //             votedForTeamId: newVoteId,
-    //         };
-    //         axios
-    //             .post(`http://localhost:5000/api/votes/`, gameVoteRequest)
-    //             .then((resp) => {
-    //                 const votedForTeamIdReturnedFromDatabase = resp.data;
-    //                 console.log(
-    //                     'vote response is: ',
-    //                     votedForTeamIdReturnedFromDatabase,
-    //                 ); //14
-    //                 // finally, once the data has come back from the api votes table
-    //                 setNewVoteForTeamId(
-    //                     votedForTeamIdReturnedFromDatabase.votedForTeamId,
-    //                 );
-    //             });
-    //     };
-    // }, [setNewVoteForTeamId]);
-
     const votes = (
         <Votes
             handleVoteClick={handleVoteClick}

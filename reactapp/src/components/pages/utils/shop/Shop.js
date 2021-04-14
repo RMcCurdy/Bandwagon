@@ -2,19 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import ShopItem from './ShopItem';
 import axios from 'axios';
 import AppContext from '../../../../context/AppContext';
-// import {
-//     ModalProvider,
-//     Modal,
-//     useModal,
-//     ModalTransition,
-// } from 'react-simple-hook-modal';
-// import ShopModal from '../ShopModal';
 
 function Shop(props) {
-
-    // const { setOrderId } = useContext(AppContext);
-
-    
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -36,9 +25,6 @@ function Shop(props) {
 
     return (
         <div className='shop'>
-            {/* <ModalProvider>
-                <ShopModal handleShopOrder={handleShopOrder} />
-            </ModalProvider> */}
             <span className='shop-header'>
                 <h1 className='shop-header-text'>Shop</h1>
                 <div className='shop-header-my-balance'>
@@ -59,7 +45,6 @@ function Shop(props) {
                                 itemImage={row.itemImage}
                                 price={row.price}
                                 accountId={id}
-                                // handleShopOrder={handleShopOrder}
                             />
                         );
                     })

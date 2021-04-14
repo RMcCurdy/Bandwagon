@@ -22,27 +22,6 @@ namespace NBAapi.Controllers
             _context = context;
         }
 
-        // // GET: api/Games
-        // [HttpGet]
-        // // public async Task<ActionResult<IEnumerable<GameResponse>>> GetGames()
-        // public async Task<ActionResult<Game>> GetGame()
-        // {
-        //     // // var game = await _context.Games.FindAsync(id);
-        //     // var game = await _context.Games.ToListAsync();
-
-        //     // if (game == null)
-        //     // {
-        //     //     return NotFound();
-        //     // }
-
-        //     // return game;
-        // }
-
-
-
-
-
-
         [HttpGet]
         [Route("GameDates")]  //api/games/gamedates
         public List<GameDateResponse> GameDates()
@@ -187,9 +166,6 @@ namespace NBAapi.Controllers
 
             foreach (var g in gamesList)
             {
-                // var gameId = g.Id;
-                // var homeFinalScore = g.HomeFinalScore;
-                // var visitorFinalScore = g.VisitorFinalScore;
 
                 var game = await _context.Games.FindAsync(g.Id);
                 if (game != null)

@@ -49,7 +49,7 @@ const Login = () => {
         };
 
         return axios
-            .post('http://localhost:5000/api/Auth', loginUser)
+            .post('http://localhost:5000/api/Auth', loginPerson)
             .then((resp) => {
                 const success = resp.data.success;
                 console.log(success);

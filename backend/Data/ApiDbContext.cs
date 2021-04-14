@@ -29,18 +29,6 @@ namespace NBAapi.Data
             
         }
 
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-        //     optionsBuilder
-        //         .LogTo(Console.WriteLine,
-        //     new[]
-        //     {
-        //         DbLoggerCategory.Database.Command.Name
-        //     },
-        //     LogLevel.Information,
-        //     DbContextLoggerOptions.SingleLine | DbContextLoggerOptions.LocalTime);
-        // }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

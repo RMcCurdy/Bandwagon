@@ -113,27 +113,7 @@ namespace NBAapi.Controllers
         [Route("payouts/v1")] // ================================================================================================= v1
         public async Task<List<GameVoteResponse>> RecalculatePayouts()
         {
-            // update all users totalPointsBalanceEarned
-
-            // =================================== tested in DBeaver
-            // Select 
-            // g.id,
-            // v.AccountId,
-            // v.VotedForTeamId,
-            // v.PointsAwarded,
-            // g.HomeFinalScore,
-            // g.VisitorFinalScore,
-            // g.HomePointsPayout,
-            // g.VisitorPointsPayout 
-            // FROM Games g
-            // INNER JOIN Votes v 
-            //  ON g.Id = v.GameId 
-            //  where (g.HomeFinalScore > 0 OR g.VisitorFinalScore >0)
-            //   ORDER BY g.Id, v.AccountId
-            // g.HomeTeamId,
-            // g.VisitorTeamId
-            // ===================================
-
+            
             // 1. get all games that have final scores and also where users have voted on that game
             // INNER JOIN
             var gameVotesList = await (from g in _context.Games
@@ -167,26 +147,7 @@ namespace NBAapi.Controllers
         [Route("payouts/v2")] // ================================================================================================= v2
         public async Task<bool> RecalculatePayouts2()
         {
-            // update all users totalPointsBalanceEarned
-
-            // =================================== tested in DBeaver
-            // Select 
-            // g.id,
-            // v.AccountId,
-            // v.VotedForTeamId,
-            // v.PointsAwarded,
-            // g.HomeFinalScore,
-            // g.VisitorFinalScore,
-            // g.HomePointsPayout,
-            // g.VisitorPointsPayout 
-            // FROM Games g
-            // INNER JOIN Votes v 
-            //  ON g.Id = v.GameId 
-            //  where (g.HomeFinalScore > 0 OR g.VisitorFinalScore >0)
-            //   ORDER BY g.Id, v.AccountId
-            // g.HomeTeamId,
-            // g.VisitorTeamId
-            // ===================================
+            
 
             // 1. get all games that have final scores and also where users have voted on that game
             //  INNER JOIN
@@ -306,81 +267,6 @@ namespace NBAapi.Controllers
             }
         }
 
-        //// GET: api/Recalc/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Game>> GetGame(int id)
-        //{
-        //    var game = await _context.Games.FindAsync(id);
-
-        //    if (game == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return game;
-        //}
-
-        //// PUT: api/Recalc/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutGame(int id, Game game)
-        //{
-        //    if (id != game.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    _context.Entry(game).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!GameExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return NoContent();
-        //}
-
-        //// POST: api/Recalc
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Game>> PostGame(Game game)
-        //{
-        //    _context.Games.Add(game);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetGame", new { id = game.Id }, game);
-        //}
-
-        //// DELETE: api/Recalc/5
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteGame(int id)
-        //{
-        //    var game = await _context.Games.FindAsync(id);
-        //    if (game == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Games.Remove(game);
-        //    await _context.SaveChangesAsync();
-
-        //    return NoContent();
-        //}
-
-        //private bool GameExists(int id)
-        //{
-        //    return _context.Games.Any(e => e.Id == id);
-        //}
+       
     }
 }

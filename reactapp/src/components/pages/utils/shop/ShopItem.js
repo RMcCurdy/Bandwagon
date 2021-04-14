@@ -1,11 +1,4 @@
 import React, { useContext, useState } from 'react';
-// import {
-//   ModalProvider,
-//   Modal,
-//   useModal,
-//   ModalTransition,
-// } from 'react-simple-hook-modal';
-// import ShopModal from '../ShopModal';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import AppContext from '../../../../context/AppContext';

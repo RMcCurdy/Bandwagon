@@ -20,18 +20,3 @@ namespace backend.Models
 
 
 }
-//          Id = g.Id,
-//  HomeTeamId = g.HomeTeamId,
-//  VisitorTeamId = g.VisitorTeamId,
-//  HomePercent = g.HomePercent,
-//  VisitorPercent = g.VisitorPercent,
-//  HomePointsPayout = g.HomePointsPayout,
-//  VisitorPointsPayout = g.VisitorPointsPayout,
-//  HomeFinalScore = g.HomeFinalScore,
-//  VisitorFinalScore = g.VisitorFinalScore,
-//  GameTime = g.GameTime,
-//  GameDate = g.GameDate,
-//  HomeTeamName = tnhome.TeamName,
-//  VisitorTeamName = tnvis.TeamName,
-//  VotedAccountId = accountId,
-//  VotedForTeamId = 0

@@ -23,13 +23,6 @@ const EditProfile = () => {
     history.push('/profile');
   }
 
-  // useEffect(() => {
-  //   axios.post(`http://localhost:5000/api/Badges/${id}`).then((resp) => {
-  //       console.log('top badge response is: ', resp.data);
-  //       setTopBadge(resp.data.badgeImage);
-  //   });
-  // }, [setTopBadge, id]);
-
   return (
     <div className="profile">
       <div>
@@ -62,8 +55,6 @@ const EditProfile = () => {
           <div className='edit-profile-form'>
             <label className="edit-profile-label" htmlFor="favteam">Favourite Team</label><br/>
             <SelectDropdownTeams />
-            {/* <input className="edit-profile-inputs" type="text" name="favteam" value={profilePic}
-            onChange={e => setProfilePic(e.target.value)}/> */}
           </div>
           <div style={{paddingTop:'2rem'}}>
           </div>

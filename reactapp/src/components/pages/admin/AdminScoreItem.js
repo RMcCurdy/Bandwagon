@@ -38,18 +38,8 @@ const AdminScoreItem = (props) => {
         setGameData(copyOfAllGameDataObjects);
     };
 
-    // useEffect(() => {
-    //         if (gameData > 0) {
 
-    //         }
-    //     }, [id, gameData, setGameData, gameDate]);
-
-    // const gId = props.gameId;
-    // setGameData(...gameData, (gameData.Id(gId).homeFinalScore: score));
     return (
-        // <p>
-        //     gameDate: {gameDate}, gameId: {gameId}, acctId: {accountId}
-        // </p>
         <div className='game' style={{ margin: '0.5rem auto' }}>
             {/* <pre>{JSON.stringify({ gameData })}</pre> */}
             <table cellSpacing='8' className='game-module'>
@@ -80,18 +70,10 @@ const AdminScoreItem = (props) => {
                             {' '}
                             <input
                                 className='edit-profile-inputs'
-                                // id='fname'
                                 type='text'
-                                // name='fname'
-                                // value={homeFinalScore}
-                                // value={gameData[idx].finalScoreHome}
                                 value={props.homeFinalScore}
                                 onChange={(e) => {
                                     handleScoreUpdateHome(e.target.value);
-                                    // console.log(
-                                    //     'home points: ',
-                                    //     e.target.value,
-                                    // );
                                 }}
                             />
                         </td>
@@ -110,10 +92,7 @@ const AdminScoreItem = (props) => {
                             {' '}
                             <input
                                 className='edit-profile-inputs'
-                                // id='fname'
                                 type='text'
-                                // name='fname'
-                                // value={gameData[idx].finalScoreVisitor}
                                 value={props.visitorFinalScore}
                                 onChange={(e) =>
                                     handleScoreUpdateVisitor(e.target.value)

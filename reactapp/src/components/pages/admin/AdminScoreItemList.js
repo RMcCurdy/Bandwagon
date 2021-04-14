@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 import axios from 'axios';
 import AdminScoreItem from './AdminScoreItem';
 import AdminRecalcPayouts from './AdminRecalcPayouts';
 
 const AdminScoreItemList = (props) => {
-    const { id, gameData, setGameData, gameDate } = useContext(AppContext);
+    const { id, gameData } = useContext(AppContext);
 
     const handleSaveScores = () => {
         console.log('starting to save game data...');
@@ -19,30 +19,8 @@ const AdminScoreItemList = (props) => {
             });
     };
 
-    // handleGameDataUpdate() {
-
-    // }
-
-    // useEffect(() => {
-    //     if (gameData > 0) {
-    //         axios
-    //             .get(`http://localhost:5000/api/Games/${gameDate}/${id}`)
-    //             .then((resp) => {
-    //                 console.log(
-    //                     'AdminScoreList > games response is: ',
-    //                     resp.data,
-    //                 );
-    //                 if (gameData === []) {
-    //                     setGameData(resp.data);
-    //                 }
-    //             });
-    //     }
-    // }, [id, gameData, setGameData, gameDate]);
-
     return (
         <>
-            {/* <p>JSON game data is:</p> */}
-            {/* <pre>{JSON.stringify({ gameData })}</pre> */}
             <div
                 style={{
                     justifyContent: 'center',
@@ -53,7 +31,6 @@ const AdminScoreItemList = (props) => {
                     backgroundColor: '#fff',
                     borderRadius: '1.5rem',
                     padding: '0em',
-                    // margin: '6em',
                 }}>
                 <div
                     style={{
@@ -65,12 +42,10 @@ const AdminScoreItemList = (props) => {
                     <div
                         style={{
                             marginTop: '1rem',
-                            // border: '2px solid green',
                         }}></div>
                     {gameData ? (
                         gameData.map((row, idx) => {
                             return (
-                                // <p>individual games will loop here</p>
                                 <AdminScoreItem
                                     key={idx}
                                     objId={idx}

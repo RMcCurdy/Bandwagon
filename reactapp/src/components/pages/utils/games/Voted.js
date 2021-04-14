@@ -1,25 +1,9 @@
 import React, { useRef } from 'react';
 
 const Voted = (props) => {
-    // const accountId = props.accountId;
-    // const gameId = props.gameId;
-    // const homeTeamId = props.homeTeamId;
-    // const visitorTeamId = props.visitorTeamId;
-    // const originalVoteForTeamId = props.votedForTeamId;
-    // const isvotingDisabled = props.isVotingDisabled;
-    //==========================================
 
     const voteRef = useRef(props.votedForTeamId);
     voteRef.current = props.votedForTeamId;
-
-    // useEffect(() => {
-    //     // const handleVoteClickaddTwo = (e) => {
-    //     //     return setCount(e.target.value);
-    //     // };
-
-    //     // document.title = `Voted for TeamId ${newVoteForTeamId}`;
-    //     console.log('Votes > useEffect > newVoteForTeamId :', voteRef.current);
-    // }, [voteRef]);
 
     return (
         <>
