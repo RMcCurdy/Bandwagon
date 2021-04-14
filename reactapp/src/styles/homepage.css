@@ -117,3 +117,19 @@
 .team-name-home-page {
   font-size: 1.5em;
 }
+
+@media (max-width: 400px) {
+  .news-title {
+    text-align: left;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .news-image{
+    max-width: 14rem;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(auto-fill, 16rem);
+  }
+}
