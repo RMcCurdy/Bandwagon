@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import AppContext from '../../../context/AppContext';
 import { NavLink } from "react-router-dom";
+import Sidebar from './Sidebar';
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -60,6 +61,7 @@ function Nav() {
     <>
     <header className="full-screen-header">
       <nav className="nav nav-top">
+        <Sidebar />
         {logoAndWebName}
         {tabsToShow()}
         {/* Global Sign in/Sign out */}

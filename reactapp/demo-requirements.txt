@@ -49,7 +49,7 @@ Register User -> Go to POST "/api/Accounts/signup" and run on:
   "id": 0,
   "firstName": "Alex",
   "lastName": "Adams",
-  "username": "AlexAdams1",
+  "username": "Alex24",
   "email": "alexadams@gmail.com",
   "password": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c",
   "profilePic": "Lakers"

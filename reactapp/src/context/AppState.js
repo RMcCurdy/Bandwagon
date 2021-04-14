@@ -12,6 +12,7 @@ const AppState = (props) => {
     const [totalPointsEarned, setTotalPointsEarned] = useState(0);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
     const [profilePic, setProfilePic] = useState('');
     const [dateCreated, setDateCreated] = useState('');
     const [topBadge, setTopBadge] = useState('');
@@ -72,6 +73,8 @@ const AppState = (props) => {
                 setOrderId,
                 clickVotedForTeamId,
                 setClickVotedForTeamId,
+                showSidebar,
+                setShowSidebar
             }}>
             {props.children}
         </AppContext.Provider>

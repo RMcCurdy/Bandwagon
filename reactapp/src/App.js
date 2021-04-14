@@ -2,6 +2,7 @@ import './App.css';
 import './styles/styles.css';
 import { BrowserRouter as Router } from "react-router-dom";
 import Nav from './components/pages/web/Nav';
+import Sidebar from './components/pages/web/Sidebar';
 import Routes from './components/routes/Routes';
 
 import AppState from './context/AppState';
@@ -16,15 +17,17 @@ function App() {
   }
 
   return (
+    <>
       <div className="App">
       <AppState>
-        <Router>
+        <Router>  
           <Nav />
           <div style={style}></div>
           <Routes />
         </Router>
       </AppState>
       </div>
+      </>
   );
 }
 

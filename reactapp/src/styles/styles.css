@@ -8,6 +8,7 @@
 @import "landingpage.css";
 @import "react-slideshow-image/dist/styles.css";
 @import "homepage.css";
+@import "sidebar.css";
 
 * {
   box-sizing: border-box;
@@ -48,6 +49,7 @@ button:focus {
   /* min-height: 30vh; */
   background-color:rgb(63, 63, 63);
   padding: .75rem 1rem;
+  min-height: 5rem;
 }
 
 .my-flex-container {

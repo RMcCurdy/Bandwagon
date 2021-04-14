@@ -1,0 +1,125 @@
+.side-drawer {
+  height: 600px;
+  background: white;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 400px;
+  z-index: 300;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  border: 2px solid red;
+}
+
+.dropdown {
+  display: none;
+  align-items: left;
+  text-align: left;
+  position: fixed;
+  z-index: 2;
+  width: 66%;
+  max-width: 400px;
+  left: 0;
+  top: 0;
+  background-color: rgb(99, 99, 99);
+  text-decoration: none;
+  height: 100vh;
+  margin-top: 5em;
+  box-shadow: 3px 3px 7px rgb(78, 78, 78);
+}
+
+.tabs-list-sidebar {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-btn-sidebar {
+  display: block;
+  margin-bottom: 10rem;
+  font-family: inherit;
+  color: hsl(0, 0%, 91%);
+  background-color: rgb(99,99,99);
+  border: 0;
+  margin: 0.3em;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 3px 3px 7px rgb(78, 78, 78);
+}
+
+.sidebar-button-show {
+  display: none;
+}
+
+.show {
+  display:block;
+}
+
+.side-drawer.open {
+  transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 2.7rem;
+    margin-left: -1rem;
+  }
+  
+  .nav-app-name {
+    font-size: 0.8em;
+    color: hsl(0, 0%, 91%);
+    margin-left: -0.2em;
+  }  
+
+}
+
+@media (max-width: 1200px) {
+
+  .header-title {
+    font-size: 2rem !important;
+  }
+
+  .sidebar-button-show {
+    display: block;
+    min-width: 2.5rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+    margin-left: -1rem;
+  }
+  
+  .mobile-menu{
+    display: block;
+  }
+
+  .nav-tabs {
+    display: none;
+  }
+
+  .nav-list.login-logout {
+    display: none;
+  }
+
+  .nav-btn {
+    font-family: inherit;
+    color: hsl(0, 0%, 91%);
+    background-color: rgb(99,99,99);
+    border: 0;
+    margin: 0.3em;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    color: hsl(29, 97%, 45%);
+  }
+  
+  .tabs-list {
+    list-style: none;
+    list-style-type: none;
+    font-size: 1.2em;
+  }
+  
+    
+}

@@ -2,7 +2,7 @@
 
 .main {
   background-color: #FFFFFF;
-  width: 400px;
+  width: 350px;
   height: 400px;
   margin: 7em auto;
   border-radius: 1.5em;
@@ -11,7 +11,7 @@
 
 .sign {
   padding-top: 40px;
-  color: hsl(29, 97%, 45%);
+  color: hsl(32, 100%, 57%);
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 23px;
