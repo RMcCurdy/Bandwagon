@@ -14,7 +14,7 @@ using NBAapi.Entities;
 
 namespace NBAapi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] // api/accounts
     [ApiController]
     public class AccountsController : ControllerBase
     {
