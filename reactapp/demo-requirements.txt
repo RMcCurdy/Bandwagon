@@ -1,0 +1,68 @@
+Were the scenario and system details fully described?
+
+Intro with the problem and how we solved this.
+
+Front end Demo (Jan and Markus)
+
+Were the basic requirements (noted above) met?
+
+For the 8 unique entity types requirement, we fulfilled this with 10 entities: 
+Accounts
+Address
+Badges
+Games
+Merchandise
+Orders
+OrderLineItems
+Players
+Teams
+Votes
+
+For the 1 weak entity requirement, we fulfilled this with:
+OrderLineItems (no OrderLineItem entry can exist unless the corresponding Order entry exists)
+
+For the 10 relationship types, we fulfilled this with:
+Accounts -> Orders (One to Many)
+Orders -> OrderLineItems (One to Many)
+OrderLineItems -> Merchandise (One to One)
+Accounts -> AccountBadge <- Badges (Many to Many)
+Accounts -> Address (One to Many)
+Accounts -> Votes (One to Optional Many)
+Votes ->  Games (One to One)
+Games -> Teams (One to Many)
+Teams -> Players (One to Many)
+
+
+Were the structure and results of several well-designed stored procedures presented?
+
+Due to everyone working remotely, we decided to use a file-based database, SQLite, to house our data. This made it possible to easily pass it back and forth with the source code we worked on. This database management system unfortunately does not allow us to create,save, or run stored procedures. After getting in contact with the Professor, he said not to worry about presenting anything for this section because of this. Just thought we would remind you about this after contacting you a few days ago.
+
+Were the API endpoints functional? 
+
+Register User -> Go to POST "/api/Accounts/signup" and run on:
+{
+  "id": 0,
+  "firstName": "Alex",
+  "lastName": "Adams",
+  "username": "AlexAdams1",
+  "email": "alexadams@gmail.com",
+  "password": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c",
+  "profilePic": "Lakers"
+}
+
+Get a User -> Go to GET "/api​/Accounts​/{id}" and run on Id 1. Copy response body and paste in POST "/api​/Accounts​/profile" with edits to the username. Run the GET on the same id to see the updated user details. 
+
+Login a User -> Go to POST "/api/Auth" and run on inputs:
+{
+  "email": "robert@test.com",
+  "password": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c"
+}
+
+For GameDates, this is the information that is dynamically filling our game dates drop down so that users can select the specific date. It is finding all **unique** dates that exist in our Games database and sorting by ascending dates.
+Get GameDates -> Go to GET "/api/Games/GameDates" and run
+
+Get Leaderboard -> Go to GET "/api/Leaderboard" and run. This returns all users who are not admins and sorts them by their amount of totalPointsEarned.
+
+Backend code
+
+Database (tables)

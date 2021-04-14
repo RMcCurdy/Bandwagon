@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using backend.Entities;
 
 namespace NBAapi.Entities
 {
@@ -22,6 +23,7 @@ namespace NBAapi.Entities
         public List<Badge> Badges { get; set; }
         public List<Order> Orders { get; set; }
         public List<Vote> Votes { get; set; }
+        public List<Address> Addresses { get; set; }
         
     }
 }
