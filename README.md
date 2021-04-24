@@ -21,6 +21,9 @@
     <a href="https://github.com/RMcCurdy/Bandwagon"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <!-- TODO Add a link to the working Bandwagon website for the Demo -->
+    <a href="https://github.com/RMcCurdy/Bandwagon/issues">View Website</a>
+    ·
     <a href="https://github.com/RMcCurdy/Bandwagon/issues">Report Bug</a>
     ·
     <a href="https://github.com/RMcCurdy/Bandwagon/issues">Request Feature</a>
@@ -65,16 +68,20 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [React.js](https://reactjs.org/)
+* [SQLite](https://www.sqlite.org/index.html)
+* [ASP.NET Core 5](https://dotnet.microsoft.com/)
+* [Entity Framework Core](https://docs.microsoft.com/en-us/ef/)
+* [JavaScript](https://www.javascript.com/)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get Bandwagon up and running follow these simple steps.
 
 
 
@@ -82,7 +89,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/RMcCurdy/Bandwagon.git
    ```
 2. Install NPM packages
    ```sh
@@ -95,8 +102,6 @@ To get a local copy up and running follow these simple steps.
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
