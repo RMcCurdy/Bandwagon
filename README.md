@@ -91,7 +91,7 @@ To get Bandwagon up and running follow these simple steps.
    ```sh
    npm install
    ```
-
+3. Run the Database
 
 
 <!-- USAGE EXAMPLES -->
