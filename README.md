@@ -22,7 +22,7 @@
     <br />
     <br />
     <!-- TODO Add a link to the working Bandwagon website for the Demo -->
-    <a href="https://github.com/RMcCurdy/Bandwagon/issues">View Website</a>
+    <a href="https://github.com/RMcCurdy/Bandwagon">View Website</a>
     ·
     <a href="https://github.com/RMcCurdy/Bandwagon/issues">Report Bug</a>
     ·
