@@ -59,8 +59,23 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Bandwagon is our web-based application using ASP.NET Core 5 backend API, Entity Framework Core, a SQLite backend database, and a React JS front end client. Users of the web app are able to create accounts and voice their opinions on who will win NBA games. We provide them with a prediction as insight, and with that they are able to vote. Points are awarded to the user if they voted correctly based on the win percentage of the team they chose. Points can be used in our shop to redeem a variety of prizes or merchandise. By participating on Bandwagon, badges are awarded to users based on certain criteria. A leaderboard is provided to see how other users stack up against them in terms of total points gained. With all of these utilities, we hope that Bandwagon can become a hub for NBA game predictions.
 
+<p align="center">
+  <img src="reactapp/public/img/landingpage/games-homepage.png" alt="Games" width="80%">
+</p>
+
+<p align="center">
+  <img src="reactapp/public/img/landingpage/shop-homepage.png" alt="Shop" width="80%">
+</p>
+
+<p align="center">
+  <img src="reactapp/public/img/landingpage/badges-homepage.png" alt="Badges" width="80%">
+</p>
+
+<p align="center">
+  <img src="reactapp/public/img/landingpage/leaderboard-homepage.png" alt="Leaderboard" width="80%">
+</p>
 
 ### Built With
 
