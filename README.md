@@ -45,7 +45,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Installation and Launch</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -80,7 +80,7 @@ To get Bandwagon up and running follow these simple steps.
 
 
 
-### Installation
+### Installation and Launch
 
 1. Clone the repo
    ```sh
@@ -91,12 +91,12 @@ To get Bandwagon up and running follow these simple steps.
    npm install
    ```
 3. Run the Database
-   ```console
+   ```sh
    cd backend
    dotnet run
    ```
 4. Run the React.js Frontend
-   ```console
+   ```sh
    cd reactapp
    npm start
    ```
