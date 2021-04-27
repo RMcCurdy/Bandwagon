@@ -94,7 +94,6 @@ To get Bandwagon up and running follow these simple steps.
 3. Run the Database
   ```sh
    cd backend
-   dotnet run
    ```
 4. Run the React.js Frontend
   ```sh
