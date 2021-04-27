@@ -50,7 +50,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -92,11 +91,12 @@ To get Bandwagon up and running follow these simple steps.
    npm install
    ```
 3. Run the Database
-  ```sh
+   ```console
    cd backend
+   dotnet run
    ```
 4. Run the React.js Frontend
-  ```sh
+   ```console
    cd reactapp
    npm start
    ```
@@ -115,14 +115,6 @@ Robert McCurdy - [@robert-mccurdy](https://www.linkedin.com/in/robert-mccurdy/) 
 
 Project Link: [https://github.com/RMcCurdy/Bandwagon](https://github.com/RMcCurdy/Bandwagon)
 
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
 
 
 
